@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoring</title>
+
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+
+    <!-- Pico.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/picocss@1.5.1/dist/pico.min.css"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div x-data="monitoringData()" x-init="loadData()">
+      <!-- Button to reload data -->
+      <button @click="loadData()">Reload Data</button>
+
+      <h2>System Monitoring</h2>
+
+      <!-- Loading spinner -->
+      <div x-show="loading" class="loading-spinner">
+        <p>Loading...</p>
+        <div class="spinner"></div>
+      </div>
+
+      <!-- Display CPU usage -->
+      <h3>CPU Load</h3>
+      <div class="chart-container">
+        <canvas id="cpuChart" x-show="!loading"></canvas>
+      </div>
+
+      <!-- Display Memory usage -->
+      <h3>Memory Usage</h3>
+      <div class="chart-container">
+        <canvas id="memoryChart" x-show="!loading"></canvas>
+      </div>
+
+      <!-- Display Disk usage -->
+      <h3>Disk Usage</h3>
+      <div class="chart-container">
+        <canvas id="diskChart" x-show="!loading"></canvas>
+      </div>
+
+      <!-- Display Process Load -->
+      <h3>Process Load</h3>
+      <div x-show="processes.length > 0">
+        <table>
+          <thead>
+            <tr>
+              <th>Process</th>
+              <th>PID</th>
+              <th>CPU Usage (%)</th>
+              <th>Memory Usage (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="process in processes" :key="process.pid">
+              <tr>
+                <td x-text="process.proc"></td>
+                <td x-text="process.pid"></td>
+                <td x-text="process.cpu.toFixed(2)"></td>
+                <td x-text="process.mem.toFixed(2)"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <script>
+        function monitoringData() {
+          return {
+            cpu: [],
+            memory: [],
+            disk: [],
+            processes: [],
+            loading: true,
+            async loadData() {
+              try {
+                this.loading = true;
+                const response = await fetch('/monitoring-lib/all');
+                const data = await response.json();
+                this.cpu = data.cpu;
+                this.memory = data.memory;
+                this.disk = data.disk;
+                this.processes = data.processLoad;
+                this.renderCharts();
+                this.loading = false;
+              } catch (error) {
+                console.error('Error fetching data:', error);
+                this.loading = false;
+              }
+            },
+            renderCharts() {
+              new Chart(document.getElementById('cpuChart'), {
+                type: 'pie',
+                data: {
+                  labels: ['User', 'System', 'Idle'],
+                  datasets: [
+                    {
+                      label: 'CPU Load',
+                      data: [
+                        this.cpu.currentLoadUser,
+                        this.cpu.currentLoadSystem,
+                        this.cpu.currentLoadIdle,
+                      ],
+                      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  plugins: {
+                    legend: {
+                      position: 'top',
+                    },
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                      },
+                    },
+                  },
+                },
+              });
+
+              new Chart(document.getElementById('memoryChart'), {
+                type: 'bar',
+                data: {
+                  labels: ['Used', 'Available'],
+                  datasets: [
+                    {
+                      label: 'Memory Usage (GB)',
+                      data: [
+                        this.memory.used / (1024 * 1024 * 1024),
+                        this.memory.available / (1024 * 1024 * 1024),
+                      ],
+                      backgroundColor: ['#FF5733', '#33FF57'],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
+                      },
+                    },
+                  },
+                },
+              });
+
+              new Chart(document.getElementById('diskChart'), {
+                type: 'bar',
+                data: {
+                  labels: this.disk.map((disk) => disk.fs),
+                  datasets: [
+                    {
+                      label: 'Disk Usage (%)',
+                      data: this.disk.map((disk) => disk.use),
+                      backgroundColor: ['#FF5733', '#33FF57'],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                },
+              });
+            },
+          };
+        }
+      </script>
+
+      <style>
+        .chart-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+
+        canvas {
+          width: 300px !important;
+          height: 300px !important;
+        }
+
+        .loading-spinner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .spinner {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #3498db;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+    </div>
+  </body>
+</html>

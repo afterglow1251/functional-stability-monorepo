@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/functional-stability-monorepo/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/functional-stability-monorepo/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/functional-stability-monorepo",
+  "projects": {
+    "functional-stability-monorepo": {
+      "type": "application",
+      "root": "apps/functional-stability-monorepo",
+      "entryFile": "main",
+      "sourceRoot": "apps/functional-stability-monorepo/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/functional-stability-monorepo/tsconfig.app.json"
+      }
+    },
+    "logger": {
+      "type": "library",
+      "root": "libs/logger",
+      "entryFile": "index",
+      "sourceRoot": "libs/logger/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/logger/tsconfig.lib.json"
+      }
+    },
+    "monitoring": {
+      "type": "library",
+      "root": "libs/monitoring",
+      "entryFile": "index",
+      "sourceRoot": "libs/monitoring/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/monitoring/tsconfig.lib.json"
+      }
+    },
+    "server": {
+      "type": "application",
+      "root": "apps/server",
+      "entryFile": "main",
+      "sourceRoot": "apps/server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/server/tsconfig.app.json"
+      }
+    }
+  }
+}
