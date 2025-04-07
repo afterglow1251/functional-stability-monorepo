@@ -8,7 +8,7 @@ import * as cron from 'node-cron';
 import { MONITORING_OPTIONS } from './shared/providers/monitoring.provider';
 import { MonitoringService } from './monitoring.service';
 import { MonitoringModuleOptions } from './shared/_types/monitoring.types';
-import { PinoFileLoggerService } from '@app/logger/shared/services/file-logger.service';
+import { PinoFileLoggerService } from 'libs/shared/src';
 
 @Injectable()
 export class MonitoringCronService implements OnModuleInit {

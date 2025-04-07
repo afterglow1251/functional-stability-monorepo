@@ -9,7 +9,7 @@ import {
 import { HttpAdapterHost } from '@nestjs/core';
 import { ExceptionFilterConfig } from '../../shared/_types/logger.types';
 import { CATCH_HTTP_EXCEPTION_FILTER_CONFIG } from '../../shared/providers/logger.providers';
-import { PinoFileLoggerService } from '../../shared/services/file-logger.service';
+import { PinoFileLoggerService } from 'libs/shared/src';
 
 @Catch(HttpException)
 export class CatchHttpExceptionFilter implements ExceptionFilter {

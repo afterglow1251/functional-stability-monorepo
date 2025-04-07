@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { LoggerService } from './logger.service';
 import { Request, Response } from 'express';
-import { PinoFileLoggerService } from '../../shared/services/file-logger.service';
+import { PinoFileLoggerService } from 'libs/shared/src';
 
 @Injectable()
 export class LoggerInterceptor implements NestInterceptor {

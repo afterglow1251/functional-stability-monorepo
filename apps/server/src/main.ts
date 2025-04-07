@@ -3,7 +3,7 @@ import { ServerModule } from './server.module';
 
 // import { CatchHttpExceptionFilter, CatchEverythingFilter } from 'libs/logger/src';
 // import { ClsService } from 'nestjs-cls';
-import { PinoConsoleLoggerService } from '@app/logger/shared/services/console-logger.service';
+import { PinoConsoleLoggerService } from 'libs/shared/src';
 
 async function bootstrap() {
   const app = await NestFactory.create(ServerModule);

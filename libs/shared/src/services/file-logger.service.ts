@@ -1,7 +1,7 @@
 import { pino } from 'pino';
-import { LoggerFileOptions } from '../_types/logger.types';
+import { LoggerFileOptions } from '../../../logger/src/shared/_types/logger.types';
 import { join } from 'path';
-import { DEFAULT_FILE_CONFIG } from '../constants/logger.constants';
+import { DEFAULT_FILE_CONFIG } from '../../../logger/src/shared/constants/logger.constants';
 import { LoggerService } from '@nestjs/common';
 
 export const pinoFileLogger = (options?: LoggerFileOptions) => {
