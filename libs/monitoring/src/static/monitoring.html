@@ -98,6 +98,7 @@
               }
             },
             renderCharts() {
+              // CPU Load Chart
               new Chart(document.getElementById('cpuChart'), {
                 type: 'pie',
                 data: {
@@ -110,7 +111,11 @@
                         this.cpu.currentLoadSystem,
                         this.cpu.currentLoadIdle,
                       ],
-                      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                      ],
                     },
                   ],
                 },
@@ -129,6 +134,7 @@
                 },
               });
 
+              // Memory Usage Chart
               new Chart(document.getElementById('memoryChart'), {
                 type: 'bar',
                 data: {
@@ -140,7 +146,10 @@
                         this.memory.used / (1024 * 1024 * 1024),
                         this.memory.available / (1024 * 1024 * 1024),
                       ],
-                      backgroundColor: ['#FF5733', '#33FF57'],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                      ],
                     },
                   ],
                 },
@@ -161,6 +170,7 @@
                 },
               });
 
+              // Disk Usage Chart
               new Chart(document.getElementById('diskChart'), {
                 type: 'bar',
                 data: {
@@ -169,7 +179,11 @@
                     {
                       label: 'Disk Usage (%)',
                       data: this.disk.map((disk) => disk.use),
-                      backgroundColor: ['#FF5733', '#33FF57'],
+                      backgroundColor: this.disk.map((disk) =>
+                        disk.use > 80
+                          ? 'rgba(255, 99, 132, 0.6)'
+                          : 'rgba(75, 192, 192, 0.6)',
+                      ),
                     },
                   ],
                 },
@@ -178,6 +192,7 @@
                   scales: {
                     y: {
                       beginAtZero: true,
+                      max: 100,
                     },
                   },
                 },
@@ -191,13 +206,13 @@
         .chart-container {
           display: flex;
           justify-content: center;
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
         }
 
-        canvas {
-          width: 300px !important;
-          height: 300px !important;
-        }
+        /* canvas {
+          width: 400px !important;
+          height: 400px !important;
+        } */
 
         .loading-spinner {
           display: flex;

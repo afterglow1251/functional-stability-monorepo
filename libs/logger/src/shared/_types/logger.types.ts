@@ -29,7 +29,7 @@ export type LoggerFileConfig = {
 
 export type LoggerFileOptions = {
   dir?: string;
-  fileName?: string;
+  file?: string;
   frequency?: 'daily' | 'hourly' | number;
   mkdir?: boolean;
   dateFormat?: string;

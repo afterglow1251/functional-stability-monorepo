@@ -17,6 +17,14 @@ import { MonitoringModule } from '@app/monitoring';
 import { PinoConsoleLoggerService } from 'libs/shared/src';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { TypeormDatabaseModule } from './db/typeorm/db.module';
+import { SequelizeDatabaseModule } from './db/sequelize/db.module';
+import { initializeMikroOrm } from './db/mikro-orm';
+import { MongooseModule } from '@nestjs/mongoose';
+import { MongooseDatabaseModule } from './db/mongoose/db.module';
+import { HealthcheckModule } from '@app/monitoring';
+
+// initializeMikroOrm();
 
 @Module({
   imports: [
@@ -57,7 +65,21 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       rootPath: join(__dirname, '..', '..', '..', 'public'),
       serveRoot: '/',
     }),
+    // TypeormDatabaseModule,
+    // SequelizeDatabaseModule,
+    MongooseDatabaseModule,
+    // MongooseModule.forRoot(
+    //   'mongodb+srv://yuriiafterglow:iOrGuFUnw2jtwAVC@cluster0.7hwngpn.mongodb.net/',
+    // ),
+    // HealthcheckModule.forRoot({
+    //   // mysql: mysqlClient,
+    //   // drizzle: drizzleOrm,
+    //   // prisma: prisma,
+    //   // mongoose: mongooseClient,
+    // }),
+    HealthcheckModule.forRoot(),
   ],
+
   controllers: [ServerController],
   providers: [
     ServerService,

@@ -1,13 +1,20 @@
 import { pino } from 'pino';
 import { LoggerFileOptions } from '../../../logger/src/shared/_types/logger.types';
 import { join } from 'path';
-import { DEFAULT_FILE_CONFIG } from '../../../logger/src/shared/constants/logger.constants';
 import { LoggerService } from '@nestjs/common';
+
+export const DEFAULT_FILE_CONFIG = {
+  dir: './logs',
+  file: 'app.log',
+  frequency: 'hourly',
+  mkdir: true,
+  dateFormat: 'yyyy-MM-dd-HH-mm-ss',
+} as const;
 
 export const pinoFileLogger = (options?: LoggerFileOptions) => {
   const {
     dir = DEFAULT_FILE_CONFIG.dir,
-    fileName = DEFAULT_FILE_CONFIG.fileName,
+    file = DEFAULT_FILE_CONFIG.file,
     frequency,
     mkdir = DEFAULT_FILE_CONFIG.mkdir,
     dateFormat,
@@ -17,7 +24,7 @@ export const pinoFileLogger = (options?: LoggerFileOptions) => {
     transport: {
       target: 'pino-roll',
       options: {
-        file: join(dir, fileName),
+        file: join(dir, file),
         frequency,
         mkdir,
         dateFormat,

@@ -1,4 +1,10 @@
-import { Controller, ForbiddenException, Get, UseFilters } from '@nestjs/common';
+import {
+  Controller,
+  ForbiddenException,
+  Get,
+  Inject,
+  UseFilters,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CatchHttpExceptionFilter, CatchEverythingFilter } from '@app/logger';
 

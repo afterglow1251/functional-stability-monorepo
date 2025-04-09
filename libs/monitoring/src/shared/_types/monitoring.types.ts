@@ -1,10 +1,17 @@
 export type MonitoringModuleOptions = {
   cronExpression: string;
+
   console: { on: boolean };
   file: {
     on: boolean;
     options?: LoggerFileOptions;
   };
+
+  cpuThreshold?: number;
+  memoryThreshold?: number;
+  diskThreshold?: number;
+  processCpuThreshold?: number;
+  processMemThreshold?: number;
 };
 
 export type LoggerFileOptions = {
