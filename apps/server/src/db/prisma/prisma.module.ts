@@ -1,15 +1,9 @@
-// import { Module } from '@nestjs/common';
-// import { PrismaService } from '.';
+// prisma.module.ts
+import { Module } from '@nestjs/common';
+import { prismaProvider } from '.';
 
-// @Module({
-//   providers: [PrismaService],
-//   exports: [PrismaService],
-// })
-// export class PrismaModule {
-//   static forRoot() {
-//     return {
-//       module: PrismaModule,
-//       global: true,
-//     };
-//   }
-// }
+@Module({
+  providers: [prismaProvider],
+  exports: [prismaProvider],
+})
+export class PrismaModule {}

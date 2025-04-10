@@ -12,19 +12,21 @@ import { TraceMiddleware } from 'libs/logger/src';
 import { ClsModule } from 'nestjs-cls';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggerInterceptor } from 'libs/logger/src';
-import { LoggerFilterModule } from 'libs/logger/src';
-import { MonitoringModule } from '@app/monitoring';
+import { LoggerExceptionFilterModule } from 'libs/logger/src';
+import { SystemMonitoringModule } from '@app/monitoring';
 import { PinoConsoleLoggerService } from 'libs/shared/src';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeormDatabaseModule } from './db/typeorm/db.module';
 import { SequelizeDatabaseModule } from './db/sequelize/db.module';
-import { initializeMikroOrm } from './db/mikro-orm';
-import { MongooseModule } from '@nestjs/mongoose';
 import { MongooseDatabaseModule } from './db/mongoose/db.module';
 import { HealthcheckModule } from '@app/monitoring';
-
-// initializeMikroOrm();
+import { PrismaModule } from './db/prisma/prisma.module';
+import { PostgresModule } from './db/postgres/pg.module';
+import { MysqlModule } from './db/mysql/mysql.module';
+import { DrizzleModule } from './db/drizzle/drizzle.module';
+import { MikroOrmModuleDatabase } from './db/mikro-orm/mikro-orm.module';
+import { RequestLimitInterceptor } from '@app/monitoring/modules/system-monitoring/interceptors/request-limit.interceptor';
 
 @Module({
   imports: [
@@ -39,7 +41,7 @@ import { HealthcheckModule } from '@app/monitoring';
         options: { dir: './logs/my-logs' },
       },
     }),
-    LoggerFilterModule.forRoot({
+    LoggerExceptionFilterModule.forRoot({
       console: {
         on: true,
       },
@@ -48,42 +50,42 @@ import { HealthcheckModule } from '@app/monitoring';
         options: { dir: './logs/error-logs' },
       },
     }),
-    // MonitoringModule.forRoot({
-    //   cronExpression: '*/2 * * * * *',
-    //   console: {
-    //     on: false,
-    //   },
-    //   file: {
-    //     on: false,
-    //     options: {
-    //       dir: './logs/monitoring-logs',
-    //     },
-    //   },
-    // }),
+    SystemMonitoringModule.forRoot({
+      cronExpression: '*/2 * * * * *',
+      console: {
+        on: true,
+      },
+      file: {
+        on: false,
+        options: {
+          dir: './logs/monitoring-logs',
+        },
+      },
+    }),
     UsersModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', '..', 'public'),
       serveRoot: '/',
     }),
-    // TypeormDatabaseModule,
-    // SequelizeDatabaseModule,
-    MongooseDatabaseModule,
-    // MongooseModule.forRoot(
-    //   'mongodb+srv://yuriiafterglow:iOrGuFUnw2jtwAVC@cluster0.7hwngpn.mongodb.net/',
-    // ),
-    // HealthcheckModule.forRoot({
-    //   // mysql: mysqlClient,
-    //   // drizzle: drizzleOrm,
-    //   // prisma: prisma,
-    //   // mongoose: mongooseClient,
-    // }),
-    HealthcheckModule.forRoot(),
+    // HealthcheckModule.forRoot([
+    //   MongooseDatabaseModule,
+    //   TypeormDatabaseModule,
+    //   SequelizeDatabaseModule,
+    //   PrismaModule,
+    //   PostgresModule,
+    //   MysqlModule,
+    //   DrizzleModule,
+    //   MikroOrmModuleDatabase,
+    // ]),
   ],
-
   controllers: [ServerController],
   providers: [
     ServerService,
     PinoConsoleLoggerService,
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: RequestLimitInterceptor,
+    },
     {
       provide: APP_INTERCEPTOR,
       useClass: LoggerInterceptor,

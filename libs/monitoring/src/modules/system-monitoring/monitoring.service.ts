@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import * as si from 'systeminformation';
-import { DEFAULT_PROCESS_NAME } from './shared/constants/monitoring.constants';
+
+export const DEFAULT_PROCESS_NAME = 'node';
 
 @Injectable()
-export class MonitoringService {
+export class SystemMonitoringService {
   async getCpu() {
     const { currentLoad, currentLoadUser, currentLoadSystem, currentLoadIdle } =
       await si.currentLoad();

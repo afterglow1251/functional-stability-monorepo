@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import { ExceptionFilterConfig } from '@app/logger';
-import { CATCH_EVERYTHING_FILTER_CONFIG } from '@app/logger/shared/providers/logger.providers';
 
 @Module({
   controllers: [UsersController],

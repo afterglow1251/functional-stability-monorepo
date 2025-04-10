@@ -8,9 +8,9 @@ import {
   Logger as NestLogger,
 } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
-import { ExceptionFilterConfig } from '../../shared/_types/logger.types';
-import { CATCH_EVERYTHING_FILTER_CONFIG } from '../../shared/providers/logger.providers';
+import { CATCH_EVERYTHING_FILTER_CONFIG } from './shared/providers';
 import { PinoFileLoggerService } from 'libs/shared/src';
+import { ExceptionFilterConfig } from '../../shared/_types/logger.types';
 
 @Catch()
 export class CatchEverythingFilter implements ExceptionFilter {

@@ -1,10 +1,11 @@
+import { HEALTH_TYPEORM_PROVIDER } from '@app/monitoring';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
 export let typeormDB: DataSource;
 
 export const databaseProviders = [
   {
-    provide: 'DATA_SOURCE',
+    provide: HEALTH_TYPEORM_PROVIDER,
     useFactory: async () => {
       typeormDB = new DataSource({
         type: 'mysql',

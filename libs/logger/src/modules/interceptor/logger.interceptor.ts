@@ -5,10 +5,9 @@ import {
   CallHandler,
   Logger as NestLogger,
 } from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { LoggerService } from './logger.service';
+import { Observable, tap } from 'rxjs';
 import { Request, Response } from 'express';
+import { LoggerService } from './logger.service';
 import { PinoFileLoggerService } from 'libs/shared/src';
 
 @Injectable()

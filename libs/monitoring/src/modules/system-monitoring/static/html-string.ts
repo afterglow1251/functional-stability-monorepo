@@ -1,0 +1,320 @@
+export const htmlString: string = `
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoring Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .chart-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 50px auto 2rem;
+      }
+
+      .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        z-index: 9999;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .tab-list {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .tab-list button {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: #eee;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .tab-list button.active {
+        background-color: #3498db;
+        color: white;
+      }
+
+      .processes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px;
+        margin-top: 50px;
+      }
+
+      .process-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .process-card strong {
+        font-size: 1.1em;
+      }
+
+      .process-card p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div x-data="monitoringData()" x-init="loadData()" class="container">
+      <!-- Tabs navigation -->
+      <nav>
+        <ul
+          class="tab-list"
+          role="tablist"
+          style="list-style-type: none; padding-left: 0"
+        >
+          <li>
+            <button
+              @click="activeTab = 'cpu'"
+              :class="{active: activeTab === 'cpu'}"
+            >
+              CPU
+            </button>
+          </li>
+          <li>
+            <button
+              @click="activeTab = 'memory'"
+              :class="{active: activeTab === 'memory'}"
+            >
+              Memory
+            </button>
+          </li>
+          <li>
+            <button
+              @click="activeTab = 'disk'"
+              :class="{active: activeTab === 'disk'}"
+            >
+              Disk
+            </button>
+          </li>
+          <li>
+            <button
+              @click="activeTab = 'process'"
+              :class="{active: activeTab === 'process'}"
+            >
+              Processes
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div x-show="loading" class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+
+      <div x-show="activeTab === 'cpu'" class="chart-container">
+        <canvas id="cpuChart" x-show="!loading"></canvas>
+      </div>
+
+      <div x-show="activeTab === 'memory'" class="chart-container">
+        <canvas id="memoryChart" x-show="!loading"></canvas>
+      </div>
+
+      <div x-show="activeTab === 'disk'" class="chart-container">
+        <canvas id="diskChart" x-show="!loading"></canvas>
+      </div>
+
+      <div x-show="activeTab === 'process' && processes.length > 0">
+        <div class="processes-container">
+          <template x-for="process in processes" :key="process.pid">
+            <div class="process-card">
+              <p>
+                <strong>Process: </strong>
+                <span x-text="process.proc"></span>
+              </p>
+              <p><strong>PID:</strong> <span x-text="process.pid"></span></p>
+              <p>
+                <strong>CPU Usage:</strong>
+                <span x-text="process.cpu.toFixed(2)"></span>%
+              </p>
+              <p>
+                <strong>Memory Usage:</strong>
+                <span x-text="process.mem.toFixed(2)"></span>%
+              </p>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <script>
+        function monitoringData() {
+          return {
+            cpu: [],
+            memory: [],
+            disk: [],
+            processes: [],
+            loading: true,
+            activeTab: 'cpu',
+            async loadData() {
+              try {
+                this.loading = true;
+                const response = await fetch('/v1/system-monitoring/all');
+                const data = await response.json();
+                this.cpu = data.cpu;
+                this.memory = data.memory;
+                this.disk = data.disk;
+                this.processes = data.processLoad;
+                this.renderCharts();
+                this.loading = false;
+              } catch (error) {
+                console.error('Error fetching data:', error);
+                this.loading = false;
+              }
+            },
+            renderCharts() {
+              new Chart(document.getElementById('cpuChart'), {
+                type: 'pie',
+                data: {
+                  labels: ['User', 'System', 'Idle'],
+                  datasets: [
+                    {
+                      label: 'CPU Load',
+                      data: [
+                        this.cpu.currentLoadUser,
+                        this.cpu.currentLoadSystem,
+                        this.cpu.currentLoadIdle,
+                      ],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  aspectRatio: 1.3,
+                  plugins: {
+                    legend: {
+                      position: 'top',
+                    },
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                      },
+                    },
+                  },
+                },
+              });
+
+              new Chart(document.getElementById('memoryChart'), {
+                type: 'bar',
+                data: {
+                  labels: ['Used', 'Available'],
+                  datasets: [
+                    {
+                      label: 'Memory Usage (GB)',
+                      data: [
+                        this.memory.used / 1073741824, 
+                        this.memory.available / 1073741824, 
+                      ],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  aspectRatio: 1.3,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
+                      },
+                    },
+                  },
+                },
+              });
+
+              new Chart(document.getElementById('diskChart'), {
+                type: 'bar',
+                data: {
+                  labels: this.disk.map((disk) => disk.fs),
+                  datasets: [
+                    {
+                      label: 'Disk Usage (%)',
+                      data: this.disk.map((disk) => disk.use),
+                      backgroundColor: this.disk.map((disk) =>
+                        disk.use > 80
+                          ? 'rgba(255, 99, 132, 0.6)'
+                          : 'rgba(75, 192, 192, 0.6)',
+                      ),
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  aspectRatio: 1.3,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                    },
+                  },
+                },
+              });
+            },
+          };
+        }
+      </script>
+    </div>
+  </body>
+</html>
+`;

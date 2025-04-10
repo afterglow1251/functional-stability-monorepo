@@ -1,7 +1,7 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { LoggerService } from './logger.service';
+import { LOGGER_INTERCEPTOR_CONFIG } from './shared/providers';
 import { LoggerConfigInitial } from '../../shared/_types/logger.types';
-import { LOGGER_CONFIG } from '../../shared/providers/logger.providers';
 
 @Module({})
 export class LoggerRequestModule {
@@ -10,7 +10,7 @@ export class LoggerRequestModule {
       module: LoggerRequestModule,
       providers: [
         {
-          provide: LOGGER_CONFIG,
+          provide: LOGGER_INTERCEPTOR_CONFIG,
           useValue: initialConfig,
         },
         LoggerService,

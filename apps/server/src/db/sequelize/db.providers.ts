@@ -1,11 +1,12 @@
 import { Sequelize } from 'sequelize-typescript';
 import { User } from './schema';
+import { HEALTH_SEQUELIZE_PROVIDER } from '@app/monitoring';
 
 export let sequelizeDB: Sequelize;
 
 export const databaseProviders = [
   {
-    provide: 'SEQUELIZE',
+    provide: HEALTH_SEQUELIZE_PROVIDER,
     useFactory: async () => {
       sequelizeDB = new Sequelize({
         dialect: 'mysql',

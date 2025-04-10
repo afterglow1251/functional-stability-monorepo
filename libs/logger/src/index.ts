@@ -6,3 +6,4 @@ export * from './modules/filter/http-exception.filter';
 export * from './shared/_types/logger.types';
 export * from './modules/interceptor/logger.interceptor';
 export * from './middleware/trace.middleware';
+export * from './shared/_types/logger.types';

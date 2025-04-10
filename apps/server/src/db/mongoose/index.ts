@@ -1,9 +1,8 @@
+import { HEALTH_MONGOOSE_PROVIDER } from '@app/monitoring';
 import mongoose, { Connection } from 'mongoose';
 
-export const MONGOOSE_CONNECTION = Symbol('MONGOOSE_CONNECTION');
-
 export const mongooseProvider = {
-  provide: MONGOOSE_CONNECTION,
+  provide: HEALTH_MONGOOSE_PROVIDER,
   useFactory: async (): Promise<Connection> => {
     try {
       await mongoose.connect(

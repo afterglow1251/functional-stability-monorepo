@@ -1,12 +1,12 @@
-// import { Injectable, OnModuleInit } from '@nestjs/common';
-// import { PrismaClient } from 'generated/prisma';
-
-import { PrismaClient as OriginalPrismaClient } from '@prisma/client';
 import { PrismaClient } from 'generated/prisma';
+import { Provider } from '@nestjs/common';
+import { HEALTH_PRISMA_PROVIDER } from '@app/monitoring';
 
-// export class PrismaService extends PrismaClient implements OnModuleInit {
-//   async onModuleInit() {
-//     await this.$connect();
-//   }
-// }
-export const prisma: OriginalPrismaClient = new PrismaClient();
+export const prismaProvider: Provider = {
+  provide: HEALTH_PRISMA_PROVIDER,
+  useFactory: () => {
+    const prisma = new PrismaClient();
+    prisma.$connect();
+    return prisma;
+  },
+};

@@ -1,16 +1,21 @@
 import { Injectable, Inject, Logger as NestLogger } from '@nestjs/common';
+import { Request, Response } from 'express';
+import { LOGGER_INTERCEPTOR_CONFIG } from '../interceptor/shared/providers';
 import {
   LoggerConfig,
   LoggerConfigInitial,
   LoggerConfigTargetsBase,
 } from '../../shared/_types/logger.types';
-import { Request, Response } from 'express';
-import { LOGGER_CONFIG } from '../../shared/providers/logger.providers';
-import { DEFAULT_TARGETS } from '../../shared/constants/logger.constants';
+
+export const DEFAULT_TARGETS: LoggerConfigTargetsBase[] = [
+  'url',
+  'method',
+  'statusCode',
+] as const;
 
 @Injectable()
 export class LoggerService {
-  private readonly nestLogger = new NestLogger(LoggerService.name);
+  private readonly consoleLogger = new NestLogger(LoggerService.name);
   private readonly config: LoggerConfig;
 
   private durationTarget = new Map<keyof LoggerConfigInitial, boolean>([
@@ -31,7 +36,9 @@ export class LoggerService {
     ['body', (req) => req.body],
   ]);
 
-  constructor(@Inject(LOGGER_CONFIG) initialConfig: LoggerConfigInitial) {
+  constructor(
+    @Inject(LOGGER_INTERCEPTOR_CONFIG) initialConfig: LoggerConfigInitial,
+  ) {
     this.config = this.prepareConfig(initialConfig);
     this.updateDurationTarget();
   }
@@ -58,7 +65,7 @@ export class LoggerService {
 
     const uniqueTargets = [...new Set(targets)];
     if (targets.length !== uniqueTargets.length) {
-      this.nestLogger.warn(
+      this.consoleLogger.warn(
         `Duplicate targets found in the logger configuration (check LoggerModule.forRoot()): ${[...targets].join(', ')}. Duplicates have been removed.`,
       );
     }
