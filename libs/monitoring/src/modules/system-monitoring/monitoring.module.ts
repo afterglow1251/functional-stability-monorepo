@@ -2,9 +2,10 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { SystemMonitoringService } from './monitoring.service';
 import { MonitoringCronService } from './extra-services/monitoring-cron.service';
 import { SystemMonitoringController } from './monitoring.controller';
-import { RequestLimitService } from './extra-services/request-limit.service';
+// import { RequestLimitService } from './extra-services/request-limit.service';
 import { MONITORING_OPTIONS } from './shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from './shared/_types/monitoring.types';
+import { SystemMonitoringAlertService } from './extra-services/alert.service';
 
 @Module({})
 export class SystemMonitoringModule {
@@ -16,16 +17,18 @@ export class SystemMonitoringModule {
         useValue: config,
       },
       SystemMonitoringService,
-      ...(isLoggingOn ? [MonitoringCronService, RequestLimitService] : []),
+      ...(isLoggingOn ? [MonitoringCronService, SystemMonitoringAlertService] : []),
     ];
 
     return {
       module: SystemMonitoringModule,
       controllers: [SystemMonitoringController],
       providers,
+      // TODO: check these deps
       exports: [
         SystemMonitoringService,
-        ...(isLoggingOn ? [RequestLimitService] : []),
+        SystemMonitoringAlertService,
+        MonitoringCronService,
       ],
     };
   }

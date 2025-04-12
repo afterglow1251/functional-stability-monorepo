@@ -11,9 +11,11 @@ import {
 import { ServerService } from './server.service';
 import { CatchHttpExceptionFilter } from '@app/logger';
 import { LoggerInterceptor } from '@app/logger/modules/interceptor/logger.interceptor';
+import { Retry } from '@app/monitoring/modules/system-monitoring/shared/decorators/retry.decorator';
 
 @Controller()
 export class ServerController {
+  private attemptCounter = 0;
   private readonly logger = new Logger(ServerController.name);
 
   constructor(
@@ -22,8 +24,16 @@ export class ServerController {
   ) {}
 
   @Get()
+  @Retry({ attempts: 3, delay: 1000, strategy: 'linear' })
   async getHello(): Promise<string> {
     this.logger.log('GET hello controller');
+    this.attemptCounter++;
+
+    if (this.attemptCounter <= 2) {
+      this.logger.error(`Attempt ${this.attemptCounter}: Temporary error occurred!`);
+      throw new Error('Temporary error!');
+    }
+
     return await this.serverService.getHello();
   }
 
@@ -39,19 +49,18 @@ export class ServerController {
     return this.serverService.getError();
   }
 
-  // async checkDbHealth(fn: () => Promise<any>) {
-  //   try {
-  //     await fn();
-  //     return { status: 'OK', message: 'Database is up and running' };
-  //   } catch (error) {
-  //     this.logger.error('Health check failed:', error.stack);
-  //     return { status: 'ERROR', message: 'Database is down', error: error.message };
-  //   }
-  // }
+  @Get('retry-test')
+  @Retry({ attempts: 3, delay: 1000, strategy: 'linear' }) // Використовуємо лінійну затримку
+  async retryTest(): Promise<string> {
+    this.logger.log('Executing retryTest...');
+    this.attemptCounter++;
 
-  // @Get('check_mikroorm')
-  // async checkMikroOrm() {
-  //   const knex = this.mikroorm.em.getKnex();
-  //   return this.checkDbHealth(() => knex.raw('SELECT 1'));
-  // }
+    if (this.attemptCounter <= 2) {
+      this.logger.error(`Attempt ${this.attemptCounter}: Temporary error occurred!`);
+      throw new Error('Temporary error!');
+    }
+
+    // На третій спробі успішний результат
+    return 'Success after retrying!';
+  }
 }

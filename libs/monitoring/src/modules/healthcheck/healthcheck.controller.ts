@@ -38,9 +38,9 @@ export class HealthcheckController {
     }
   }
 
-  async checkDbHealth(fn: () => Promise<any>) {
+  async checkDbHealth(checkFn: () => Promise<any>) {
     try {
-      await fn();
+      await checkFn();
       return { status: 'OK', message: 'Database is up and running' };
     } catch (error) {
       this.logger.error('Health check failed:', error.stack);
@@ -48,42 +48,42 @@ export class HealthcheckController {
     }
   }
 
-  @Get('check_drizzle')
+  @Get('drizzle')
   async checkDrizzle() {
     this.checkDbConfigured(this.drizzle);
 
     return this.checkDbHealth(() => this.drizzle.execute('SELECT 1'));
   }
 
-  @Get('check_typeorm')
+  @Get('typeorm')
   async checkTypeOrm() {
     this.checkDbConfigured(this.typeOrm);
 
     return this.checkDbHealth(() => this.typeOrm.query('SELECT 1'));
   }
 
-  @Get('check_sequelize')
+  @Get('sequelize')
   async checkSequelizeOrm() {
     this.checkDbConfigured(this.sequelize);
 
     return this.checkDbHealth(() => this.sequelize.query('SELECT 1'));
   }
 
-  @Get('check_mikroorm')
+  @Get('mikroorm')
   async checkMikroOrm() {
     this.checkDbConfigured(this.mikroOrm);
 
     return this.checkDbHealth(() => this.mikroOrm.em.getKnex().raw('SELECT 1'));
   }
 
-  @Get('check_prisma')
+  @Get('prisma')
   async checkPrisma() {
     this.checkDbConfigured(this.prisma);
 
     return this.checkDbHealth(() => this.prisma.$queryRaw`SELECT 1`);
   }
 
-  @Get('check_mongoose')
+  @Get('mongoose')
   async checkMongoose() {
     this.checkDbConfigured(this.mongoose);
 
@@ -96,17 +96,62 @@ export class HealthcheckController {
     });
   }
 
-  @Get('check_mysql')
+  @Get('mysql')
   async checkMysql() {
     this.checkDbConfigured(this.mysql);
 
     return this.checkDbHealth(() => this.mysql.query('SELECT 1'));
   }
 
-  @Get('check_postgres')
+  @Get('postgres')
   async checkPostgres() {
     this.checkDbConfigured(this.postgres);
 
     return this.checkDbHealth(() => this.postgres.query('SELECT 1'));
+  }
+
+  @Get('all')
+  async checkAll() {
+    const checks = await Promise.all(
+      [
+        this.drizzle &&
+          this.createNamedCheck('drizzle', () => this.drizzle.execute('SELECT 1')),
+        this.typeOrm &&
+          this.createNamedCheck('typeorm', () => this.typeOrm.query('SELECT 1')),
+        this.sequelize &&
+          this.createNamedCheck('sequelize', () => this.sequelize.query('SELECT 1')),
+        this.mikroOrm &&
+          this.createNamedCheck('mikroorm', () =>
+            this.mikroOrm.em.getKnex().raw('SELECT 1'),
+          ),
+        this.prisma &&
+          this.createNamedCheck('prisma', () => this.prisma.$queryRaw`SELECT 1`),
+        this.mongoose &&
+          this.createNamedCheck('mongoose', () => {
+            if (this.mongoose.readyState !== 1 || !this.mongoose.db) {
+              throw new Error('MongoDB is not available');
+            }
+            return this.mongoose.db.command({ ping: 1 });
+          }),
+        this.mysql &&
+          this.createNamedCheck('mysql', () => this.mysql.query('SELECT 1')),
+        this.postgres &&
+          this.createNamedCheck('postgres', () => this.postgres.query('SELECT 1')),
+      ].filter(Boolean), // Remove all `undefined` if the database is not configured
+    );
+
+    const isAllOk = checks.every((check) => check.result.status === 'OK');
+
+    return {
+      status: isAllOk ? 'OK' : 'PARTIAL',
+      databases: checks,
+    };
+  }
+
+  private async createNamedCheck(name: string, checkFn: () => Promise<any>) {
+    return {
+      name,
+      result: await this.checkDbHealth(checkFn),
+    };
   }
 }

@@ -26,7 +26,7 @@ import { PostgresModule } from './db/postgres/pg.module';
 import { MysqlModule } from './db/mysql/mysql.module';
 import { DrizzleModule } from './db/drizzle/drizzle.module';
 import { MikroOrmModuleDatabase } from './db/mikro-orm/mikro-orm.module';
-import { RequestLimitInterceptor } from '@app/monitoring/modules/system-monitoring/interceptors/request-limit.interceptor';
+import { OverloadProtectionInterceptor } from '@app/monitoring/modules/system-monitoring/interceptors/overload-protection.interceptor';
 
 @Module({
   imports: [
@@ -56,7 +56,7 @@ import { RequestLimitInterceptor } from '@app/monitoring/modules/system-monitori
         on: true,
       },
       file: {
-        on: false,
+        on: true,
         options: {
           dir: './logs/monitoring-logs',
         },
@@ -72,7 +72,7 @@ import { RequestLimitInterceptor } from '@app/monitoring/modules/system-monitori
     //   TypeormDatabaseModule,
     //   SequelizeDatabaseModule,
     //   PrismaModule,
-    //   PostgresModule,
+    //   // PostgresModule,
     //   MysqlModule,
     //   DrizzleModule,
     //   MikroOrmModuleDatabase,
@@ -84,7 +84,7 @@ import { RequestLimitInterceptor } from '@app/monitoring/modules/system-monitori
     PinoConsoleLoggerService,
     {
       provide: APP_INTERCEPTOR,
-      useClass: RequestLimitInterceptor,
+      useClass: OverloadProtectionInterceptor,
     },
     {
       provide: APP_INTERCEPTOR,

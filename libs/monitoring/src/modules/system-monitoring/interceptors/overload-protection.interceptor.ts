@@ -5,15 +5,15 @@ import {
   CallHandler,
 } from '@nestjs/common';
 import { Observable, throwError } from 'rxjs';
-import { RequestLimitService } from '../extra-services/request-limit.service';
+import { MonitoringCronService } from '../extra-services/monitoring-cron.service';
 import { ServiceUnavailableException } from '@nestjs/common';
 
 @Injectable()
-export class RequestLimitInterceptor implements NestInterceptor {
-  constructor(private readonly requestLimitService: RequestLimitService) {}
+export class OverloadProtectionInterceptor implements NestInterceptor {
+  constructor(private readonly monitoringCronService: MonitoringCronService) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    const isOverloaded = this.requestLimitService.isSystemOverloadedStatus();
+    const isOverloaded = this.monitoringCronService.getIsSystemOverloaded();
 
     if (isOverloaded) {
       return throwError(
