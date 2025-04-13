@@ -2,13 +2,14 @@ import { Inject, Injectable, Logger as NestLogger } from '@nestjs/common';
 import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import { PinoFileLoggerService } from 'libs/shared/src';
+import { MetricsStorageService } from '../metrics-storage.service';
 
 export const DEFAULT_MONITORING_THRESHOLDS = {
-  cpu: 60,
-  memory: 60,
-  disk: 60,
-  processCpu: 60,
-  processMem: 60,
+  cpu: 95,
+  memory: 95,
+  disk: 95,
+  processCpu: 95,
+  processMem: 95,
 } as const;
 
 @Injectable()
@@ -17,16 +18,17 @@ export class SystemMonitoringAlertService {
   private fileLogger?: PinoFileLoggerService;
 
   private readonly thresholds: {
-    cpu: number;
-    memory: number;
-    disk: number;
-    processCpu: number;
-    processMem: number;
+    cpu: any;
+    memory: any;
+    disk: any;
+    processCpu: any;
+    processMem: any;
   };
 
   constructor(
     @Inject(MONITORING_OPTIONS)
     private readonly config: MonitoringModuleOptions,
+    private readonly metricsStorageService: MetricsStorageService,
   ) {
     if (this.config.file.on) {
       this.fileLogger = new PinoFileLoggerService(config.file.options);
@@ -42,13 +44,14 @@ export class SystemMonitoringAlertService {
         this.config.processMemThreshold ?? DEFAULT_MONITORING_THRESHOLDS.processMem,
     };
   }
-  generateWarnings(systemMetrics: {
-    cpu: { currentLoad: number };
-    memory: { used: number; total: number };
-    disk: any[];
-    processLoad: any[];
-  }): string[] {
+
+  async generateWarnings(): Promise<string[]> {
+    const systemMetrics = await this.metricsStorageService.getLastRecord();
+
+    if (!systemMetrics) return [];
+
     const warnings: string[] = [];
+
     const memoryUsage =
       (systemMetrics.memory.used / systemMetrics.memory.total) * 100;
 
@@ -90,10 +93,8 @@ export class SystemMonitoringAlertService {
   }
 
   logWarnings(warnings: string[]) {
-    if (warnings.length) {
-      const warningsString = '\n' + warnings.join('\n');
-      if (this.config.console.on) this.consoleLogger.warn(warningsString);
-      if (this.config.file.on) this.fileLogger!.warn(warningsString);
-    }
+    const warningsString = '\n' + warnings.join('\n');
+    if (this.config.console.on) this.consoleLogger.warn(warningsString);
+    if (this.config.file.on) this.fileLogger!.warn(warningsString);
   }
 }

@@ -182,138 +182,148 @@ export const htmlString: string = `
         </div>
       </div>
 
-      <script>
-        function monitoringData() {
-          return {
-            cpu: [],
-            memory: [],
-            disk: [],
-            processes: [],
-            loading: true,
-            activeTab: 'cpu',
-            async loadData() {
-              try {
-                this.loading = true;
-                const response = await fetch('/v1/system-monitoring/all');
-                const data = await response.json();
-                this.cpu = data.cpu;
-                this.memory = data.memory;
-                this.disk = data.disk;
-                this.processes = data.processLoad;
-                this.renderCharts();
-                this.loading = false;
-              } catch (error) {
-                console.error('Error fetching data:', error);
-                this.loading = false;
-              }
-            },
-            renderCharts() {
-              new Chart(document.getElementById('cpuChart'), {
-                type: 'pie',
-                data: {
-                  labels: ['User', 'System', 'Idle'],
-                  datasets: [
-                    {
-                      label: 'CPU Load',
-                      data: [
-                        this.cpu.currentLoadUser,
-                        this.cpu.currentLoadSystem,
-                        this.cpu.currentLoadIdle,
-                      ],
-                      backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                      ],
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: true,
-                  aspectRatio: 1.3,
-                  plugins: {
-                    legend: {
-                      position: 'top',
-                    },
-                    tooltip: {
-                      callbacks: {
-                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
-                      },
-                    },
-                  },
-                },
-              });
+<script>
+  function monitoringData() {
+    return {
+      cpu: [],
+      memory: [],
+      disk: [],
+      processes: [],
+      cpuHistory: [],
+      memoryHistory: [],
+      diskHistory: [],
+      loading: true,
+      activeTab: 'cpu',
 
-              new Chart(document.getElementById('memoryChart'), {
-                type: 'bar',
-                data: {
-                  labels: ['Used', 'Available'],
-                  datasets: [
-                    {
-                      label: 'Memory Usage (GB)',
-                      data: [
-                        this.memory.used / 1073741824, 
-                        this.memory.available / 1073741824, 
-                      ],
-                      backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                      ],
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: true,
-                  aspectRatio: 1.3,
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                    },
-                  },
-                  plugins: {
-                    tooltip: {
-                      callbacks: {
-                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
-                      },
-                    },
-                  },
-                },
-              });
+      async loadData() {
+        try {
+          this.loading = true;
+          
+          // Отримуємо поточні дані
+          const response = await fetch('/v1/system-monitoring/all');
+          const data = await response.json();
+          this.cpu = data.cpu;
+          this.memory = data.memory;
+          this.disk = data.disk;
+          this.processes = data.processLoad;
 
-              new Chart(document.getElementById('diskChart'), {
-                type: 'bar',
-                data: {
-                  labels: this.disk.map((disk) => disk.fs),
-                  datasets: [
-                    {
-                      label: 'Disk Usage (%)',
-                      data: this.disk.map((disk) => disk.use),
-                      backgroundColor: this.disk.map((disk) =>
-                        disk.use > 80
-                          ? 'rgba(255, 99, 132, 0.6)'
-                          : 'rgba(75, 192, 192, 0.6)',
-                      ),
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  maintainAspectRatio: true,
-                  aspectRatio: 1.3,
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                      max: 100,
-                    },
-                  },
-                },
-              });
-            },
-          };
+          // Отримуємо історичні дані
+          const historicalResponse = await fetch('/v1/system-monitoring/historical');
+          const historicalData = await historicalResponse.json();
+          this.cpuHistory = historicalData.cpu;
+          this.memoryHistory = historicalData.memory;
+          this.diskHistory = historicalData.disk;
+
+          this.renderCharts();
+          this.loading = false;
+        } catch (error) {
+          console.error('Error fetching data:', error);
+          this.loading = false;
         }
-      </script>
+      },
+
+      renderCharts() {
+        // Графік для CPU
+        new Chart(document.getElementById('cpuChart'), {
+          type: 'line',
+          data: {
+            labels: this.cpuHistory.map((_, index) => index), // Мітки часу (індекси)
+            datasets: [
+              {
+                label: 'CPU Load History',
+                data: this.cpuHistory, // Дані історії
+                borderColor: 'rgba(255, 99, 132, 1)',
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                },
+              },
+            },
+          },
+        });
+
+        // Графік для Memory
+        new Chart(document.getElementById('memoryChart'), {
+          type: 'line',
+          data: {
+            labels: this.memoryHistory.map((_, index) => index), // Мітки часу
+            datasets: [
+              {
+                label: 'Memory Usage History (GB)',
+                data: this.memoryHistory.map((memory) => memory.used / 1073741824), // Переведення в GB
+                borderColor: 'rgba(54, 162, 235, 1)',
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
+                },
+              },
+            },
+          },
+        });
+
+        // Графік для Disk
+        new Chart(document.getElementById('diskChart'), {
+          type: 'line',
+          data: {
+            labels: this.diskHistory.map((_, index) => index), // Мітки часу
+            datasets: [
+              {
+                label: 'Disk Usage History (%)',
+                data: this.diskHistory.map((disk) => disk.use),
+                borderColor: 'rgba(75, 192, 192, 1)',
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+              },
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                },
+              },
+            },
+          },
+        });
+      },
+    };
+  }
+</script>
+
     </div>
   </body>
 </html>

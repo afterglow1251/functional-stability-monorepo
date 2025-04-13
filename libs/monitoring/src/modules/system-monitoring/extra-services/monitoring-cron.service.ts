@@ -9,19 +9,20 @@ import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import * as cron from 'node-cron';
 import { SystemMonitoringAlertService } from './alert.service';
+import { MetricsStorageService } from '../metrics-storage.service';
 
 @Injectable()
 export class MonitoringCronService implements OnModuleInit {
   private readonly consoleLogger = new NestLogger(MonitoringCronService.name);
 
   private isSystemOverloaded: boolean = false;
-  private systemMetrics: any;
 
   constructor(
     @Inject(MONITORING_OPTIONS)
     private readonly config: MonitoringModuleOptions,
     private readonly monitoringService: SystemMonitoringService,
     private readonly alertService: SystemMonitoringAlertService,
+    private readonly storageService: MetricsStorageService,
   ) {}
 
   onModuleInit() {
@@ -41,10 +42,6 @@ export class MonitoringCronService implements OnModuleInit {
     });
   }
 
-  getSystemMetrics() {
-    return this.systemMetrics;
-  }
-
   private setSystemOverloadStatus(warnings: string[]) {
     this.isSystemOverloaded = warnings.length > 0;
   }
@@ -54,23 +51,24 @@ export class MonitoringCronService implements OnModuleInit {
   }
 
   async updateSystemMetrics() {
-    const {
-      cpu: { currentLoad },
-      memory: { used, total },
-      disk,
-      processLoad,
-    } = await this.monitoringService.getAllSystemInfo();
+    const { cpu, memory, disk, processLoad } =
+      await this.monitoringService.getAllSystemInfo();
 
-    this.systemMetrics = {
-      cpu: currentLoad,
-      memory: { used, total },
+    const metric = {
+      timestamp: Date.now(),
+      cpu,
+      memory,
       disk,
       processLoad,
     };
 
-    const warnings = this.alertService.generateWarnings(this.systemMetrics);
+    await this.storageService.saveMetric(metric);
+
+    const warnings = await this.alertService.generateWarnings();
     this.setSystemOverloadStatus(warnings);
 
-    this.alertService.logWarnings(warnings);
+    if (warnings.length) {
+      this.alertService.logWarnings(warnings);
+    }
   }
 }

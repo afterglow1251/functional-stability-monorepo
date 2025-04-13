@@ -27,6 +27,7 @@ import { MysqlModule } from './db/mysql/mysql.module';
 import { DrizzleModule } from './db/drizzle/drizzle.module';
 import { MikroOrmModuleDatabase } from './db/mikro-orm/mikro-orm.module';
 import { OverloadProtectionInterceptor } from '@app/monitoring/modules/system-monitoring/interceptors/overload-protection.interceptor';
+import { AdaptiveRateLimitInterceptor } from '@app/monitoring/modules/system-monitoring/interceptors/adaptive-rate-limit.interceptor';
 
 @Module({
   imports: [
@@ -51,12 +52,12 @@ import { OverloadProtectionInterceptor } from '@app/monitoring/modules/system-mo
       },
     }),
     SystemMonitoringModule.forRoot({
-      cronExpression: '*/2 * * * * *',
+      cronExpression: '0 */6 * * * *',
       console: {
         on: true,
       },
       file: {
-        on: true,
+        on: false,
         options: {
           dir: './logs/monitoring-logs',
         },
@@ -82,10 +83,14 @@ import { OverloadProtectionInterceptor } from '@app/monitoring/modules/system-mo
   providers: [
     ServerService,
     PinoConsoleLoggerService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: OverloadProtectionInterceptor,
-    },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: OverloadProtectionInterceptor,
+    // },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: AdaptiveRateLimitInterceptor,
+    // },
     {
       provide: APP_INTERCEPTOR,
       useClass: LoggerInterceptor,

@@ -12,6 +12,7 @@ import { ServerService } from './server.service';
 import { CatchHttpExceptionFilter } from '@app/logger';
 import { LoggerInterceptor } from '@app/logger/modules/interceptor/logger.interceptor';
 import { Retry } from '@app/monitoring/modules/system-monitoring/shared/decorators/retry.decorator';
+import { RateLimit } from '@app/monitoring/modules/system-monitoring/interceptors/rate-limit.decorator';
 
 @Controller()
 export class ServerController {

@@ -16,6 +16,6 @@ export class UsersController {
   // @UseFilters(CatchEverythingFilter)
   getUsers() {
     // return this.usersService.findUsers();
-    throw new ForbiddenException('users forbidden');
+    return ['Yurii', 'Oleg'];
   }
 }

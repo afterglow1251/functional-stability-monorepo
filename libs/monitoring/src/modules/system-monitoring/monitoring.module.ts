@@ -6,6 +6,7 @@ import { SystemMonitoringController } from './monitoring.controller';
 import { MONITORING_OPTIONS } from './shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from './shared/_types/monitoring.types';
 import { SystemMonitoringAlertService } from './extra-services/alert.service';
+import { MetricsStorageService } from './metrics-storage.service';
 
 @Module({})
 export class SystemMonitoringModule {
@@ -17,18 +18,28 @@ export class SystemMonitoringModule {
         useValue: config,
       },
       SystemMonitoringService,
-      ...(isLoggingOn ? [MonitoringCronService, SystemMonitoringAlertService] : []),
+      ...(isLoggingOn
+        ? [
+            MonitoringCronService,
+            SystemMonitoringAlertService,
+            MetricsStorageService,
+          ]
+        : []),
     ];
 
     return {
       module: SystemMonitoringModule,
       controllers: [SystemMonitoringController],
       providers,
-      // TODO: check these deps
       exports: [
         SystemMonitoringService,
-        SystemMonitoringAlertService,
-        MonitoringCronService,
+        ...(isLoggingOn
+          ? [
+              MonitoringCronService,
+              SystemMonitoringAlertService,
+              MetricsStorageService,
+            ]
+          : []),
       ],
     };
   }
