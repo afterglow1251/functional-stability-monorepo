@@ -1,4 +1,4 @@
-export const htmlString: string = `
+export const htmlTemplateStringCharts: string = `
 <!doctype html>
 <html lang="en">
   <head>
@@ -71,11 +71,6 @@ export const htmlString: string = `
         max-height: 300px;
       }
 
-      canvas {
-        width: 100% !important;
-        height: auto !important;
-      }
-
       .process-card strong {
         font-size: 1.1em;
       }
@@ -128,16 +123,13 @@ export const htmlString: string = `
       <nav>
         <ul class="tab-list" role="tablist">
           <li>
-            <button
-              @click="activeTab = 'cpu'"
-              :class="{active: activeTab === 'cpu'}"
-            >
+            <button @click="switchTab('cpu')" :class="{active: activeTab === 'cpu'}">
               CPU
             </button>
           </li>
           <li>
             <button
-              @click="activeTab = 'memory'"
+              @click="switchTab('memory')"
               :class="{active: activeTab === 'memory'}"
             >
               Memory
@@ -145,7 +137,7 @@ export const htmlString: string = `
           </li>
           <li>
             <button
-              @click="activeTab = 'disk'"
+              @click="switchTab('disk')"
               :class="{active: activeTab === 'disk'}"
             >
               Disk
@@ -153,7 +145,7 @@ export const htmlString: string = `
           </li>
           <li>
             <button
-              @click="activeTab = 'process'"
+              @click="switchTab('process')"
               :class="{active: activeTab === 'process'}"
             >
               Node.js process
@@ -167,11 +159,15 @@ export const htmlString: string = `
         <div class="spinner"></div>
       </div>
 
-      <div x-show="activeTab === 'cpu' && !loading">
+      <div x-show="activeTab === 'cpu' && !loading" x-transition>
         <div class="chart-container">
           <h2>CPU Load Over Time</h2>
-          <canvas id="cpuLineChart"></canvas>
+          <template x-if="showNoDataMessage">
+            <div x-html="document.getElementById('no-data-message').innerHTML"></div>
+          </template>
+          <canvas id="cpuLineChart" x-show="!showNoDataMessage"></canvas>
         </div>
+
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current CPU Usage</h2>
@@ -180,11 +176,15 @@ export const htmlString: string = `
         </div>
       </div>
 
-      <div x-show="activeTab === 'memory' && !loading">
+      <div x-show="activeTab === 'memory' && !loading" x-transition>
         <div class="chart-container">
           <h2>Memory Usage Over Time</h2>
-          <canvas id="memoryLineChart"></canvas>
+          <template x-if="showNoDataMessage">
+            <div x-html="document.getElementById('no-data-message').innerHTML"></div>
+          </template>
+          <canvas id="memoryLineChart" x-show="!showNoDataMessage"></canvas>
         </div>
+
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Memory Usage</h2>
@@ -193,11 +193,15 @@ export const htmlString: string = `
         </div>
       </div>
 
-      <div x-show="activeTab === 'disk' && !loading">
+      <div x-show="activeTab === 'disk' && !loading" x-transition>
         <div class="chart-container">
           <h2>Disks Usage Over Time</h2>
-          <canvas id="diskLineChart"></canvas>
+          <template x-if="showNoDataMessage">
+            <div x-html="document.getElementById('no-data-message').innerHTML"></div>
+          </template>
+          <canvas id="diskLineChart" x-show="!showNoDataMessage"></canvas>
         </div>
+
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Disk Usage</h2>
@@ -206,14 +210,20 @@ export const htmlString: string = `
         </div>
       </div>
 
-      <div x-show="activeTab === 'process' && !loading">
+      <div x-show="activeTab === 'process' && !loading" x-transition>
         <div class="chart-container">
           <h2>Node.js CPU Usage Over Time</h2>
-          <canvas id="processCpuLineChart"></canvas>
+          <template x-if="showNoDataMessage">
+            <div x-html="document.getElementById('no-data-message').innerHTML"></div>
+          </template>
+          <canvas id="processCpuLineChart" x-show="!showNoDataMessage"></canvas>
         </div>
         <div class="chart-container">
           <h2>Node.js Memory Usage Over Time</h2>
-          <canvas id="processMemLineChart"></canvas>
+          <template x-if="showNoDataMessage">
+            <div x-html="document.getElementById('no-data-message').innerHTML"></div>
+          </template>
+          <canvas id="processMemLineChart" x-show="!showNoDataMessage"></canvas>
         </div>
 
         <div x-show="data.processLoad.length > 0">
@@ -240,11 +250,20 @@ export const htmlString: string = `
       </div>
     </div>
 
+    <template id="no-data-message">
+      <div style="text-align: center">
+        <p style="text-decoration: underline dotted red; font-style: italic">
+          No available historical data to show
+        </p>
+      </div>
+    </template>
+
     <script>
       function monitoringApp() {
         return {
           activeTab: 'cpu',
           loading: true,
+          showNoDataMessage: false,
           data: {
             cpu: {},
             memory: {},
@@ -253,12 +272,42 @@ export const htmlString: string = `
           },
           historicalData: [],
           charts: {},
+          initializedTabs: new Set(),
 
           async initApp() {
             await this.fetchData();
             await this.fetchHistoricalData();
             this.loading = false;
-            this.renderAllCharts();
+            this.switchTab('cpu');
+          },
+
+          async switchTab(tabName) {
+            this.activeTab = tabName;
+
+            if (!this.initializedTabs.has(tabName)) {
+              this.loading = true;
+              try {
+                switch (tabName) {
+                  case 'cpu':
+                    await this.initCpuCharts();
+                    break;
+                  case 'memory':
+                    await this.initMemoryCharts();
+                    break;
+                  case 'disk':
+                    await this.initDiskCharts();
+                    break;
+                  case 'process':
+                    await this.initProcessCharts();
+                    break;
+                }
+                this.initializedTabs.add(tabName);
+              } catch (error) {
+                console.error(\`Error initializing \${tabName} tab:\`, error);
+              } finally {
+                this.loading = false;
+              }
+            }
           },
 
           async fetchData() {
@@ -272,118 +321,48 @@ export const htmlString: string = `
 
           async fetchHistoricalData() {
             try {
-              this.loading = true;
               const res = await fetch('/v1/system-monitoring/historical');
               this.historicalData = await res.json();
-              this.renderAllCharts();
+              this.showNoDataMessage = this.historicalData.length === 0;
             } catch (err) {
               console.error('Failed to fetch metrics:', err);
-            } finally {
-              this.loading = false;
+              this.showNoDataMessage = true;
             }
           },
 
-          renderAllCharts() {
-            this.renderCPUCharts();
-            this.renderMemoryCharts();
-            this.renderDiskCharts();
-            this.renderProcessCharts();
-          },
-
-          renderProcessCharts() {
-            if (this.charts.processCpuOverTime)
-              this.charts.processCpuOverTime.destroy();
-            if (this.charts.processMemOverTime)
-              this.charts.processMemOverTime.destroy();
-
-            const labels = this.historicalData.map((m) =>
-              new Date(m.timestamp).toLocaleTimeString(),
-            );
-
-            const cpuData = this.historicalData.map((m) => {
-              const proc = m.processLoad?.find((p) => p.proc === 'node');
-              return proc ? proc.cpu : 0;
-            });
-
-            const memData = this.historicalData.map((m) => {
-              const proc = m.processLoad?.find((p) => p.proc === 'node');
-              return proc ? proc.mem : 0;
-            });
-
-            const cpuCtx = document
-              .getElementById('processCpuLineChart')
-              ?.getContext('2d');
-            const memCtx = document
-              .getElementById('processMemLineChart')
-              ?.getContext('2d');
-
-            if (cpuCtx) {
-              this.charts.processCpuOverTime = new Chart(cpuCtx, {
-                type: 'line',
-                data: {
-                  labels,
-                  datasets: [
-                    {
-                      label: 'Node CPU Usage (%)',
-                      data: cpuData,
-                      borderColor: 'rgba(255, 159, 64, 1)',
-                      backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                      fill: true,
-                      tension: 0.3,
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                      max: 100,
-                      title: { display: true, text: 'CPU (%)' },
-                    },
-                    x: { title: { display: true, text: 'Time' } },
-                  },
-                },
-              });
-            }
-
-            if (memCtx) {
-              this.charts.processMemOverTime = new Chart(memCtx, {
-                type: 'line',
-                data: {
-                  labels,
-                  datasets: [
-                    {
-                      label: 'Node Memory Usage (%)',
-                      data: memData,
-                      borderColor: 'rgba(153, 102, 255, 1)',
-                      backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                      fill: true,
-                      tension: 0.3,
-                    },
-                  ],
-                },
-                options: {
-                  responsive: true,
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                      max: 100,
-                      title: { display: true, text: 'Memory (%)' },
-                    },
-                    x: { title: { display: true, text: 'Time' } },
-                  },
-                },
-              });
+          async initCpuCharts() {
+            this.renderCPUPieChart();
+            if (this.historicalData.length > 0) {
+              this.renderCPULineChart();
             }
           },
 
-          renderCPUCharts() {
+          async initMemoryCharts() {
+            this.renderMemoryBarChart();
+            if (this.historicalData.length > 0) {
+              this.renderMemoryLineChart();
+            }
+          },
+
+          async initDiskCharts() {
+            this.renderDiskBarChart();
+            if (this.historicalData.length > 0) {
+              this.renderDiskLineChart();
+            }
+          },
+
+          async initProcessCharts() {
+            if (this.historicalData.length > 0) {
+              this.renderProcessCpuChart();
+              this.renderProcessMemChart();
+            }
+          },
+
+          renderCPULineChart() {
             if (this.charts.cpuLine) this.charts.cpuLine.destroy();
-            if (this.charts.cpuPie) this.charts.cpuPie.destroy();
 
             const cpuCtx = document.getElementById('cpuLineChart')?.getContext('2d');
-            if (cpuCtx) {
+            if (cpuCtx && this.historicalData.length > 0) {
               const labels = this.historicalData.map((m) =>
                 new Date(m.timestamp).toLocaleTimeString(),
               );
@@ -406,6 +385,7 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   scales: {
                     y: {
                       beginAtZero: true,
@@ -419,6 +399,10 @@ export const htmlString: string = `
                 },
               });
             }
+          },
+
+          renderCPUPieChart() {
+            if (this.charts.cpuPie) this.charts.cpuPie.destroy();
 
             const cpuPieCtx = document
               .getElementById('cpuPieChart')
@@ -446,6 +430,7 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   plugins: {
                     legend: { position: 'top' },
                     tooltip: {
@@ -459,9 +444,8 @@ export const htmlString: string = `
             }
           },
 
-          renderMemoryCharts() {
+          renderMemoryLineChart() {
             if (this.charts.memoryLine) this.charts.memoryLine.destroy();
-            if (this.charts.memoryBar) this.charts.memoryBar.destroy();
 
             const memLineCtx = document
               .getElementById('memoryLineChart')
@@ -491,6 +475,7 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   scales: {
                     y: {
                       beginAtZero: true,
@@ -504,6 +489,9 @@ export const htmlString: string = `
                 },
               });
             }
+          },
+          renderMemoryBarChart() {
+            if (this.charts.memoryBar) this.charts.memoryBar.destroy();
 
             const memBarCtx = document
               .getElementById('memoryBarChart')
@@ -529,6 +517,7 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   scales: {
                     y: {
                       beginAtZero: true,
@@ -547,14 +536,12 @@ export const htmlString: string = `
             }
           },
 
-          renderDiskCharts() {
+          renderDiskLineChart() {
             if (this.charts.diskLine) this.charts.diskLine.destroy();
-            if (this.charts.diskBar) this.charts.diskBar.destroy();
 
             const diskLineCtx = document
               .getElementById('diskLineChart')
               ?.getContext('2d');
-
             if (diskLineCtx && this.historicalData.length > 0) {
               const labels = this.historicalData.map((m) =>
                 new Date(m.timestamp).toLocaleTimeString(),
@@ -576,7 +563,7 @@ export const htmlString: string = `
                 ];
 
                 return {
-                  label: 'Disk ' + fs + ' Usage (%)'
+                  label: \`Disk \${fs} Usage (%)\`,
                   data: this.historicalData.map((m) => {
                     const disk = m.disk?.find((d) => d.fs === fs);
                     return disk ? disk.use : null;
@@ -599,6 +586,7 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   scales: {
                     y: {
                       beginAtZero: true,
@@ -612,6 +600,10 @@ export const htmlString: string = `
                 },
               });
             }
+          },
+
+          renderDiskBarChart() {
+            if (this.charts.diskBar) this.charts.diskBar.destroy();
 
             const diskBarCtx = document
               .getElementById('diskBarChart')
@@ -635,12 +627,111 @@ export const htmlString: string = `
                 },
                 options: {
                   responsive: true,
+                  animation: false,
                   scales: {
                     y: {
                       beginAtZero: true,
                       max: 100,
                       title: { display: true, text: 'Usage (%)' },
                     },
+                  },
+                },
+              });
+            }
+          },
+
+          renderProcessCpuChart() {
+            if (this.charts.processCpuOverTime)
+              this.charts.processCpuOverTime.destroy();
+
+            const labels = this.historicalData.map((m) =>
+              new Date(m.timestamp).toLocaleTimeString(),
+            );
+
+            const cpuData = this.historicalData.map((m) => {
+              const proc = m.processLoad?.find((p) => p.proc === 'node');
+              return proc ? proc.cpu : 0;
+            });
+
+            const cpuCtx = document
+              .getElementById('processCpuLineChart')
+              ?.getContext('2d');
+
+            if (cpuCtx) {
+              this.charts.processCpuOverTime = new Chart(cpuCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'Node CPU Usage (%)',
+                      data: cpuData,
+                      borderColor: 'rgba(255, 159, 64, 1)',
+                      backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  animation: false,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'CPU (%)' },
+                    },
+                    x: { title: { display: true, text: 'Time' } },
+                  },
+                },
+              });
+            }
+          },
+
+          renderProcessMemChart() {
+            if (this.charts.processMemOverTime)
+              this.charts.processMemOverTime.destroy();
+
+            const labels = this.historicalData.map((m) =>
+              new Date(m.timestamp).toLocaleTimeString(),
+            );
+
+            const memData = this.historicalData.map((m) => {
+              const proc = m.processLoad?.find((p) => p.proc === 'node');
+              return proc ? proc.mem : 0;
+            });
+
+            const memCtx = document
+              .getElementById('processMemLineChart')
+              ?.getContext('2d');
+
+            if (memCtx) {
+              this.charts.processMemOverTime = new Chart(memCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'Node Memory Usage (%)',
+                      data: memData,
+                      borderColor: 'rgba(153, 102, 255, 1)',
+                      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  animation: false,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'Memory (%)' },
+                    },
+                    x: { title: { display: true, text: 'Time' } },
                   },
                 },
               });

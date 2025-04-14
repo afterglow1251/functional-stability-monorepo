@@ -52,7 +52,7 @@ import { AdaptiveRateLimitInterceptor } from '@app/monitoring/modules/system-mon
       },
     }),
     SystemMonitoringModule.forRoot({
-      cronExpression: '*/2 * * * * *',
+      cronExpression: '*/10 * * * * *',
       console: {
         on: true,
       },

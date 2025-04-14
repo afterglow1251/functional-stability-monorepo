@@ -10,6 +10,8 @@ async function bootstrap() {
 
   app.useLogger(app.get(PinoConsoleLoggerService));
 
+  // app.setGlobalPrefix('api', { exclude: ['v1/system-monitoring/(.*)'] });
+
   // app.useGlobalFilters(
   //   new CatchEverythingFilter(app.get(HttpAdapterHost), {
   //     console: { on: true },

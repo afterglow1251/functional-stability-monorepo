@@ -1,7 +1,6 @@
-import { MyRender } from './shared/decorators/render';
 import { SystemMonitoringService } from './monitoring.service';
 import { Controller, Get } from '@nestjs/common';
-import { htmlString } from './static/html-string';
+import { htmlTemplateStringCharts } from './static/html-string';
 import { MetricsStorageService } from './metrics-storage.service';
 
 @Controller('v1/system-monitoring')
@@ -38,7 +37,7 @@ export class SystemMonitoringController {
 
   @Get('/charts')
   getMonitoringHtml() {
-    return htmlString;
+    return htmlTemplateStringCharts;
   }
 
   @Get('historical')
