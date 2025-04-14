@@ -1,6 +1,6 @@
 import { MyRender } from './shared/decorators/render';
 import { SystemMonitoringService } from './monitoring.service';
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { htmlString } from './static/html-string';
 import { MetricsStorageService } from './metrics-storage.service';
 
@@ -37,17 +37,12 @@ export class SystemMonitoringController {
   }
 
   @Get('/charts')
-  getMonitoringHtml(
-    @MyRender('libs/monitoring/src/modules/system-monitoring/static/monitoring.html')
-    html: string,
-  ) {
-    return html;
+  getMonitoringHtml() {
+    return htmlString;
   }
 
   @Get('historical')
-  async getHistoricalData(
-    @Query('range') range: 'hour' | 'day' | 'week' | 'all' = 'hour',
-  ) {
-    return this.metricsStorageService.getMetricsByTimeRange(range);
+  async getHistoricalData() {
+    return this.metricsStorageService.getLastMetrics(60);
   }
 }

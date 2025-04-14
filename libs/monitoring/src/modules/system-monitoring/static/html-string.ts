@@ -4,19 +4,84 @@ export const htmlString: string = `
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monitoring Charts</title>
+    <title>System Monitoring</title>
+
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
+      body {
+        font-family: sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .tab-list {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .tab-list button {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: #eee;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .tab-list button.active {
+        background-color: #3498db;
+        color: white;
+      }
+
+      .tab-list button:hover:not(.active) {
+        background-color: #ddd;
+      }
+
+      .chart-container {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 1rem auto;
+      }
+
+      .chart-narrow {
+        width: 50%;
+        max-width: 50%;
+        margin: 0 auto;
+      }
+
+      .chart-narrow canvas {
+        max-height: 300px;
+      }
+
       canvas {
         width: 100% !important;
         height: auto !important;
       }
 
-      .chart-container {
-        width: 100%;
-        max-width: 500px;
-        margin: 50px auto 2rem;
+      .process-card strong {
+        font-size: 1.1em;
+      }
+
+      .process-card p {
+        margin: 5px 0;
       }
 
       .loading-spinner {
@@ -51,64 +116,17 @@ export const htmlString: string = `
         }
       }
 
-      .tab-list {
-        display: flex;
-        gap: 1rem;
+      h2 {
+        text-align: center;
         margin-bottom: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .tab-list button {
-        padding: 0.5rem 1rem;
-        border: none;
-        background: #eee;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .tab-list button.active {
-        background-color: #3498db;
-        color: white;
-      }
-
-      .processes-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 20px;
-        margin-top: 50px;
-      }
-
-      .process-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-      }
-
-      .process-card strong {
-        font-size: 1.1em;
-      }
-
-      .process-card p {
-        margin: 5px 0;
+        color: #333;
       }
     </style>
   </head>
   <body>
-    <div x-data="monitoringData()" x-init="loadData()" class="container">
-      <!-- Tabs navigation -->
+    <div x-data="monitoringApp()" x-init="initApp()" class="container">
       <nav>
-        <ul
-          class="tab-list"
-          role="tablist"
-          style="list-style-type: none; padding-left: 0"
-        >
+        <ul class="tab-list" role="tablist">
           <li>
             <button
               @click="activeTab = 'cpu'"
@@ -138,193 +156,499 @@ export const htmlString: string = `
               @click="activeTab = 'process'"
               :class="{active: activeTab === 'process'}"
             >
-              Processes
+              Node.js process
             </button>
           </li>
         </ul>
       </nav>
 
       <div x-show="loading" class="loading-spinner">
+        <p>Loading...</p>
         <div class="spinner"></div>
       </div>
 
-      <div x-show="activeTab === 'cpu'" class="chart-container">
-        <canvas id="cpuChart" x-show="!loading"></canvas>
+      <div x-show="activeTab === 'cpu' && !loading">
+        <div class="chart-container">
+          <h2>CPU Load Over Time</h2>
+          <canvas id="cpuLineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="chart-narrow">
+            <h2>Current CPU Usage</h2>
+            <canvas id="cpuPieChart"></canvas>
+          </div>
+        </div>
       </div>
 
-      <div x-show="activeTab === 'memory'" class="chart-container">
-        <canvas id="memoryChart" x-show="!loading"></canvas>
+      <div x-show="activeTab === 'memory' && !loading">
+        <div class="chart-container">
+          <h2>Memory Usage Over Time</h2>
+          <canvas id="memoryLineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="chart-narrow">
+            <h2>Current Memory Usage</h2>
+            <canvas id="memoryBarChart"></canvas>
+          </div>
+        </div>
       </div>
 
-      <div x-show="activeTab === 'disk'" class="chart-container">
-        <canvas id="diskChart" x-show="!loading"></canvas>
+      <div x-show="activeTab === 'disk' && !loading">
+        <div class="chart-container">
+          <h2>Disks Usage Over Time</h2>
+          <canvas id="diskLineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <div class="chart-narrow">
+            <h2>Current Disk Usage</h2>
+            <canvas id="diskBarChart"></canvas>
+          </div>
+        </div>
       </div>
 
-      <div x-show="activeTab === 'process' && processes.length > 0">
-        <div class="processes-container">
-          <template x-for="process in processes" :key="process.pid">
-            <div class="process-card">
-              <p>
-                <strong>Process: </strong>
-                <span x-text="process.proc"></span>
-              </p>
-              <p><strong>PID:</strong> <span x-text="process.pid"></span></p>
-              <p>
-                <strong>CPU Usage:</strong>
-                <span x-text="process.cpu.toFixed(2)"></span>%
-              </p>
-              <p>
-                <strong>Memory Usage:</strong>
-                <span x-text="process.mem.toFixed(2)"></span>%
-              </p>
+      <div x-show="activeTab === 'process' && !loading">
+        <div class="chart-container">
+          <h2>Node.js CPU Usage Over Time</h2>
+          <canvas id="processCpuLineChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h2>Node.js Memory Usage Over Time</h2>
+          <canvas id="processMemLineChart"></canvas>
+        </div>
+
+        <div x-show="data.processLoad.length > 0">
+          <template x-for="process in data.processLoad" :key="process.pid">
+            <div class="chart-container">
+              <div class="process-card">
+                <p>
+                  <strong>Process: </strong>
+                  <span x-text="process.proc"></span>
+                </p>
+                <p><strong>PID:</strong> <span x-text="process.pid"></span></p>
+                <p>
+                  <strong>CPU Usage:</strong>
+                  <span x-text="process.cpu.toFixed(2)"></span>%
+                </p>
+                <p>
+                  <strong>Memory Usage:</strong>
+                  <span x-text="process.mem.toFixed(2)"></span>%
+                </p>
+              </div>
             </div>
           </template>
         </div>
       </div>
-
-<script>
-  function monitoringData() {
-    return {
-      cpu: [],
-      memory: [],
-      disk: [],
-      processes: [],
-      cpuHistory: [],
-      memoryHistory: [],
-      diskHistory: [],
-      loading: true,
-      activeTab: 'cpu',
-
-      async loadData() {
-        try {
-          this.loading = true;
-          
-          // Отримуємо поточні дані
-          const response = await fetch('/v1/system-monitoring/all');
-          const data = await response.json();
-          this.cpu = data.cpu;
-          this.memory = data.memory;
-          this.disk = data.disk;
-          this.processes = data.processLoad;
-
-          // Отримуємо історичні дані
-          const historicalResponse = await fetch('/v1/system-monitoring/historical');
-          const historicalData = await historicalResponse.json();
-          this.cpuHistory = historicalData.cpu;
-          this.memoryHistory = historicalData.memory;
-          this.diskHistory = historicalData.disk;
-
-          this.renderCharts();
-          this.loading = false;
-        } catch (error) {
-          console.error('Error fetching data:', error);
-          this.loading = false;
-        }
-      },
-
-      renderCharts() {
-        // Графік для CPU
-        new Chart(document.getElementById('cpuChart'), {
-          type: 'line',
-          data: {
-            labels: this.cpuHistory.map((_, index) => index), // Мітки часу (індекси)
-            datasets: [
-              {
-                label: 'CPU Load History',
-                data: this.cpuHistory, // Дані історії
-                borderColor: 'rgba(255, 99, 132, 1)',
-                fill: false,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-              },
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
-                },
-              },
-            },
-          },
-        });
-
-        // Графік для Memory
-        new Chart(document.getElementById('memoryChart'), {
-          type: 'line',
-          data: {
-            labels: this.memoryHistory.map((_, index) => index), // Мітки часу
-            datasets: [
-              {
-                label: 'Memory Usage History (GB)',
-                data: this.memoryHistory.map((memory) => memory.used / 1073741824), // Переведення в GB
-                borderColor: 'rgba(54, 162, 235, 1)',
-                fill: false,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-              },
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
-                },
-              },
-            },
-          },
-        });
-
-        // Графік для Disk
-        new Chart(document.getElementById('diskChart'), {
-          type: 'line',
-          data: {
-            labels: this.diskHistory.map((_, index) => index), // Мітки часу
-            datasets: [
-              {
-                label: 'Disk Usage History (%)',
-                data: this.diskHistory.map((disk) => disk.use),
-                borderColor: 'rgba(75, 192, 192, 1)',
-                fill: false,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 100,
-              },
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
-                },
-              },
-            },
-          },
-        });
-      },
-    };
-  }
-</script>
-
     </div>
+
+    <script>
+      function monitoringApp() {
+        return {
+          activeTab: 'cpu',
+          loading: true,
+          data: {
+            cpu: {},
+            memory: {},
+            disk: [],
+            processLoad: [],
+          },
+          historicalData: [],
+          charts: {},
+
+          async initApp() {
+            await this.fetchData();
+            await this.fetchHistoricalData();
+            this.loading = false;
+            this.renderAllCharts();
+          },
+
+          async fetchData() {
+            try {
+              const response = await fetch('/v1/system-monitoring/all');
+              this.data = await response.json();
+            } catch (error) {
+              console.error('Failed to fetch current data:', error);
+            }
+          },
+
+          async fetchHistoricalData() {
+            try {
+              this.loading = true;
+              const res = await fetch('/v1/system-monitoring/historical');
+              this.historicalData = await res.json();
+              this.renderAllCharts();
+            } catch (err) {
+              console.error('Failed to fetch metrics:', err);
+            } finally {
+              this.loading = false;
+            }
+          },
+
+          renderAllCharts() {
+            this.renderCPUCharts();
+            this.renderMemoryCharts();
+            this.renderDiskCharts();
+            this.renderProcessCharts();
+          },
+
+          renderProcessCharts() {
+            if (this.charts.processCpuOverTime)
+              this.charts.processCpuOverTime.destroy();
+            if (this.charts.processMemOverTime)
+              this.charts.processMemOverTime.destroy();
+
+            const labels = this.historicalData.map((m) =>
+              new Date(m.timestamp).toLocaleTimeString(),
+            );
+
+            const cpuData = this.historicalData.map((m) => {
+              const proc = m.processLoad?.find((p) => p.proc === 'node');
+              return proc ? proc.cpu : 0;
+            });
+
+            const memData = this.historicalData.map((m) => {
+              const proc = m.processLoad?.find((p) => p.proc === 'node');
+              return proc ? proc.mem : 0;
+            });
+
+            const cpuCtx = document
+              .getElementById('processCpuLineChart')
+              ?.getContext('2d');
+            const memCtx = document
+              .getElementById('processMemLineChart')
+              ?.getContext('2d');
+
+            if (cpuCtx) {
+              this.charts.processCpuOverTime = new Chart(cpuCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'Node CPU Usage (%)',
+                      data: cpuData,
+                      borderColor: 'rgba(255, 159, 64, 1)',
+                      backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'CPU (%)' },
+                    },
+                    x: { title: { display: true, text: 'Time' } },
+                  },
+                },
+              });
+            }
+
+            if (memCtx) {
+              this.charts.processMemOverTime = new Chart(memCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'Node Memory Usage (%)',
+                      data: memData,
+                      borderColor: 'rgba(153, 102, 255, 1)',
+                      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'Memory (%)' },
+                    },
+                    x: { title: { display: true, text: 'Time' } },
+                  },
+                },
+              });
+            }
+          },
+
+          renderCPUCharts() {
+            if (this.charts.cpuLine) this.charts.cpuLine.destroy();
+            if (this.charts.cpuPie) this.charts.cpuPie.destroy();
+
+            const cpuCtx = document.getElementById('cpuLineChart')?.getContext('2d');
+            if (cpuCtx) {
+              const labels = this.historicalData.map((m) =>
+                new Date(m.timestamp).toLocaleTimeString(),
+              );
+              const cpuLoad = this.historicalData.map((m) => m.cpu.currentLoad);
+
+              this.charts.cpuLine = new Chart(cpuCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'CPU Load (%)',
+                      data: cpuLoad,
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'CPU Load (%)' },
+                    },
+                    x: {
+                      title: { display: true, text: 'Time' },
+                    },
+                  },
+                },
+              });
+            }
+
+            const cpuPieCtx = document
+              .getElementById('cpuPieChart')
+              ?.getContext('2d');
+            if (cpuPieCtx && this.data.cpu) {
+              this.charts.cpuPie = new Chart(cpuPieCtx, {
+                type: 'pie',
+                data: {
+                  labels: ['User', 'System', 'Idle'],
+                  datasets: [
+                    {
+                      label: 'CPU Load',
+                      data: [
+                        this.data.cpu.currentLoadUser,
+                        this.data.cpu.currentLoadSystem,
+                        this.data.cpu.currentLoadIdle,
+                      ],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                      },
+                    },
+                  },
+                },
+              });
+            }
+          },
+
+          renderMemoryCharts() {
+            if (this.charts.memoryLine) this.charts.memoryLine.destroy();
+            if (this.charts.memoryBar) this.charts.memoryBar.destroy();
+
+            const memLineCtx = document
+              .getElementById('memoryLineChart')
+              ?.getContext('2d');
+            if (memLineCtx) {
+              const labels = this.historicalData.map((m) =>
+                new Date(m.timestamp).toLocaleTimeString(),
+              );
+              const memUsage = this.historicalData.map(
+                (m) => (m.memory.used / m.memory.total) * 100,
+              );
+
+              this.charts.memoryLine = new Chart(memLineCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets: [
+                    {
+                      label: 'Memory Usage (%)',
+                      data: memUsage,
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                      fill: true,
+                      tension: 0.3,
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'Memory Usage (%)' },
+                    },
+                    x: {
+                      title: { display: true, text: 'Time' },
+                    },
+                  },
+                },
+              });
+            }
+
+            const memBarCtx = document
+              .getElementById('memoryBarChart')
+              ?.getContext('2d');
+            if (memBarCtx && this.data.memory) {
+              this.charts.memoryBar = new Chart(memBarCtx, {
+                type: 'bar',
+                data: {
+                  labels: ['Used', 'Available'],
+                  datasets: [
+                    {
+                      label: 'Memory Usage (GB)',
+                      data: [
+                        this.data.memory.used / 1073741824,
+                        this.data.memory.available / 1073741824,
+                      ],
+                      backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                      ],
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      title: { display: true, text: 'GB' },
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
+                      },
+                    },
+                  },
+                },
+              });
+            }
+          },
+
+          renderDiskCharts() {
+            if (this.charts.diskLine) this.charts.diskLine.destroy();
+            if (this.charts.diskBar) this.charts.diskBar.destroy();
+
+            const diskLineCtx = document
+              .getElementById('diskLineChart')
+              ?.getContext('2d');
+
+            if (diskLineCtx && this.historicalData.length > 0) {
+              const labels = this.historicalData.map((m) =>
+                new Date(m.timestamp).toLocaleTimeString(),
+              );
+
+              const diskNames = Array.from(
+                new Set(
+                  this.historicalData.flatMap((m) => m.disk?.map((d) => d.fs) || []),
+                ),
+              );
+
+              const datasets = diskNames.map((fs, index) => {
+                const colors = [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                ];
+
+                return {
+                  label: 'Disk ' + fs + ' Usage (%)'
+                  data: this.historicalData.map((m) => {
+                    const disk = m.disk?.find((d) => d.fs === fs);
+                    return disk ? disk.use : null;
+                  }),
+                  borderColor: colors[index % colors.length],
+                  backgroundColor: colors[index % colors.length].replace(
+                    '1)',
+                    '0.2)',
+                  ),
+                  fill: true,
+                  tension: 0.3,
+                };
+              });
+
+              this.charts.diskLine = new Chart(diskLineCtx, {
+                type: 'line',
+                data: {
+                  labels,
+                  datasets,
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'Disk Usage (%)' },
+                    },
+                    x: {
+                      title: { display: true, text: 'Time' },
+                    },
+                  },
+                },
+              });
+            }
+
+            const diskBarCtx = document
+              .getElementById('diskBarChart')
+              ?.getContext('2d');
+            if (diskBarCtx && this.data.disk) {
+              this.charts.diskBar = new Chart(diskBarCtx, {
+                type: 'bar',
+                data: {
+                  labels: this.data.disk.map((disk) => disk.fs),
+                  datasets: [
+                    {
+                      label: 'Disk Usage (%)',
+                      data: this.data.disk.map((disk) => disk.use),
+                      backgroundColor: this.data.disk.map((disk) =>
+                        disk.use > 80
+                          ? 'rgba(255, 99, 132, 0.6)'
+                          : 'rgba(75, 192, 192, 0.6)',
+                      ),
+                    },
+                  ],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 100,
+                      title: { display: true, text: 'Usage (%)' },
+                    },
+                  },
+                },
+              });
+            }
+          },
+        };
+      }
+    </script>
   </body>
 </html>
 `;

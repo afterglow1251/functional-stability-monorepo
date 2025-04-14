@@ -46,35 +46,4 @@ export class MetricsStorageService implements OnModuleInit {
     await this.db.read();
     return this.db.data.metrics[this.db.data.metrics.length - 1];
   }
-
-  async getMetricsByTimeRange(
-    range: 'hour' | 'day' | 'week' | 'all',
-  ): Promise<Metric[]> {
-    await this.db.read();
-
-    if (range === 'all') {
-      return [...this.db.data.metrics];
-    }
-
-    const now = Date.now();
-    let timeThreshold: number;
-
-    switch (range) {
-      case 'hour':
-        timeThreshold = now - 3600000;
-        break;
-      case 'day':
-        timeThreshold = now - 86400000;
-        break;
-      case 'week':
-        timeThreshold = now - 604800000;
-        break;
-      default:
-        timeThreshold = now - 3600000;
-    }
-
-    return this.db.data.metrics.filter(
-      (metric) => metric.timestamp >= timeThreshold,
-    );
-  }
 }
