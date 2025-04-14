@@ -81,7 +81,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { MetricsStorageService } from '../metrics-storage.service';
+import { SystemInfoStorageService } from '../metrics-storage.service';
 import { RATE_LIMIT_KEY } from './rate-limit.decorator';
 
 @Injectable()
@@ -89,14 +89,14 @@ export class AdaptiveRateLimitInterceptor implements NestInterceptor {
   private currentWindowStart = Date.now();
   private requestCount = 0;
 
-  constructor(private readonly metricsStorageService: MetricsStorageService) {}
+  constructor(private readonly systemInfoStorageService: SystemInfoStorageService) {}
 
   async intercept(
     context: ExecutionContext,
     next: CallHandler,
   ): Promise<Observable<any>> {
     const now = Date.now();
-    const latestMetrics = await this.metricsStorageService.getLastRecord();
+    const latestMetrics = await this.systemInfoStorageService.getLastRecord();
 
     if (!latestMetrics) {
       return next.handle();

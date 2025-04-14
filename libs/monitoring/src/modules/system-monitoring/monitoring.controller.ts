@@ -1,13 +1,14 @@
 import { SystemMonitoringService } from './monitoring.service';
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, ParseIntPipe, Query } from '@nestjs/common';
 import { htmlTemplateStringCharts } from './static/html-string';
-import { MetricsStorageService } from './metrics-storage.service';
+import { SystemInfoStorageService } from './metrics-storage.service';
+import { MyRender } from './shared/decorators/render';
 
 @Controller('v1/system-monitoring')
 export class SystemMonitoringController {
   constructor(
     private readonly monitoringService: SystemMonitoringService,
-    private readonly metricsStorageService: MetricsStorageService,
+    private readonly systemInfoStorageService: SystemInfoStorageService,
   ) {}
 
   @Get('all')
@@ -35,13 +36,22 @@ export class SystemMonitoringController {
     return this.monitoringService.getProcessLoad();
   }
 
-  @Get('/charts')
+  @Get('charts')
   getMonitoringHtml() {
     return htmlTemplateStringCharts;
   }
 
+  @Get('charts-test')
+  getMonitoringHtmlTest(
+    @MyRender('libs/monitoring/src/modules/system-monitoring/static/monitoring.html')
+    res: string,
+  ) {
+    return res;
+  }
+
   @Get('historical')
-  async getHistoricalData() {
-    return this.metricsStorageService.getLastMetrics(60);
+  async getHistoricalData(@Query('limit') limit?: string) {
+    const limitOrUndefined = limit ? parseInt(limit, 10) : undefined;
+    return this.systemInfoStorageService.getLastMetrics(limitOrUndefined);
   }
 }

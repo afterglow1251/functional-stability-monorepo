@@ -38,6 +38,7 @@ export class SystemMonitoringService {
     ]);
 
     return {
+      timestamp: new Date().toISOString(),
       cpu: { currentLoad, currentLoadUser, currentLoadSystem, currentLoadIdle },
       memory: { total, free, used, available, swapused, swapfree },
       disk,

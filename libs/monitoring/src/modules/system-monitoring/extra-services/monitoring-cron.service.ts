@@ -9,7 +9,7 @@ import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import * as cron from 'node-cron';
 import { SystemMonitoringAlertService } from './alert.service';
-import { MetricsStorageService } from '../metrics-storage.service';
+import { SystemInfoStorageService } from '../metrics-storage.service';
 
 @Injectable()
 export class MonitoringCronService implements OnModuleInit {
@@ -22,7 +22,7 @@ export class MonitoringCronService implements OnModuleInit {
     private readonly config: MonitoringModuleOptions,
     private readonly monitoringService: SystemMonitoringService,
     private readonly alertService: SystemMonitoringAlertService,
-    private readonly storageService: MetricsStorageService,
+    private readonly systemInfoStorageService: SystemInfoStorageService,
   ) {}
 
   onModuleInit() {
@@ -62,7 +62,7 @@ export class MonitoringCronService implements OnModuleInit {
       processLoad,
     };
 
-    await this.storageService.saveMetric(metric);
+    await this.systemInfoStorageService.saveMetric(metric);
 
     const warnings = await this.alertService.generateWarnings();
     this.setSystemOverloadStatus(warnings);

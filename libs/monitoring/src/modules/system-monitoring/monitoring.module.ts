@@ -6,7 +6,7 @@ import { SystemMonitoringController } from './monitoring.controller';
 import { MONITORING_OPTIONS } from './shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from './shared/_types/monitoring.types';
 import { SystemMonitoringAlertService } from './extra-services/alert.service';
-import { MetricsStorageService } from './metrics-storage.service';
+import { SystemInfoStorageService } from './metrics-storage.service';
 
 @Module({})
 export class SystemMonitoringModule {
@@ -22,7 +22,7 @@ export class SystemMonitoringModule {
         ? [
             MonitoringCronService,
             SystemMonitoringAlertService,
-            MetricsStorageService,
+            SystemInfoStorageService,
           ]
         : []),
     ];
@@ -37,7 +37,7 @@ export class SystemMonitoringModule {
           ? [
               MonitoringCronService,
               SystemMonitoringAlertService,
-              MetricsStorageService,
+              SystemInfoStorageService,
             ]
           : []),
       ],

@@ -78,6 +78,23 @@
         margin: 5px 0;
       }
 
+      .process-card {
+        position: relative;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        padding: 20px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .process-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
       .loading-spinner {
         position: absolute;
         top: 50%;
@@ -147,7 +164,7 @@
               @click="switchTab('process')"
               :class="{active: activeTab === 'process'}"
             >
-              Node.js process
+              Node.js Process
             </button>
           </li>
         </ul>
@@ -170,6 +187,17 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current CPU Usage</h2>
+            <p
+              style="
+                text-align: center;
+                color: #666;
+                font-size: 0.9em;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="cpuPieChart"></canvas>
           </div>
         </div>
@@ -187,6 +215,17 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Memory Usage</h2>
+            <p
+              style="
+                text-align: center;
+                color: #666;
+                font-size: 0.9em;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="memoryBarChart"></canvas>
           </div>
         </div>
@@ -204,6 +243,17 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Disk Usage</h2>
+            <p
+              style="
+                text-align: center;
+                color: #666;
+                font-size: 0.9em;
+                margin-top: -10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="diskBarChart"></canvas>
           </div>
         </div>
@@ -228,6 +278,18 @@
         <div x-show="data.processLoad.length > 0">
           <template x-for="process in data.processLoad" :key="process.pid">
             <div class="chart-container">
+              <h2>Current Node.js Process</h2>
+              <p
+                style="
+                  text-align: center;
+                  color: #666;
+                  font-size: 0.9em;
+                  margin-top: -10px;
+                  margin-bottom: 10px;
+                "
+              >
+                <span x-text="formatTooltipDate(data.timestamp)"></span>
+              </p>
               <div class="process-card">
                 <p>
                   <strong>Process: </strong>
@@ -264,6 +326,7 @@
           loading: true,
           showNoDataMessage: false,
           data: {
+            timestamp: null,
             cpu: {},
             memory: {},
             disk: [],
@@ -272,6 +335,11 @@
           historicalData: [],
           charts: {},
           initializedTabs: new Set(),
+
+          formatTooltipDate(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleString();
+          },
 
           async initApp() {
             await this.fetchData();
@@ -395,6 +463,17 @@
                       title: { display: true, text: 'Time' },
                     },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -435,6 +514,7 @@
                     tooltip: {
                       callbacks: {
                         label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
+                        // title: () => this.formatTooltipDate(this.data.timestamp),
                       },
                     },
                   },
@@ -485,6 +565,17 @@
                       title: { display: true, text: 'Time' },
                     },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -527,6 +618,7 @@
                     tooltip: {
                       callbacks: {
                         label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
+                        // title: () => this.formatTooltipDate(this.data.timestamp),
                       },
                     },
                   },
@@ -596,6 +688,17 @@
                       title: { display: true, text: 'Time' },
                     },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -632,6 +735,13 @@
                       beginAtZero: true,
                       max: 100,
                       title: { display: true, text: 'Usage (%)' },
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        // title: () => this.formatTooltipDate(this.data.timestamp),
+                      },
                     },
                   },
                 },
@@ -683,6 +793,17 @@
                     },
                     x: { title: { display: true, text: 'Time' } },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -731,6 +852,17 @@
                       title: { display: true, text: 'Memory (%)' },
                     },
                     x: { title: { display: true, text: 'Time' } },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
                   },
                 },
               });

@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger as NestLogger } from '@nestjs/common';
 import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import { PinoFileLoggerService } from 'libs/shared/src';
-import { MetricsStorageService } from '../metrics-storage.service';
+import { SystemInfoStorageService } from '../metrics-storage.service';
 
 export const DEFAULT_MONITORING_THRESHOLDS = {
   cpu: 95,
@@ -28,7 +28,7 @@ export class SystemMonitoringAlertService {
   constructor(
     @Inject(MONITORING_OPTIONS)
     private readonly config: MonitoringModuleOptions,
-    private readonly metricsStorageService: MetricsStorageService,
+    private readonly systemInfoStorageService: SystemInfoStorageService,
   ) {
     if (this.config.file.on) {
       this.fileLogger = new PinoFileLoggerService(config.file.options);
@@ -46,7 +46,7 @@ export class SystemMonitoringAlertService {
   }
 
   async generateWarnings(): Promise<string[]> {
-    const systemMetrics = await this.metricsStorageService.getLastRecord();
+    const systemMetrics = await this.systemInfoStorageService.getLastRecord();
 
     if (!systemMetrics) return [];
 

@@ -14,12 +14,14 @@ type DataSchema = {
   metrics: Metric[];
 };
 
+const MAX_SYSTEM_INFO_OBJECTS = 40;
+
 @Injectable()
-export class MetricsStorageService implements OnModuleInit {
+export class SystemInfoStorageService implements OnModuleInit {
   private db: Low<DataSchema>;
 
   async onModuleInit() {
-    const adapter = new JSONFile<DataSchema>('metrics.json');
+    const adapter = new JSONFile<DataSchema>('system-info.json');
 
     this.db = new Low(adapter, { metrics: [] });
 
@@ -30,14 +32,14 @@ export class MetricsStorageService implements OnModuleInit {
     await this.db.read();
     this.db.data.metrics.push(metric);
 
-    if (this.db.data.metrics.length > 60) {
-      this.db.data.metrics = this.db.data.metrics.slice(-60);
+    if (this.db.data.metrics.length > MAX_SYSTEM_INFO_OBJECTS) {
+      this.db.data.metrics = this.db.data.metrics.slice(-MAX_SYSTEM_INFO_OBJECTS);
     }
 
     await this.db.write();
   }
 
-  async getLastMetrics(limit = 10): Promise<Metric[]> {
+  async getLastMetrics(limit = MAX_SYSTEM_INFO_OBJECTS): Promise<Metric[]> {
     await this.db.read();
     return [...this.db.data.metrics].slice(-limit);
   }
