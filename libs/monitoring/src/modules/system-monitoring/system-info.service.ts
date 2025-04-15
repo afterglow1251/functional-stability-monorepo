@@ -14,7 +14,7 @@ type DataSchema = {
   metrics: Metric[];
 };
 
-const MAX_SYSTEM_INFO_OBJECTS = 40;
+const MAX_SYSTEM_INFO_OBJECTS = 80;
 
 @Injectable()
 export class SystemInfoStorageService implements OnModuleInit {
@@ -44,8 +44,8 @@ export class SystemInfoStorageService implements OnModuleInit {
     return [...this.db.data.metrics].slice(-limit);
   }
 
-  async getLastRecord(): Promise<Metric> {
+  async getLastRecord(): Promise<Metric | undefined> {
     await this.db.read();
-    return this.db.data.metrics[this.db.data.metrics.length - 1];
+    return this.db.data.metrics.at(-1);
   }
 }

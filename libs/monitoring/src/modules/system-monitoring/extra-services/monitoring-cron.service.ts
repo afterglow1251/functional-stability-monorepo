@@ -9,7 +9,7 @@ import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import * as cron from 'node-cron';
 import { SystemMonitoringAlertService } from './alert.service';
-import { SystemInfoStorageService } from '../metrics-storage.service';
+import { SystemInfoStorageService } from '../system-info.service';
 
 @Injectable()
 export class MonitoringCronService implements OnModuleInit {

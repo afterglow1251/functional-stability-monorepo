@@ -1,9 +1,7 @@
-import { HttpAdapterHost, NestFactory } from '@nestjs/core';
+import { NestFactory } from '@nestjs/core';
 import { ServerModule } from './server.module';
 
-// import { CatchHttpExceptionFilter, CatchEverythingFilter } from 'libs/logger/src';
-// import { ClsService } from 'nestjs-cls';
-import { PinoConsoleLoggerService } from 'libs/shared/src';
+import { PinoConsoleLoggerService } from '@app/functional-resilience';
 
 async function bootstrap() {
   const app = await NestFactory.create(ServerModule);

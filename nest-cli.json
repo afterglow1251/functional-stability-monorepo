@@ -10,6 +10,15 @@
   "monorepo": true,
   "root": "apps/functional-stability-monorepo",
   "projects": {
+    "functional-resilience": {
+      "type": "library",
+      "root": "libs/functional-resilience",
+      "entryFile": "index",
+      "sourceRoot": "libs/functional-resilience/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/functional-resilience/tsconfig.lib.json"
+      }
+    },
     "functional-stability-monorepo": {
       "type": "application",
       "root": "apps/functional-stability-monorepo",

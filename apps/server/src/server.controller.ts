@@ -12,8 +12,14 @@ import { ServerService } from './server.service';
 import { CatchHttpExceptionFilter } from '@app/logger';
 import { LoggerInterceptor } from '@app/logger/modules/interceptor/logger.interceptor';
 import { Retry } from '@app/monitoring/modules/system-monitoring/shared/decorators/retry.decorator';
-import { RateLimit } from '@app/monitoring/modules/system-monitoring/interceptors/rate-limit.decorator';
+// import { RateLimit } from '@app/monitoring/modules/system-monitoring/interceptors/rate-limit.decorator';
+import { BypassOverload } from '@app/monitoring/modules/system-monitoring/interceptors/priority.decorator';
+import { HEALTH_MONGOOSE_PROVIDER } from '@app/monitoring';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Person } from './db/mongoose/schema';
 
+@BypassOverload()
 @Controller()
 export class ServerController {
   private attemptCounter = 0;
@@ -21,7 +27,7 @@ export class ServerController {
 
   constructor(
     private readonly serverService: ServerService,
-    // @Inject('MikroORM') private readonly mikroorm: any,
+    // @InjectModel('Person') private readonly personModel: Model<Person>,
   ) {}
 
   @Get()
@@ -39,13 +45,16 @@ export class ServerController {
   }
 
   @Get('test')
-  // @UseInterceptors(LoggerInterceptor)
   getTest(): any {
     return { message: 'test' };
   }
 
+  @Get('test2')
+  getTest2(): any {
+    return { message: 'test2' };
+  }
+
   @Get('error')
-  // @UseFilters(CatchHttpExceptionFilter)
   getError(): string {
     return this.serverService.getError();
   }
@@ -64,4 +73,10 @@ export class ServerController {
     // На третій спробі успішний результат
     return 'Success after retrying!';
   }
+
+  // @Get('mongodb')
+  // async createPerson(): Promise<Person> {
+  //   const createdPerson = new this.personModel({ name: 'Yurii', age: 20 });
+  //   return createdPerson.save();
+  // }
 }

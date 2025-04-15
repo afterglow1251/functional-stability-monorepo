@@ -24,6 +24,7 @@
     "@mikro-orm/mysql": "^6.4.12",
     "@mikro-orm/nestjs": "^6.1.1",
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/mongoose": "^11.0.3",
     "@nestjs/platform-express": "^11.0.1",
@@ -101,6 +102,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@app/functional-resilience(|/.*)$": "<rootDir>/libs/functional-resilience/src/$1",
       "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
       "^@app/monitoring(|/.*)$": "<rootDir>/libs/monitoring/src/$1"
     }

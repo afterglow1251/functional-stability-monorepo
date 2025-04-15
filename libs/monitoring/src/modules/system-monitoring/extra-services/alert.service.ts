@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger as NestLogger } from '@nestjs/common';
 import { MONITORING_OPTIONS } from '../shared/providers/monitoring.provider';
 import { MonitoringModuleOptions } from '../shared/_types/monitoring.types';
 import { PinoFileLoggerService } from 'libs/shared/src';
-import { SystemInfoStorageService } from '../metrics-storage.service';
+import { SystemInfoStorageService } from '../system-info.service';
 
 export const DEFAULT_MONITORING_THRESHOLDS = {
   cpu: 95,

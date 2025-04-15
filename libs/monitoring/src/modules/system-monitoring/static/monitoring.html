@@ -118,6 +118,14 @@
         animation: spin 2s linear infinite;
       }
 
+      .timestamp {
+        text-align: center;
+        color: #666;
+        font-size: 0.9em;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+
       @keyframes spin {
         0% {
           transform: rotate(0deg);
@@ -187,15 +195,7 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current CPU Usage</h2>
-            <p
-              style="
-                text-align: center;
-                color: #666;
-                font-size: 0.9em;
-                margin-top: -10px;
-                margin-bottom: 10px;
-              "
-            >
+            <p class="timestamp">
               <span x-text="formatTooltipDate(data.timestamp)"></span>
             </p>
             <canvas id="cpuPieChart"></canvas>
@@ -215,15 +215,7 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Memory Usage</h2>
-            <p
-              style="
-                text-align: center;
-                color: #666;
-                font-size: 0.9em;
-                margin-top: -10px;
-                margin-bottom: 10px;
-              "
-            >
+            <p class="timestamp">
               <span x-text="formatTooltipDate(data.timestamp)"></span>
             </p>
             <canvas id="memoryBarChart"></canvas>
@@ -243,15 +235,7 @@
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Disk Usage</h2>
-            <p
-              style="
-                text-align: center;
-                color: #666;
-                font-size: 0.9em;
-                margin-top: -10px;
-                margin-bottom: 10px;
-              "
-            >
+            <p class="timestamp">
               <span x-text="formatTooltipDate(data.timestamp)"></span>
             </p>
             <canvas id="diskBarChart"></canvas>
@@ -279,15 +263,7 @@
           <template x-for="process in data.processLoad" :key="process.pid">
             <div class="chart-container">
               <h2>Current Node.js Process</h2>
-              <p
-                style="
-                  text-align: center;
-                  color: #666;
-                  font-size: 0.9em;
-                  margin-top: -10px;
-                  margin-bottom: 10px;
-                "
-              >
+              <p class="timestamp">
                 <span x-text="formatTooltipDate(data.timestamp)"></span>
               </p>
               <div class="process-card">
@@ -320,9 +296,13 @@
     </template>
 
     <script>
+      const currentDataUrl = '/v1/system-monitoring/all';
+      const historicalDataUrl = '/v1/system-monitoring/historical';
+      const currentTab = localStorage.getItem('selectedTab') ?? 'cpu';
+
       function monitoringApp() {
         return {
-          activeTab: 'cpu',
+          activeTab: currentTab,
           loading: true,
           showNoDataMessage: false,
           data: {
@@ -337,19 +317,21 @@
           initializedTabs: new Set(),
 
           formatTooltipDate(timestamp) {
-            const date = new Date(timestamp);
-            return date.toLocaleString();
+            return new Date(timestamp).toLocaleString();
           },
 
           async initApp() {
             await this.fetchData();
             await this.fetchHistoricalData();
             this.loading = false;
-            this.switchTab('cpu');
+
+            this.switchTab((this.activeTab = currentTab));
           },
 
           async switchTab(tabName) {
             this.activeTab = tabName;
+
+            localStorage.setItem('selectedTab', tabName);
 
             if (!this.initializedTabs.has(tabName)) {
               this.loading = true;
@@ -379,7 +361,7 @@
 
           async fetchData() {
             try {
-              const response = await fetch('/v1/system-monitoring/all');
+              const response = await fetch(currentDataUrl);
               this.data = await response.json();
             } catch (error) {
               console.error('Failed to fetch current data:', error);
@@ -388,7 +370,7 @@
 
           async fetchHistoricalData() {
             try {
-              const res = await fetch('/v1/system-monitoring/historical');
+              const res = await fetch(historicalDataUrl);
               this.historicalData = await res.json();
               this.showNoDataMessage = this.historicalData.length === 0;
             } catch (err) {
@@ -514,7 +496,6 @@
                     tooltip: {
                       callbacks: {
                         label: (tooltipItem) => tooltipItem.raw.toFixed(2) + '%',
-                        // title: () => this.formatTooltipDate(this.data.timestamp),
                       },
                     },
                   },
@@ -618,7 +599,6 @@
                     tooltip: {
                       callbacks: {
                         label: (tooltipItem) => tooltipItem.raw.toFixed(2) + ' GB',
-                        // title: () => this.formatTooltipDate(this.data.timestamp),
                       },
                     },
                   },
@@ -739,9 +719,7 @@
                   },
                   plugins: {
                     tooltip: {
-                      callbacks: {
-                        // title: () => this.formatTooltipDate(this.data.timestamp),
-                      },
+                      callbacks: {},
                     },
                   },
                 },

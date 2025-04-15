@@ -1,7 +1,7 @@
 import { SystemMonitoringService } from './monitoring.service';
 import { Controller, Get, ParseIntPipe, Query } from '@nestjs/common';
 import { htmlTemplateStringCharts } from './static/html-string';
-import { SystemInfoStorageService } from './metrics-storage.service';
+import { SystemInfoStorageService } from './system-info.service';
 import { MyRender } from './shared/decorators/render';
 
 @Controller('v1/system-monitoring')
@@ -41,13 +41,13 @@ export class SystemMonitoringController {
     return htmlTemplateStringCharts;
   }
 
-  @Get('charts-test')
-  getMonitoringHtmlTest(
-    @MyRender('libs/monitoring/src/modules/system-monitoring/static/monitoring.html')
-    res: string,
-  ) {
-    return res;
-  }
+  // @Get('charts-test')
+  // getMonitoringHtmlTest(
+  //   @MyRender('libs/monitoring/src/modules/system-monitoring/static/monitoring.html')
+  //   res: string,
+  // ) {
+  //   return res;
+  // }
 
   @Get('historical')
   async getHistoricalData(@Query('limit') limit?: string) {

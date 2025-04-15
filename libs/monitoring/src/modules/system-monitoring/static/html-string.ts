@@ -79,6 +79,23 @@ export const htmlTemplateStringCharts: string = `
         margin: 5px 0;
       }
 
+      .process-card {
+        position: relative;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        padding: 20px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .process-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
       .loading-spinner {
         position: absolute;
         top: 50%;
@@ -100,6 +117,14 @@ export const htmlTemplateStringCharts: string = `
         width: 50px;
         height: 50px;
         animation: spin 2s linear infinite;
+      }
+
+      .timestamp {
+        text-align: center;
+        color: #666;
+        font-size: 0.9em;
+        margin-top: -10px;
+        margin-bottom: 10px;
       }
 
       @keyframes spin {
@@ -148,7 +173,7 @@ export const htmlTemplateStringCharts: string = `
               @click="switchTab('process')"
               :class="{active: activeTab === 'process'}"
             >
-              Node.js process
+              Node.js Process
             </button>
           </li>
         </ul>
@@ -171,6 +196,9 @@ export const htmlTemplateStringCharts: string = `
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current CPU Usage</h2>
+            <p class="timestamp">
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="cpuPieChart"></canvas>
           </div>
         </div>
@@ -188,6 +216,9 @@ export const htmlTemplateStringCharts: string = `
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Memory Usage</h2>
+            <p class="timestamp">
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="memoryBarChart"></canvas>
           </div>
         </div>
@@ -205,6 +236,9 @@ export const htmlTemplateStringCharts: string = `
         <div class="chart-container">
           <div class="chart-narrow">
             <h2>Current Disk Usage</h2>
+            <p class="timestamp">
+              <span x-text="formatTooltipDate(data.timestamp)"></span>
+            </p>
             <canvas id="diskBarChart"></canvas>
           </div>
         </div>
@@ -229,6 +263,10 @@ export const htmlTemplateStringCharts: string = `
         <div x-show="data.processLoad.length > 0">
           <template x-for="process in data.processLoad" :key="process.pid">
             <div class="chart-container">
+              <h2>Current Node.js Process</h2>
+              <p class="timestamp">
+                <span x-text="formatTooltipDate(data.timestamp)"></span>
+              </p>
               <div class="process-card">
                 <p>
                   <strong>Process: </strong>
@@ -259,12 +297,17 @@ export const htmlTemplateStringCharts: string = `
     </template>
 
     <script>
+      const currentDataUrl = '/v1/system-monitoring/all';
+      const historicalDataUrl = '/v1/system-monitoring/historical';
+      const currentTab = localStorage.getItem('selectedTab') ?? 'cpu';
+
       function monitoringApp() {
         return {
-          activeTab: 'cpu',
+          activeTab: currentTab,
           loading: true,
           showNoDataMessage: false,
           data: {
+            timestamp: null,
             cpu: {},
             memory: {},
             disk: [],
@@ -274,15 +317,22 @@ export const htmlTemplateStringCharts: string = `
           charts: {},
           initializedTabs: new Set(),
 
+          formatTooltipDate(timestamp) {
+            return new Date(timestamp).toLocaleString();
+          },
+
           async initApp() {
             await this.fetchData();
             await this.fetchHistoricalData();
             this.loading = false;
-            this.switchTab('cpu');
+
+            this.switchTab((this.activeTab = currentTab));
           },
 
           async switchTab(tabName) {
             this.activeTab = tabName;
+
+            localStorage.setItem('selectedTab', tabName);
 
             if (!this.initializedTabs.has(tabName)) {
               this.loading = true;
@@ -312,7 +362,7 @@ export const htmlTemplateStringCharts: string = `
 
           async fetchData() {
             try {
-              const response = await fetch('/v1/system-monitoring/all');
+              const response = await fetch(currentDataUrl);
               this.data = await response.json();
             } catch (error) {
               console.error('Failed to fetch current data:', error);
@@ -321,7 +371,7 @@ export const htmlTemplateStringCharts: string = `
 
           async fetchHistoricalData() {
             try {
-              const res = await fetch('/v1/system-monitoring/historical');
+              const res = await fetch(historicalDataUrl);
               this.historicalData = await res.json();
               this.showNoDataMessage = this.historicalData.length === 0;
             } catch (err) {
@@ -394,6 +444,17 @@ export const htmlTemplateStringCharts: string = `
                     },
                     x: {
                       title: { display: true, text: 'Time' },
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
                     },
                   },
                 },
@@ -484,6 +545,17 @@ export const htmlTemplateStringCharts: string = `
                     },
                     x: {
                       title: { display: true, text: 'Time' },
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
                     },
                   },
                 },
@@ -597,6 +669,17 @@ export const htmlTemplateStringCharts: string = `
                       title: { display: true, text: 'Time' },
                     },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -633,6 +716,11 @@ export const htmlTemplateStringCharts: string = `
                       beginAtZero: true,
                       max: 100,
                       title: { display: true, text: 'Usage (%)' },
+                    },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {},
                     },
                   },
                 },
@@ -684,6 +772,17 @@ export const htmlTemplateStringCharts: string = `
                     },
                     x: { title: { display: true, text: 'Time' } },
                   },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
+                  },
                 },
               });
             }
@@ -732,6 +831,17 @@ export const htmlTemplateStringCharts: string = `
                       title: { display: true, text: 'Memory (%)' },
                     },
                     x: { title: { display: true, text: 'Time' } },
+                  },
+                  plugins: {
+                    tooltip: {
+                      callbacks: {
+                        title: (context) => {
+                          const index = context[0].dataIndex;
+                          const timestamp = this.historicalData[index].timestamp;
+                          return this.formatTooltipDate(timestamp);
+                        },
+                      },
+                    },
                   },
                 },
               });

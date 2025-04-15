@@ -6,7 +6,7 @@ export const mongooseProvider = {
   useFactory: async (): Promise<Connection> => {
     try {
       await mongoose.connect(
-        'mongodb+srv://yuriiafterglow:iOrGuFUnw2jtwAVC@cluster0.7hwngpn.mongodb.net/',
+        'mongodb+srv://yuriiafterglow:<db_password>@cluster0.7hwngpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
         {},
       );
       console.log('MongoDB connected');
