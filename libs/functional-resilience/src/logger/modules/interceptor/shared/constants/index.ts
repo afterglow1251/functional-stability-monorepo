@@ -1,4 +1,4 @@
-import { LoggerConfigTargetsBase } from '@app/logger';
+import { LoggerConfigTargetsBase } from '../../../../shared/_types/logger.types';
 
 export const DEFAULT_TARGETS: LoggerConfigTargetsBase[] = [
   'url',

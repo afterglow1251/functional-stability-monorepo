@@ -9,15 +9,11 @@ import {
   UsePipes,
 } from '@nestjs/common';
 import { ServerService } from './server.service';
-import { CatchHttpExceptionFilter } from '@app/logger';
-import { LoggerInterceptor } from '@app/logger/modules/interceptor/logger.interceptor';
-import { Retry } from '@app/monitoring/modules/system-monitoring/shared/decorators/retry.decorator';
 // import { RateLimit } from '@app/monitoring/modules/system-monitoring/interceptors/rate-limit.decorator';
-import { BypassOverload } from '@app/monitoring/modules/system-monitoring/interceptors/priority.decorator';
-import { HEALTH_MONGOOSE_PROVIDER } from '@app/monitoring';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { Person } from './db/mongoose/schema';
+import { drizzleProvideToken } from './db/drizzle';
+import { BypassOverload, Retry } from '@app/functional-resilience';
+// import { InjectModel } from '@nestjs/mongoose';
+// import { Person } from './db/mongoose/schema';
 
 @BypassOverload()
 @Controller()
@@ -79,4 +75,14 @@ export class ServerController {
   //   const createdPerson = new this.personModel({ name: 'Yurii', age: 20 });
   //   return createdPerson.save();
   // }
+
+  @Get('fallback')
+  riskyOperation() {
+    return this.serverService.riskyOperation('operation');
+  }
+
+  @Get('fetch')
+  async fetchData() {
+    return await this.serverService.fetchData();
+  }
 }

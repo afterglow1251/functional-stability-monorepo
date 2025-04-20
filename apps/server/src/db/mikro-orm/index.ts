@@ -1,5 +1,3 @@
-import { HEALTH_MIKROORM_PROVIDER } from '@app/monitoring';
-
 import { MikroORM } from '@mikro-orm/core';
 import { User } from './user.entity';
 import { MySqlDriver } from '@mikro-orm/mysql';
@@ -25,6 +23,6 @@ export const mikroOrmProvider = {
 };
 
 export const mikroOrmStringProvider = {
-  provide: HEALTH_MIKROORM_PROVIDER,
+  provide: 'HEALTH_MIKROORM_PROVIDER',
   useExisting: 'MikroORM',
 };

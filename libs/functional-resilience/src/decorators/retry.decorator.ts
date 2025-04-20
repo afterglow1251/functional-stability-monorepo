@@ -33,7 +33,7 @@ export function Retry(options: RetryOptions): MethodDecorator {
             const delay = calculateDelay(
               attempt,
               options.delay,
-              options.strategy ?? ('linear' as RetryOptions['strategy']),
+              options.strategy ?? 'exponential',
             );
             await new Promise((res) => setTimeout(res, delay));
           }

@@ -1,1 +1,0 @@
-export const MONITORING_OPTIONS = Symbol('MONITORING_OPTIONS');

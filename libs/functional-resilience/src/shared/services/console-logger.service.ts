@@ -3,9 +3,12 @@ import { ClsService } from 'nestjs-cls';
 import pino from 'pino';
 
 export const pinoConsoleLogger = pino({
+  level: 'debug',
   transport: {
     target: 'pino-pretty',
-    options: { colorize: true },
+    options: {
+      colorize: true,
+    },
   },
 });
 
@@ -41,11 +44,6 @@ export class PinoConsoleLoggerService implements LoggerService {
   }
 
   debug(message: any, context?: string) {
-    const traceId = this.cls.get('traceId');
-    this.logger.debug({ traceId }, this.getMessage(message, context));
-  }
-
-  verbose(message: any, context?: string) {
     const traceId = this.cls.get('traceId');
     this.logger.debug({ traceId }, this.getMessage(message, context));
   }

@@ -6,7 +6,6 @@ import {
   UseFilters,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { CatchHttpExceptionFilter, CatchEverythingFilter } from '@app/logger';
 
 @Controller('users')
 export class UsersController {

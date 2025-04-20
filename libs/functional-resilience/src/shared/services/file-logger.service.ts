@@ -1,6 +1,6 @@
+import { LoggerService } from '@nestjs/common';
 import { pino } from 'pino';
 import { join } from 'path';
-import { LoggerService } from '@nestjs/common';
 
 type LoggerFileOptions = {
   dir?: string;
@@ -28,6 +28,7 @@ export const pinoFileLogger = (options?: LoggerFileOptions) => {
   } = options ?? {};
 
   return pino({
+    level: 'debug',
     transport: {
       target: 'pino-roll',
       options: {
@@ -61,9 +62,5 @@ export class PinoFileLoggerService implements LoggerService {
 
   debug(message: any) {
     this.logger.debug(message);
-  }
-
-  verbose(message: any) {
-    this.logger.trace(message);
   }
 }

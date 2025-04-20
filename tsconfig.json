@@ -18,24 +18,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/functional-resilience": [
-        "libs/functional-resilience/src"
-      ],
-      "@app/functional-resilience/*": [
-        "libs/functional-resilience/src/*"
-      ],
-      "@app/logger": [
-        "libs/logger/src"
-      ],
-      "@app/logger/*": [
-        "libs/logger/src/*"
-      ],
-      "@app/monitoring": [
-        "libs/monitoring/src"
-      ],
-      "@app/monitoring/*": [
-        "libs/monitoring/src/*"
-      ]
+      "@app/functional-resilience": ["libs/functional-resilience/src"],
+      "@app/functional-resilience/*": ["libs/functional-resilience/src/*"],
+      "@app/logger": ["libs/logger/src"],
+      "@app/logger/*": ["libs/logger/src/*"],
+      "@app/monitoring": ["libs/monitoring/src"],
+      "@app/monitoring/*": ["libs/monitoring/src/*"]
     }
   }
 }

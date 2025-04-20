@@ -1,8 +1,7 @@
-import { HEALTH_POSTGRES_PROVIDER } from '@app/monitoring';
 import { Pool } from 'pg';
 
 export const postgresProvider = {
-  provide: HEALTH_POSTGRES_PROVIDER,
+  provide: 'HEALTH_POSTGRES_PROVIDER',
   useFactory: async () => {
     const pool = new Pool({
       host: 'localhost',

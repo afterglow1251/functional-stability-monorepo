@@ -1,8 +1,7 @@
-import { HEALTH_MYSQL_PROVIDER } from '@app/monitoring';
 import { createPool, Pool } from 'mysql2/promise';
 
 export const mysqlProvider = {
-  provide: HEALTH_MYSQL_PROVIDER,
+  provide: 'HEALTH_MYSQL_PROVIDER',
   useFactory: async () => {
     const pool: Pool = createPool({
       host: 'localhost',
