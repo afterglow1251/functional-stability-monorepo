@@ -1,29 +1,29 @@
 {
   "metrics": [
     {
-      "timestamp": 1745087019055,
+      "timestamp": 1745516655035,
       "cpu": {
-        "currentLoad": 32.658941818404756,
-        "currentLoadUser": 19.53896143706701,
-        "currentLoadSystem": 12.73373796824229,
-        "currentLoadIdle": 67.34105818159523
+        "currentLoad": 35.23489932885906,
+        "currentLoadUser": 20.190156599552573,
+        "currentLoadSystem": 14.560029828486204,
+        "currentLoadIdle": 64.76510067114094
       },
       "memory": {
         "total": 8362713088,
-        "free": 1511780352,
-        "used": 6850932736,
-        "available": 1511780352,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2192138240,
+        "used": 6170574848,
+        "available": 2192138240,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827543552,
-          "available": 14828933120,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -31,9 +31,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382294528,
-          "available": 136411611136,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -41,42 +41,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 17324,
+          "pid": 13460,
           "pids": [
-            17324,
-            2688,
-            20548,
-            19312
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.6600660066006601,
-          "mem": 10.864739689608253
+          "cpu": 0.322234156820623,
+          "mem": 9.648093382012247
         }
       ]
     },
     {
-      "timestamp": 1745087021043,
+      "timestamp": 1745516657049,
       "cpu": {
-        "currentLoad": 30.731072115086498,
-        "currentLoadUser": 17.938860296397348,
-        "currentLoadSystem": 12.023314937682148,
-        "currentLoadIdle": 69.2689278849135
+        "currentLoad": 29.582689335394125,
+        "currentLoadUser": 17.489953632148378,
+        "currentLoadSystem": 11.795981452859351,
+        "currentLoadIdle": 70.41731066460586
       },
       "memory": {
         "total": 8362713088,
-        "free": 1551134720,
-        "used": 6811578368,
-        "available": 1551134720,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2202058752,
+        "used": 6160654336,
+        "available": 2202058752,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827543552,
-          "available": 14828933120,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -84,9 +84,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382294528,
-          "available": 136411611136,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -94,42 +94,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 17324,
+          "pid": 13460,
           "pids": [
-            17324,
-            2688,
-            20548,
-            19312
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 1.079913606911447,
-          "mem": 10.401248384906925
+          "cpu": 0.21505376344086022,
+          "mem": 9.67473813206588
         }
       ]
     },
     {
-      "timestamp": 1745087023064,
+      "timestamp": 1745516659079,
       "cpu": {
-        "currentLoad": 32.94901041987792,
-        "currentLoadUser": 18.299525248165732,
-        "currentLoadSystem": 14.069917997410444,
-        "currentLoadIdle": 67.05098958012208
+        "currentLoad": 26.53918762560136,
+        "currentLoadUser": 15.126971560806284,
+        "currentLoadSystem": 10.3708665732903,
+        "currentLoadIdle": 73.46081237439863
       },
       "memory": {
         "total": 8362713088,
-        "free": 1569071104,
-        "used": 6793641984,
-        "available": 1569071104,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2197716992,
+        "used": 6164996096,
+        "available": 2197716992,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827543552,
-          "available": 14828933120,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -137,9 +137,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382294528,
-          "available": 136411611136,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -147,1791 +147,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 17324,
+          "pid": 13460,
           "pids": [
-            17324,
-            2688,
-            20548,
-            19312
-          ],
-          "cpu": 2.0629750271444083,
-          "mem": 9.259001664317292
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087025086,
-      "cpu": {
-        "currentLoad": 28.82977410196272,
-        "currentLoadUser": 16.769534625354897,
-        "currentLoadSystem": 11.572645352425628,
-        "currentLoadIdle": 71.17022589803727
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1664499712,
-        "used": 6698213376,
-        "available": 1664499712,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827670528,
-          "available": 14828806144,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382294528,
-          "available": 136411611136,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 17324,
-          "pids": [
-            17324,
-            2688,
-            20548,
-            19312
-          ],
-          "cpu": 0.42238648363252373,
-          "mem": 9.242495633493625
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087027144,
-      "cpu": {
-        "currentLoad": 34.93356193741963,
-        "currentLoadUser": 20.580491090563957,
-        "currentLoadSystem": 13.875451595125835,
-        "currentLoadIdle": 65.06643806258037
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1646301184,
-        "used": 6716411904,
-        "available": 1646301184,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827801600,
-          "available": 14828675072,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382327296,
-          "available": 136411578368,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 17324,
-          "pids": [
-            17324,
-            2688,
-            20548,
-            19312
-          ],
-          "cpu": 0.8565310492505354,
-          "mem": 9.259687374796613
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087029157,
-      "cpu": {
-        "currentLoad": 35.06381404525556,
-        "currentLoadUser": 22.547629323632776,
-        "currentLoadSystem": 11.942783155558296,
-        "currentLoadIdle": 64.93618595474445
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1636294656,
-        "used": 6726418432,
-        "available": 1636294656,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827670528,
-          "available": 14828806144,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382327296,
-          "available": 136411578368,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 17324,
-          "pids": [
-            17324,
-            2688,
-            20548,
-            19312
-          ],
-          "cpu": 0.43956043956043955,
-          "mem": 9.309450363867368
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087031147,
-      "cpu": {
-        "currentLoad": 42.30289421157685,
-        "currentLoadUser": 30.31437125748503,
-        "currentLoadSystem": 11.801397205588822,
-        "currentLoadIdle": 57.69710578842315
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1660116992,
-        "used": 6702596096,
-        "available": 1660116992,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827670528,
-          "available": 14828806144,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382343680,
-          "available": 136411561984,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 17324,
-          "pids": [
-            17324,
-            2688,
-            20548,
-            19312
-          ],
-          "cpu": 8.7248322147651,
-          "mem": 8.782481860508856
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087083297,
-      "cpu": {
-        "currentLoad": 9.258122783802621,
-        "currentLoadUser": 6.593578399649973,
-        "currentLoadSystem": 2.4893034038672877,
-        "currentLoadIdle": 90.74187721619738
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1774911488,
-        "used": 6587801600,
-        "available": 1774911488,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828612608,
-          "available": 14827864064,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382343680,
-          "available": 136411561984,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.000271267211252103,
-          "mem": 7.080548450833089
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087085265,
-      "cpu": {
-        "currentLoad": 52.033940603943094,
-        "currentLoadUser": 32.35587721487397,
-        "currentLoadSystem": 19.48465185924632,
-        "currentLoadIdle": 47.9660593960569
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1697947648,
-        "used": 6664744960,
-        "available": 1697996800,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382347776,
-          "available": 136411557888,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 21.03448275862069,
-          "mem": 8.140607872544054
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087087362,
-      "cpu": {
-        "currentLoad": 48.506770543498426,
-        "currentLoadUser": 35.75094292957398,
-        "currentLoadSystem": 12.465219810795771,
-        "currentLoadIdle": 51.493229456501574
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1518329856,
-        "used": 6844383232,
-        "available": 1518329856,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382360064,
-          "available": 136411545600,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 28.75,
-          "mem": 10.414374842653935
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087089215,
-      "cpu": {
-        "currentLoad": 50.18121506235027,
-        "currentLoadUser": 37.71116161926408,
-        "currentLoadSystem": 12.285766939001167,
-        "currentLoadIdle": 49.81878493764974
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1430593536,
-        "used": 6932119552,
-        "available": 1430593536,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382360064,
-          "available": 136411545600,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 16.97674418604651,
-          "mem": 11.156362560599664
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087091250,
-      "cpu": {
-        "currentLoad": 25.965428466347923,
-        "currentLoadUser": 15.808508029912957,
-        "currentLoadSystem": 9.770749049895795,
-        "currentLoadIdle": 74.03457153365208
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1470369792,
-        "used": 6892343296,
-        "available": 1470369792,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382376448,
-          "available": 136411529216,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.5399568034557236,
-          "mem": 10.861898889051066
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087093260,
-      "cpu": {
-        "currentLoad": 30.576503583670927,
-        "currentLoadUser": 19.277033343720785,
-        "currentLoadSystem": 11.006544094733561,
-        "currentLoadIdle": 69.42349641632907
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1479639040,
-        "used": 6883074048,
-        "available": 1479639040,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382376448,
-          "available": 136411529216,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.5285412262156448,
-          "mem": 10.900837448412531
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087095307,
-      "cpu": {
-        "currentLoad": 25.369037452726605,
-        "currentLoadUser": 15.73136513358546,
-        "currentLoadSystem": 9.540075637428327,
-        "currentLoadIdle": 74.6309625472734
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1478881280,
-        "used": 6883831808,
-        "available": 1478881280,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382376448,
-          "available": 136411529216,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.6629834254143647,
-          "mem": 10.906127214967297
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087097319,
-      "cpu": {
-        "currentLoad": 21.45488604433344,
-        "currentLoadUser": 14.142990945988135,
-        "currentLoadSystem": 7.211988760536997,
-        "currentLoadIdle": 78.54511395566657
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1538949120,
-        "used": 6823763968,
-        "available": 1538949120,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828743680,
-          "available": 14827732992,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 1.2539184952978055,
-          "mem": 10.286049024380926
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087099298,
-      "cpu": {
-        "currentLoad": 27.62699203187251,
-        "currentLoadUser": 16.63969123505976,
-        "currentLoadSystem": 10.601344621513945,
-        "currentLoadIdle": 72.3730079681275
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1629618176,
-        "used": 6733094912,
-        "available": 1629618176,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828809216,
-          "available": 14827667456,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.7709251101321586,
-          "mem": 9.182398007913099
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087101327,
-      "cpu": {
-        "currentLoad": 36.05963921953614,
-        "currentLoadUser": 21.76340655295128,
-        "currentLoadSystem": 14.00171800220886,
-        "currentLoadIdle": 63.940360780463855
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1620959232,
-        "used": 6741753856,
-        "available": 1620959232,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120829005824,
-          "available": 14827470848,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 2680,
-          "pids": [
-            2680,
-            16316,
-            19412,
-            19584
-          ],
-          "cpu": 0.10893246187363835,
-          "mem": 9.212275393083532
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087169058,
-      "cpu": {
-        "currentLoad": 9.259955446435795,
-        "currentLoadUser": 6.594523120879532,
-        "currentLoadSystem": 2.490178146091417,
-        "currentLoadIdle": 90.7400445535642
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1773469696,
-        "used": 6589243392,
-        "available": 1773469696,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382392832,
-          "available": 136411512832,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.0002849382881760176,
-          "mem": 7.2261149897290355
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087171026,
-      "cpu": {
-        "currentLoad": 42.89865825758981,
-        "currentLoadUser": 27.05744141470352,
-        "currentLoadSystem": 15.556792184505039,
-        "currentLoadIdle": 57.10134174241019
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1688518656,
-        "used": 6674194432,
-        "available": 1688518656,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382392832,
-          "available": 136411512832,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 19.823788546255507,
-          "mem": 8.497373239070999
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087173073,
-      "cpu": {
-        "currentLoad": 50.532903705539724,
-        "currentLoadUser": 35.809889701326064,
-        "currentLoadSystem": 14.623869128764408,
-        "currentLoadIdle": 49.467096294460276
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1487675392,
-        "used": 6875037696,
-        "available": 1487675392,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382392832,
-          "available": 136411512832,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 28.94168466522678,
-          "mem": 10.489607078099485
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087174932,
-      "cpu": {
-        "currentLoad": 42.9644342374775,
-        "currentLoadUser": 32.30091242008565,
-        "currentLoadSystem": 9.980758487989572,
-        "currentLoadIdle": 57.0355657625225
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1437298688,
-        "used": 6925414400,
-        "available": 1437298688,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382396928,
-          "available": 136411508736,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 12.412177985948476,
-          "mem": 11.237962107638912
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087177016,
-      "cpu": {
-        "currentLoad": 25.662849794868652,
-        "currentLoadUser": 12.926336415406285,
-        "currentLoadSystem": 12.252770803992409,
-        "currentLoadIdle": 74.33715020513134
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1480646656,
-        "used": 6882066432,
-        "available": 1480646656,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382409216,
-          "available": 136411496448,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.6269592476489028,
-          "mem": 10.908870056884581
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087179041,
-      "cpu": {
-        "currentLoad": 26.469138844400643,
-        "currentLoadUser": 14.531230750277196,
-        "currentLoadSystem": 11.26031785142294,
-        "currentLoadIdle": 73.53086115559935
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1484058624,
-        "used": 6878654464,
-        "available": 1484058624,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825151488,
-          "available": 14831325184,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382409216,
-          "available": 136411496448,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.33333333333333337,
-          "mem": 10.95554734879839
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087181028,
-      "cpu": {
-        "currentLoad": 27.21784130113356,
-        "currentLoadUser": 16.448989650073926,
-        "currentLoadSystem": 10.103499260719566,
-        "currentLoadIdle": 72.78215869886644
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1475203072,
-        "used": 6887510016,
-        "available": 1475203072,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382409216,
-          "available": 136411496448,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.2127659574468085,
-          "mem": 10.960445280793543
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087183080,
-      "cpu": {
-        "currentLoad": 26.16434108527132,
-        "currentLoadUser": 16.477519379844964,
-        "currentLoadSystem": 9.593798449612404,
-        "currentLoadIdle": 73.83565891472868
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1546600448,
-        "used": 6816112640,
-        "available": 1546600448,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382409216,
-          "available": 136411496448,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 2.0042194092827006,
-          "mem": 10.321265155426076
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087185082,
-      "cpu": {
-        "currentLoad": 28.036745081000557,
-        "currentLoadUser": 15.90838557507293,
-        "currentLoadSystem": 11.544907206256596,
-        "currentLoadIdle": 71.96325491899944
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1636610048,
-        "used": 6726103040,
-        "available": 1636610048,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.11534025374855825,
-          "mem": 9.24293644737319
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087187057,
-      "cpu": {
-        "currentLoad": 26.54145557889534,
-        "currentLoadUser": 15.352774002224145,
-        "currentLoadSystem": 10.799456320276782,
-        "currentLoadIdle": 73.45854442110465
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1638600704,
-        "used": 6724112384,
-        "available": 1638600704,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.4291845493562232,
-          "mem": 9.256111884440152
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087189052,
-      "cpu": {
-        "currentLoad": 24.659569200297106,
-        "currentLoadUser": 13.629611289923249,
-        "currentLoadSystem": 10.838078732359495,
-        "currentLoadIdle": 75.3404307997029
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1632849920,
-        "used": 6729863168,
-        "available": 1632849920,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825085952,
-          "available": 14831390720,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.21668472372697722,
-          "mem": 9.281434192855093
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087191099,
-      "cpu": {
-        "currentLoad": 29.462673557063695,
-        "currentLoadUser": 19.357449722931324,
-        "currentLoadSystem": 9.71919556690119,
-        "currentLoadIdle": 70.5373264429363
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1650581504,
-        "used": 6712131584,
-        "available": 1650581504,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 5.313496280552602,
-          "mem": 8.85624471635586
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087193126,
-      "cpu": {
-        "currentLoad": 26.51068533529845,
-        "currentLoadUser": 16.801768607221813,
-        "currentLoadSystem": 8.744780152296732,
-        "currentLoadIdle": 73.48931466470154
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1668993024,
-        "used": 6693720064,
-        "available": 1668993024,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 4.600219058050384,
-          "mem": 8.720523020770171
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087195134,
-      "cpu": {
-        "currentLoad": 24.973870273593608,
-        "currentLoadUser": 15.843836458653552,
-        "currentLoadSystem": 9.03166308023363,
-        "currentLoadIdle": 75.0261297264064
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1661919232,
-        "used": 6700793856,
-        "available": 1661919232,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382425600,
-          "available": 136411480064,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.5417118093174431,
-          "mem": 8.731788264359022
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087197143,
-      "cpu": {
-        "currentLoad": 26.866508787236693,
-        "currentLoadUser": 16.751838464414806,
-        "currentLoadSystem": 9.82799451576717,
-        "currentLoadIdle": 73.1334912127633
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1666822144,
-        "used": 6695890944,
-        "available": 1666822144,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825217024,
-          "available": 14831259648,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.3236245954692557,
-          "mem": 8.723559738607165
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087199135,
-      "cpu": {
-        "currentLoad": 26.656812022665683,
-        "currentLoadUser": 15.09608277900961,
-        "currentLoadSystem": 10.883222468588322,
-        "currentLoadIdle": 73.34318797733432
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1657896960,
-        "used": 6704816128,
-        "available": 1657896960,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825151488,
-          "available": 14831325184,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.7838745800671892,
-          "mem": 8.7278699187629
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087201130,
-      "cpu": {
-        "currentLoad": 23.77713190278894,
-        "currentLoadUser": 14.995980458846084,
-        "currentLoadSystem": 8.490507698967287,
-        "currentLoadIdle": 76.22286809721106
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1671999488,
-        "used": 6690713600,
-        "available": 1671999488,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825221120,
-          "available": 14831255552,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.2136752136752137,
-          "mem": 8.73169030571912
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087203179,
-      "cpu": {
-        "currentLoad": 22.201630837657525,
-        "currentLoadUser": 11.286137879911045,
-        "currentLoadSystem": 10.526315789473683,
-        "currentLoadIdle": 77.79836916234247
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1666527232,
-        "used": 6696185856,
-        "available": 1666527232,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825229312,
-          "available": 14831247360,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
-          ],
-          "cpu": 0.43431053203040176,
-          "mem": 8.736147423834709
-        }
-      ]
-    },
-    {
-      "timestamp": 1745087205159,
-      "cpu": {
-        "currentLoad": 28.23718742262936,
-        "currentLoadUser": 14.991334488734836,
-        "currentLoadSystem": 13.060163406783856,
-        "currentLoadIdle": 71.76281257737064
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1665273856,
-        "used": 6697439232,
-        "available": 1665273856,
-        "swapused": 853540864,
-        "swapfree": 7212105728
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120825753600,
-          "available": 14830723072,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 18224,
-          "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
           "cpu": 0.10905125408942204,
-          "mem": 8.740702500590201
+          "mem": 9.698689019522178
         }
       ]
     },
     {
-      "timestamp": 1745087207223,
+      "timestamp": 1745516661113,
       "cpu": {
-        "currentLoad": 25.140724424865397,
-        "currentLoadUser": 13.381057268722468,
-        "currentLoadSystem": 11.178414096916299,
-        "currentLoadIdle": 74.8592755751346
+        "currentLoad": 29.669320269442746,
+        "currentLoadUser": 16.27066748315983,
+        "currentLoadSystem": 12.731169626454378,
+        "currentLoadIdle": 70.33067973055725
       },
       "memory": {
         "total": 8362713088,
-        "free": 1663963136,
-        "used": 6698749952,
-        "available": 1663963136,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2211713024,
+        "used": 6151000064,
+        "available": 2211713024,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825872384,
-          "available": 14830604288,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -1939,9 +190,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -1949,42 +200,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.308641975308642,
-          "mem": 8.746433081024529
+          "cpu": 0.3188097768331562,
+          "mem": 9.69619107420465
         }
       ]
     },
     {
-      "timestamp": 1745087209213,
+      "timestamp": 1745516663153,
       "cpu": {
-        "currentLoad": 31.18935058472257,
-        "currentLoadUser": 17.199552127394874,
-        "currentLoadSystem": 13.504603135108237,
-        "currentLoadIdle": 68.81064941527744
+        "currentLoad": 29.800110031175496,
+        "currentLoadUser": 18.619720031786784,
+        "currentLoadSystem": 10.599669906473501,
+        "currentLoadIdle": 70.19988996882451
       },
       "memory": {
         "total": 8362713088,
-        "free": 1678499840,
-        "used": 6684213248,
-        "available": 1678499840,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2213294080,
+        "used": 6149419008,
+        "available": 2213294080,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825937920,
-          "available": 14830538752,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -1992,9 +243,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2002,42 +253,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.32537960954446854,
-          "mem": 8.748931026342058
+          "cpu": 0.21390374331550802,
+          "mem": 9.704321641316604
         }
       ]
     },
     {
-      "timestamp": 1745087211249,
+      "timestamp": 1745516665138,
       "cpu": {
-        "currentLoad": 26.170475602223597,
-        "currentLoadUser": 14.768375540457072,
-        "currentLoadSystem": 11.012970969734404,
-        "currentLoadIdle": 73.8295243977764
+        "currentLoad": 20.336995432662633,
+        "currentLoadUser": 11.196148623626714,
+        "currentLoadSystem": 8.3816812739168,
+        "currentLoadIdle": 79.66300456733737
       },
       "memory": {
         "total": 8362713088,
-        "free": 1686876160,
-        "used": 6675836928,
-        "available": 1686876160,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2246676480,
+        "used": 6116036608,
+        "available": 2246676480,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825937920,
-          "available": 14830538752,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2045,9 +296,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2055,42 +306,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.847457627118644,
-          "mem": 8.755347317255708
+          "cpu": 0.44150110375275936,
+          "mem": 9.705350207035586
         }
       ]
     },
     {
-      "timestamp": 1745087213217,
+      "timestamp": 1745516667139,
       "cpu": {
-        "currentLoad": 30.006195786864932,
-        "currentLoadUser": 15.588599752168525,
-        "currentLoadSystem": 14.324659231722428,
-        "currentLoadIdle": 69.99380421313506
+        "currentLoad": 12.320774626031904,
+        "currentLoadUser": 7.857985227484328,
+        "currentLoadSystem": 4.17106324871206,
+        "currentLoadIdle": 87.6792253739681
       },
       "memory": {
         "total": 8362713088,
-        "free": 1691836416,
-        "used": 6670876672,
-        "available": 1691836416,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2244026368,
+        "used": 6118686720,
+        "available": 2244026368,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825937920,
-          "available": 14830538752,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2098,9 +349,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2108,42 +359,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0,
-          "mem": 8.766024809005142
+          "cpu": 0.21739130434782608,
+          "mem": 9.705986938194956
         }
       ]
     },
     {
-      "timestamp": 1745087215211,
+      "timestamp": 1745516669151,
       "cpu": {
-        "currentLoad": 19.036024224261723,
-        "currentLoadUser": 9.9644128113879,
-        "currentLoadSystem": 8.971717550103016,
-        "currentLoadIdle": 80.96397577573828
+        "currentLoad": 18.1534037632056,
+        "currentLoadUser": 12.196036756891917,
+        "currentLoadSystem": 5.957367006313683,
+        "currentLoadIdle": 81.8465962367944
       },
       "memory": {
         "total": 8362713088,
-        "free": 1662935040,
-        "used": 6699778048,
-        "available": 1662935040,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2252570624,
+        "used": 6110142464,
+        "available": 2252570624,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825937920,
-          "available": 14830538752,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2151,9 +402,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2161,42 +412,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.5291005291005292,
-          "mem": 8.804473575167094
+          "cpu": 0.21621621621621623,
+          "mem": 9.7122073118288
         }
       ]
     },
     {
-      "timestamp": 1745087217247,
+      "timestamp": 1745516671153,
       "cpu": {
-        "currentLoad": 16.828799801722536,
-        "currentLoadUser": 9.374806369663547,
-        "currentLoadSystem": 7.361050870561993,
-        "currentLoadIdle": 83.17120019827746
+        "currentLoad": 14.439522579057462,
+        "currentLoadUser": 8.662483081087732,
+        "currentLoadSystem": 5.48172757475083,
+        "currentLoadIdle": 85.56047742094253
       },
       "memory": {
         "total": 8362713088,
-        "free": 1659236352,
-        "used": 6703476736,
-        "available": 1659236352,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2247389184,
+        "used": 6115323904,
+        "available": 2247389184,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120825937920,
-          "available": 14830538752,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2204,9 +455,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2214,42 +465,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.4250797024442083,
-          "mem": 8.812849038878806
+          "cpu": 0.3232758620689655,
+          "mem": 9.697121681283729
         }
       ]
     },
     {
-      "timestamp": 1745087219262,
+      "timestamp": 1745516673171,
       "cpu": {
-        "currentLoad": 26.025871139444202,
-        "currentLoadUser": 14.70570031565266,
-        "currentLoadSystem": 11.128303521693383,
-        "currentLoadIdle": 73.9741288605558
+        "currentLoad": 12.566294378236725,
+        "currentLoadUser": 7.992762213764274,
+        "currentLoadSystem": 4.280277032507644,
+        "currentLoadIdle": 87.43370562176327
       },
       "memory": {
         "total": 8362713088,
-        "free": 1654898688,
-        "used": 6707814400,
-        "available": 1654898688,
-        "swapused": 853540864,
-        "swapfree": 7212105728
+        "free": 2256457728,
+        "used": 6106255360,
+        "available": 2256457728,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826068992,
-          "available": 14830407680,
-          "use": 89.07,
+          "used": 133615468544,
+          "available": 2041008128,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2257,9 +508,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2267,42 +518,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 18224,
+          "pid": 13460,
           "pids": [
-            18224,
-            21788,
-            15456,
-            6480
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.6593406593406594,
-          "mem": 8.832636684139223
+          "cpu": 0.10537407797681769,
+          "mem": 9.697954329722904
         }
       ]
     },
     {
-      "timestamp": 1745088031508,
+      "timestamp": 1745516675166,
       "cpu": {
-        "currentLoad": 9.26833837595529,
-        "currentLoadUser": 6.597462308719054,
-        "currentLoadSystem": 2.4952728718656316,
-        "currentLoadIdle": 90.73166162404472
+        "currentLoad": 13.82812986851125,
+        "currentLoadUser": 8.66828690721007,
+        "currentLoadSystem": 5.066367545335577,
+        "currentLoadIdle": 86.17187013148875
       },
       "memory": {
         "total": 8362713088,
-        "free": 1694543872,
-        "used": 6668169216,
-        "available": 1694543872,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2259984384,
+        "used": 6102728704,
+        "available": 2259984384,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120830066688,
-          "available": 14826409984,
-          "use": 89.07,
+          "used": 133615472640,
+          "available": 2041004032,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2310,9 +561,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382450176,
-          "available": 136411455488,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2320,42 +571,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 10128,
+          "pid": 13460,
           "pids": [
-            10128,
-            17388,
-            7160,
-            5628
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.00029017746945980065,
-          "mem": 6.992483633560238
+          "cpu": 0.21953896816684962,
+          "mem": 9.712893022308121
         }
       ]
     },
     {
-      "timestamp": 1745088033448,
+      "timestamp": 1745516677185,
       "cpu": {
-        "currentLoad": 49.418388813265686,
-        "currentLoadUser": 32.78678381388442,
-        "currentLoadSystem": 16.439797054819948,
-        "currentLoadIdle": 50.58161118673431
+        "currentLoad": 12.409488139825218,
+        "currentLoadUser": 7.02247191011236,
+        "currentLoadSystem": 5.187265917602996,
+        "currentLoadIdle": 87.59051186017479
       },
       "memory": {
         "total": 8362713088,
-        "free": 1645285376,
-        "used": 6717427712,
-        "available": 1645285376,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2258808832,
+        "used": 6103904256,
+        "available": 2258808832,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120830263296,
-          "available": 14826213376,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -2363,9 +614,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382458368,
-          "available": 136411447296,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -2373,996 +624,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 10128,
+          "pid": 13460,
           "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 20.512820512820515,
-          "mem": 8.018061614025326
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088035476,
-      "cpu": {
-        "currentLoad": 52.17095497278576,
-        "currentLoadUser": 38.069025235032164,
-        "currentLoadSystem": 13.811232063334982,
-        "currentLoadIdle": 47.82904502721425
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1475272704,
-        "used": 6887440384,
-        "available": 1475272704,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827105280,
-          "available": 14829371392,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382462464,
-          "available": 136411443200,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 25.867861142217247,
-          "mem": 10.174180257611631
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088037380,
-      "cpu": {
-        "currentLoad": 50.33706475354073,
-        "currentLoadUser": 40.09524398540417,
-        "currentLoadSystem": 9.951141072422537,
-        "currentLoadIdle": 49.66293524645927
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1374863360,
-        "used": 6987849728,
-        "available": 1374863360,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827060224,
-          "available": 14829416448,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 21.768707482993197,
-          "mem": 11.137946336297889
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088039403,
-      "cpu": {
-        "currentLoad": 35.77511725499877,
-        "currentLoadUser": 20.636879782769686,
-        "currentLoadSystem": 14.656874845717107,
-        "currentLoadIdle": 64.22488274500124
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1432408064,
-        "used": 6930305024,
-        "available": 1432408064,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827125760,
-          "available": 14829350912,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.6458557588805167,
-          "mem": 10.80189922211044
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088041381,
-      "cpu": {
-        "currentLoad": 36.42322676396017,
-        "currentLoadUser": 20.777935811019727,
-        "currentLoadSystem": 15.360831117432442,
-        "currentLoadIdle": 63.57677323603983
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1442549760,
-        "used": 6920163328,
-        "available": 1442549760,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826671104,
-          "available": 14829805568,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 1.1013215859030838,
-          "mem": 10.848380596744443
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088043406,
-      "cpu": {
-        "currentLoad": 30.3856834310398,
-        "currentLoadUser": 15.921012033323048,
-        "currentLoadSystem": 13.98333847577908,
-        "currentLoadIdle": 69.6143165689602
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1439539200,
-        "used": 6923173888,
-        "available": 1439539200,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826548224,
-          "available": 14829928448,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.3264417845484222,
-          "mem": 10.855188722217704
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088045421,
-      "cpu": {
-        "currentLoad": 32.0813867715761,
-        "currentLoadUser": 19.012785837226456,
-        "currentLoadSystem": 12.201868699286944,
-        "currentLoadIdle": 67.9186132284239
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1424052224,
-        "used": 6938660864,
-        "available": 1424052224,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826556416,
-          "available": 14829920256,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.43103448275862066,
-          "mem": 10.77143408510059
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088047472,
-      "cpu": {
-        "currentLoad": 25.910104011887075,
-        "currentLoadUser": 16.926696384348688,
-        "currentLoadSystem": 8.698613174839029,
-        "currentLoadIdle": 74.08989598811293
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1526050816,
-        "used": 6836662272,
-        "available": 1526050816,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826572800,
-          "available": 14829903872,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.8456659619450317,
-          "mem": 9.701333902799561
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088049465,
-      "cpu": {
-        "currentLoad": 26.550531257721772,
-        "currentLoadUser": 16.790214974054855,
-        "currentLoadSystem": 9.46997776130467,
-        "currentLoadIdle": 73.44946874227823
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1509990400,
-        "used": 6852722688,
-        "available": 1509990400,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826580992,
-          "available": 14829895680,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.21905805038335158,
-          "mem": 9.732533729608686
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088051455,
-      "cpu": {
-        "currentLoad": 31.88225021828614,
-        "currentLoadUser": 17.25707870774604,
-        "currentLoadSystem": 14.425595609330175,
-        "currentLoadIdle": 68.11774978171385
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1502228480,
-        "used": 6860484608,
-        "available": 1502228480,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826613760,
-          "available": 14829862912,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.43668122270742354,
-          "mem": 9.762558052738974
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088053504,
-      "cpu": {
-        "currentLoad": 35.49932440732097,
-        "currentLoadUser": 22.552511976415673,
-        "currentLoadSystem": 11.982557425377719,
-        "currentLoadIdle": 64.50067559267903
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1587277824,
-        "used": 6775435264,
-        "available": 1587277824,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826605568,
-          "available": 14829871104,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 5.302226935312831,
-          "mem": 8.77557577639569
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088055478,
-      "cpu": {
-        "currentLoad": 23.086989032901293,
-        "currentLoadUser": 14.992522432701893,
-        "currentLoadSystem": 7.801595214356929,
-        "currentLoadIdle": 76.9130109670987
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1576976384,
-        "used": 6785736704,
-        "available": 1576976384,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826605568,
-          "available": 14829871104,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 4.977876106194691,
-          "mem": 8.690204821720172
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088057575,
-      "cpu": {
-        "currentLoad": 30.338259847875825,
-        "currentLoadUser": 18.458969760682702,
-        "currentLoadSystem": 11.582462432749985,
-        "currentLoadIdle": 69.66174015212417
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1563488256,
-        "used": 6799224832,
-        "available": 1563488256,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120826609664,
-          "available": 14829867008,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 10128,
-          "pids": [
-            10128,
-            17388,
-            7160,
-            5628
-          ],
-          "cpu": 0.7470651013874066,
-          "mem": 8.701470065309026
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088158752,
-      "cpu": {
-        "currentLoad": 9.270725531068974,
-        "currentLoadUser": 6.5987084191597125,
-        "currentLoadSystem": 2.4963939852251205,
-        "currentLoadIdle": 90.72927446893102
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1634713600,
-        "used": 6727999488,
-        "available": 1634713600,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827990016,
-          "available": 14828486656,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382523904,
-          "available": 136411381760,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
-          ],
-          "cpu": 0.00031064138686071497,
-          "mem": 7.774144600666706
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088160705,
-      "cpu": {
-        "currentLoad": 49.31149981391887,
-        "currentLoadUser": 32.75648182607617,
-        "currentLoadSystem": 16.5550179878427,
-        "currentLoadIdle": 50.68850018608113
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1462886400,
-        "used": 6899826688,
-        "available": 1462886400,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828002304,
-          "available": 14828474368,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382532096,
-          "available": 136411373568,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
-          ],
-          "cpu": 25.52026286966046,
-          "mem": 9.923357160139846
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088162703,
-      "cpu": {
-        "currentLoad": 53.14702609125758,
-        "currentLoadUser": 41.733646593297884,
-        "currentLoadSystem": 11.12278966242117,
-        "currentLoadIdle": 46.85297390874242
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1383383040,
-        "used": 6979330048,
-        "available": 1383383040,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828002304,
-          "available": 14828474368,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382556672,
-          "available": 136411348992,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
-          ],
-          "cpu": 29.482948294829484,
-          "mem": 11.15812581611792
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088164664,
-      "cpu": {
-        "currentLoad": 30.113184460079534,
-        "currentLoadUser": 19.21688589782808,
-        "currentLoadSystem": 10.32119914346895,
-        "currentLoadIdle": 69.88681553992046
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1385017344,
-        "used": 6977695744,
-        "available": 1385017344,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828002304,
-          "available": 14828474368,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382556672,
-          "available": 136411348992,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
-          ],
-          "cpu": 0.6880733944954129,
-          "mem": 10.856217287936687
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088166669,
-      "cpu": {
-        "currentLoad": 20.219023779724658,
-        "currentLoadUser": 12.415519399249062,
-        "currentLoadSystem": 7.709637046307885,
-        "currentLoadIdle": 79.78097622027535
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1412767744,
-        "used": 6949945344,
-        "available": 1412767744,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120828002304,
-          "available": 14828474368,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382556672,
-          "available": 136411348992,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
-          ],
-          "cpu": 0.5586592178770949,
-          "mem": 10.855090763577802
-        }
-      ]
-    },
-    {
-      "timestamp": 1745088168741,
-      "cpu": {
-        "currentLoad": 32.09732777641579,
-        "currentLoadUser": 18.196861975974503,
-        "currentLoadSystem": 12.944349105172837,
-        "currentLoadIdle": 67.90267222358422
-      },
-      "memory": {
-        "total": 8362713088,
-        "free": 1401405440,
-        "used": 6961307648,
-        "available": 1401405440,
-        "swapused": 838860800,
-        "swapfree": 7226785792
-      },
-      "disk": [
-        {
-          "fs": "C:",
-          "type": "NTFS",
-          "size": 135656476672,
-          "used": 120827990016,
-          "available": 14828486656,
-          "use": 89.07,
-          "mount": "C:",
-          "rw": true
-        },
-        {
-          "fs": "D:",
-          "type": "NTFS",
-          "size": 375793905664,
-          "used": 239382556672,
-          "available": 136411348992,
-          "use": 63.7,
-          "mount": "D:",
-          "rw": true
-        }
-      ],
-      "processLoad": [
-        {
-          "proc": "node",
-          "pid": 11352,
-          "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
           "cpu": 0,
-          "mem": 10.869931497523115
+          "mem": 9.713578732787443
         }
       ]
     },
     {
-      "timestamp": 1745088170686,
+      "timestamp": 1745516679210,
       "cpu": {
-        "currentLoad": 32.59695630829651,
-        "currentLoadUser": 19.176485027000492,
-        "currentLoadSystem": 13.132056946489937,
-        "currentLoadIdle": 67.40304369170349
+        "currentLoad": 13.211281543790204,
+        "currentLoadUser": 7.3354774863928744,
+        "currentLoadSystem": 5.585106382978723,
+        "currentLoadIdle": 86.7887184562098
       },
       "memory": {
         "total": 8362713088,
-        "free": 1412018176,
-        "used": 6950694912,
-        "available": 1412018176,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2264731648,
+        "used": 6097981440,
+        "available": 2264731648,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827990016,
-          "available": 14828486656,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3370,9 +667,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3380,42 +677,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.32537960954446854,
-          "mem": 10.890061998023194
+          "cpu": 0.10834236186348861,
+          "mem": 9.714754236466279
         }
       ]
     },
     {
-      "timestamp": 1745088172704,
+      "timestamp": 1745516681177,
       "cpu": {
-        "currentLoad": 26.1703187250996,
-        "currentLoadUser": 12.84238047808765,
-        "currentLoadSystem": 12.935756972111554,
-        "currentLoadIdle": 73.8296812749004
+        "currentLoad": 15.182072829131652,
+        "currentLoadUser": 9.337068160597573,
+        "currentLoadSystem": 5.552443199502023,
+        "currentLoadIdle": 84.81792717086834
       },
       "memory": {
         "total": 8362713088,
-        "free": 1417195520,
-        "used": 6945517568,
-        "available": 1417195520,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2254262272,
+        "used": 6108450816,
+        "available": 2254262272,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827990016,
-          "available": 14828486656,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3423,9 +720,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3433,42 +730,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 1.076426264800861,
-          "mem": 9.7586886864628
+          "cpu": 0.21929824561403508,
+          "mem": 9.715390967625648
         }
       ]
     },
     {
-      "timestamp": 1745088174726,
+      "timestamp": 1745516683190,
       "cpu": {
-        "currentLoad": 36.231263383297645,
-        "currentLoadUser": 17.968797797491586,
-        "currentLoadSystem": 17.693484245946774,
-        "currentLoadIdle": 63.76873661670236
+        "currentLoad": 13.008079163274253,
+        "currentLoadUser": 8.999812112481994,
+        "currentLoadSystem": 3.9080603745224525,
+        "currentLoadIdle": 86.99192083672574
       },
       "memory": {
         "total": 8362713088,
-        "free": 1510428672,
-        "used": 6852284416,
-        "available": 1510428672,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2249682944,
+        "used": 6113030144,
+        "available": 2249682944,
+        "swapused": 711983104,
+        "swapfree": 6268387328
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120827990016,
-          "available": 14828486656,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3476,9 +773,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3486,42 +783,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.6417112299465241,
-          "mem": 9.737480640923788
+          "cpu": 0.32223415682062295,
+          "mem": 9.71607667810497
         }
       ]
     },
     {
-      "timestamp": 1745088176774,
+      "timestamp": 1745516685201,
       "cpu": {
-        "currentLoad": 26.938523324065493,
-        "currentLoadUser": 13.129440840284214,
-        "currentLoadSystem": 13.419833178869322,
-        "currentLoadIdle": 73.06147667593451
+        "currentLoad": 15.438881258584091,
+        "currentLoadUser": 8.98364340117368,
+        "currentLoadSystem": 6.455237857410413,
+        "currentLoadIdle": 84.56111874141591
       },
       "memory": {
         "total": 8362713088,
-        "free": 1511948288,
-        "used": 6850764800,
-        "available": 1511948288,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2264915968,
+        "used": 6097797120,
+        "available": 2264915968,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828006400,
-          "available": 14828470272,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3529,9 +826,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3539,42 +836,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.2178649237472767,
-          "mem": 9.74806017403332
+          "cpu": 0.1072961373390558,
+          "mem": 9.716909326544148
         }
       ]
     },
     {
-      "timestamp": 1745088178781,
+      "timestamp": 1745516687197,
       "cpu": {
-        "currentLoad": 23.593488890264283,
-        "currentLoadUser": 13.257411648202016,
-        "currentLoadSystem": 10.144209939964103,
-        "currentLoadIdle": 76.40651110973572
+        "currentLoad": 13.174396225243685,
+        "currentLoadUser": 8.145526789594586,
+        "currentLoadSystem": 4.935742223877817,
+        "currentLoadIdle": 86.82560377475632
       },
       "memory": {
         "total": 8362713088,
-        "free": 1545269248,
-        "used": 6817443840,
-        "available": 1545269248,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2232344576,
+        "used": 6130368512,
+        "available": 2232344576,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828002304,
-          "available": 14828474368,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3582,9 +879,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3592,42 +889,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 1.3143483023001097,
-          "mem": 9.227458982268507
+          "cpu": 0.10857763300760044,
+          "mem": 9.717546057703517
         }
       ]
     },
     {
-      "timestamp": 1745088180777,
+      "timestamp": 1745516689273,
       "cpu": {
-        "currentLoad": 33.48615327427049,
-        "currentLoadUser": 23.022117588749147,
-        "currentLoadSystem": 10.36490923734589,
-        "currentLoadIdle": 66.51384672572951
+        "currentLoad": 15.36165184402015,
+        "currentLoadUser": 8.837614279494993,
+        "currentLoadSystem": 6.325020212699794,
+        "currentLoadIdle": 84.63834815597984
       },
       "memory": {
         "total": 8362713088,
-        "free": 1611816960,
-        "used": 6750896128,
-        "available": 1611816960,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2232266752,
+        "used": 6130446336,
+        "available": 2232266752,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828010496,
-          "available": 14828466176,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3635,9 +932,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3645,42 +942,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 9.11983032873807,
-          "mem": 8.687119124563228
+          "cpu": 1.3756613756613756,
+          "mem": 9.717252181783808
         }
       ]
     },
     {
-      "timestamp": 1745088182772,
+      "timestamp": 1745516691198,
       "cpu": {
-        "currentLoad": 30.94452400224145,
-        "currentLoadUser": 15.677728659485709,
-        "currentLoadSystem": 14.880767075524561,
-        "currentLoadIdle": 69.05547599775855
+        "currentLoad": 17.687543014452856,
+        "currentLoadUser": 11.437151973972345,
+        "currentLoadSystem": 6.25039104048051,
+        "currentLoadIdle": 82.31245698554714
       },
       "memory": {
         "total": 8362713088,
-        "free": 1605734400,
-        "used": 6756978688,
-        "available": 1605734400,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2231386112,
+        "used": 6131326976,
+        "available": 2231386112,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828125184,
-          "available": 14828351488,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3688,9 +985,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3698,42 +995,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.4333694474539545,
-          "mem": 8.69265378771775
+          "cpu": 0.547645125958379,
+          "mem": 9.728272528772901
         }
       ]
     },
     {
-      "timestamp": 1745088184793,
+      "timestamp": 1745516693197,
       "cpu": {
-        "currentLoad": 25.30761145118407,
-        "currentLoadUser": 11.104927966363693,
-        "currentLoadSystem": 13.912075681691707,
-        "currentLoadIdle": 74.69238854881593
+        "currentLoad": 12.862453531598513,
+        "currentLoadUser": 6.400247831474597,
+        "currentLoadSystem": 5.997521685254028,
+        "currentLoadIdle": 87.13754646840148
       },
       "memory": {
         "total": 8362713088,
-        "free": 1609256960,
-        "used": 6753456128,
-        "available": 1609256960,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2237333504,
+        "used": 6125379584,
+        "available": 2237333504,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828190720,
-          "available": 14828285952,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3741,9 +1038,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382589440,
-          "available": 136411316224,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3751,42 +1048,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.32292787944025836,
-          "mem": 8.700539458229947
+          "cpu": 0.21645021645021645,
+          "mem": 9.76152948701999
         }
       ]
     },
     {
-      "timestamp": 1745088186798,
+      "timestamp": 1745516695205,
       "cpu": {
-        "currentLoad": 28.620945778658086,
-        "currentLoadUser": 14.607576132706116,
-        "currentLoadSystem": 13.821490467937608,
-        "currentLoadIdle": 71.37905422134192
+        "currentLoad": 16.482493171095108,
+        "currentLoadUser": 10.274397814750435,
+        "currentLoadSystem": 6.108765830643159,
+        "currentLoadIdle": 83.5175068289049
       },
       "memory": {
         "total": 8362713088,
-        "free": 1589731328,
-        "used": 6772981760,
-        "available": 1589731328,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2234966016,
+        "used": 6127747072,
+        "available": 2234966016,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828190720,
-          "available": 14828285952,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3794,9 +1091,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382593536,
-          "available": 136411312128,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3804,42 +1101,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.4241781548250265,
-          "mem": 8.711461846579137
+          "cpu": 0,
+          "mem": 9.785039560596726
         }
       ]
     },
     {
-      "timestamp": 1745088188794,
+      "timestamp": 1745516697216,
       "cpu": {
-        "currentLoad": 27.225551368382035,
-        "currentLoadUser": 13.115463025884969,
-        "currentLoadSystem": 13.720887131648855,
-        "currentLoadIdle": 72.77444863161796
+        "currentLoad": 11.502274285002182,
+        "currentLoadUser": 7.209171911022494,
+        "currentLoadSystem": 4.1996386067667775,
+        "currentLoadIdle": 88.49772571499783
       },
       "memory": {
         "total": 8362713088,
-        "free": 1612484608,
-        "used": 6750228480,
-        "available": 1612484608,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2238517248,
+        "used": 6124195840,
+        "available": 2238517248,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828043264,
-          "available": 14828433408,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3847,9 +1144,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382687744,
-          "available": 136411217920,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3857,42 +1154,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.43811610076670315,
-          "mem": 8.715478150815164
+          "cpu": 0,
+          "mem": 9.815504697606578
         }
       ]
     },
     {
-      "timestamp": 1745088190864,
+      "timestamp": 1745516699246,
       "cpu": {
-        "currentLoad": 24.60963811156696,
-        "currentLoadUser": 11.879248055844712,
-        "currentLoadSystem": 12.154797624150389,
-        "currentLoadIdle": 75.39036188843305
+        "currentLoad": 12.280810459136255,
+        "currentLoadUser": 7.34865852902906,
+        "currentLoadSystem": 4.833013197843732,
+        "currentLoadIdle": 87.71918954086375
       },
       "memory": {
         "total": 8362713088,
-        "free": 1616949248,
-        "used": 6745763840,
-        "available": 1616949248,
-        "swapused": 838860800,
-        "swapfree": 7226785792
+        "free": 2241409024,
+        "used": 6121304064,
+        "available": 2241409024,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120828182528,
-          "available": 14828294144,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3900,9 +1197,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382687744,
-          "available": 136411217920,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3910,42 +1207,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 11352,
+          "pid": 13460,
           "pids": [
-            11352,
-            22168,
-            17192,
-            20896
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.7322175732217573,
-          "mem": 8.720033227570656
+          "cpu": 0.4223864836325238,
+          "mem": 9.815847552846238
         }
       ]
     },
     {
-      "timestamp": 1745088281124,
+      "timestamp": 1745516701241,
       "cpu": {
-        "currentLoad": 9.273684144417853,
-        "currentLoadUser": 6.600163308089818,
-        "currentLoadSystem": 2.4978272758070603,
-        "currentLoadIdle": 90.72631585558216
+        "currentLoad": 15.92601787487587,
+        "currentLoadUser": 9.229145978152928,
+        "currentLoadSystem": 6.405163853028799,
+        "currentLoadIdle": 84.07398212512413
       },
       "memory": {
         "total": 8362713088,
-        "free": 1665691648,
-        "used": 6697021440,
-        "available": 1665691648,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2247909376,
+        "used": 6114803712,
+        "available": 2247909376,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826880000,
-          "available": 14829596672,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -3953,9 +1250,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382605824,
-          "available": 136411299840,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -3963,42 +1260,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.00030563009291067393,
-          "mem": 7.745540677815013
+          "cpu": 0.10940919037199125,
+          "mem": 9.820696505521438
         }
       ]
     },
     {
-      "timestamp": 1745088283119,
+      "timestamp": 1745516703245,
       "cpu": {
-        "currentLoad": 51.10129455794834,
-        "currentLoadUser": 34.22295846370943,
-        "currentLoadSystem": 16.58997484508252,
-        "currentLoadIdle": 48.89870544205166
+        "currentLoad": 12.565834314393703,
+        "currentLoadUser": 7.540739822789516,
+        "currentLoadSystem": 4.932151930107194,
+        "currentLoadIdle": 87.43416568560629
       },
       "memory": {
         "total": 8362713088,
-        "free": 1494310912,
-        "used": 6868402176,
-        "available": 1494310912,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2239021056,
+        "used": 6123692032,
+        "available": 2239021056,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826880000,
-          "available": 14829596672,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -4006,9 +1303,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382605824,
-          "available": 136411299840,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -4016,42 +1313,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 25.476992143658812,
-          "mem": 9.881822696820947
+          "cpu": 0.10810810810810811,
+          "mem": 9.821823029880324
         }
       ]
     },
     {
-      "timestamp": 1745088285106,
+      "timestamp": 1745516705250,
       "cpu": {
-        "currentLoad": 57.904491258417245,
-        "currentLoadUser": 40.63754865015136,
-        "currentLoadSystem": 16.883919194415274,
-        "currentLoadIdle": 42.09550874158275
+        "currentLoad": 14.264432029795158,
+        "currentLoadUser": 8.733705772811918,
+        "currentLoadSystem": 5.238981998758535,
+        "currentLoadIdle": 85.73556797020484
       },
       "memory": {
         "total": 8362713088,
-        "free": 1384558592,
-        "used": 6978154496,
-        "available": 1384558592,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2246119424,
+        "used": 6116593664,
+        "available": 2246119424,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826880000,
-          "available": 14829596672,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -4059,9 +1356,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382609920,
-          "available": 136411295744,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -4069,42 +1366,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 28.70056497175141,
-          "mem": 11.073489551241675
+          "cpu": 0.10822510822510822,
+          "mem": 9.82201894716013
         }
       ]
     },
     {
-      "timestamp": 1745088287078,
+      "timestamp": 1745516707271,
       "cpu": {
-        "currentLoad": 31.122767578368926,
-        "currentLoadUser": 19.60159860122393,
-        "currentLoadSystem": 11.034095166729111,
-        "currentLoadIdle": 68.87723242163108
+        "currentLoad": 11.926321012155793,
+        "currentLoadUser": 6.387993053832795,
+        "currentLoadSystem": 5.240635078144381,
+        "currentLoadIdle": 88.0736789878442
       },
       "memory": {
         "total": 8362713088,
-        "free": 1385848832,
-        "used": 6976864256,
-        "available": 1385848832,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2237669376,
+        "used": 6125043712,
+        "available": 2237669376,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826945536,
-          "available": 14829531136,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -4112,9 +1409,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382622208,
-          "available": 136411283456,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -4122,42 +1419,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 1.1727078891257996,
-          "mem": 10.780005466092106
+          "cpu": 0.2103049421661409,
+          "mem": 9.82206792648008
         }
       ]
     },
     {
-      "timestamp": 1745088289042,
+      "timestamp": 1745516709288,
       "cpu": {
-        "currentLoad": 30.188330871491875,
-        "currentLoadUser": 15.866568193008371,
-        "currentLoadSystem": 13.940177252584935,
-        "currentLoadIdle": 69.81166912850813
+        "currentLoad": 11.889452207246197,
+        "currentLoadUser": 8.025225670829727,
+        "currentLoadSystem": 3.8642265364164707,
+        "currentLoadIdle": 88.1105477927538
       },
       "memory": {
         "total": 8362713088,
-        "free": 1412980736,
-        "used": 6949732352,
-        "available": 1412980736,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2235801600,
+        "used": 6126911488,
+        "available": 2235801600,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826945536,
-          "available": 14829531136,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -4165,9 +1462,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382622208,
-          "available": 136411283456,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -4175,42 +1472,42 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.45558086560364464,
-          "mem": 10.785931963806242
+          "cpu": 0,
+          "mem": 9.824125057918046
         }
       ]
     },
     {
-      "timestamp": 1745088291205,
+      "timestamp": 1745516711296,
       "cpu": {
-        "currentLoad": 31.73711817340327,
-        "currentLoadUser": 19.00647948164147,
-        "currentLoadSystem": 12.24930576982413,
-        "currentLoadIdle": 68.26288182659674
+        "currentLoad": 15.851695964347613,
+        "currentLoadUser": 10.54097548898242,
+        "currentLoadSystem": 5.11884129735083,
+        "currentLoadIdle": 84.14830403565239
       },
       "memory": {
         "total": 8362713088,
-        "free": 1414623232,
-        "used": 6948089856,
-        "available": 1414623232,
-        "swapused": 836763648,
-        "swapfree": 7228882944
+        "free": 2235154432,
+        "used": 6127558656,
+        "available": 2235154432,
+        "swapused": 676331520,
+        "swapfree": 6304038912
       },
       "disk": [
         {
           "fs": "C:",
           "type": "NTFS",
           "size": 135656476672,
-          "used": 120826863616,
-          "available": 14829613056,
-          "use": 89.07,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
           "mount": "C:",
           "rw": true
         },
@@ -4218,9 +1515,9 @@
           "fs": "D:",
           "type": "NTFS",
           "size": 375793905664,
-          "used": 239382622208,
-          "available": 136411283456,
-          "use": 63.7,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
           "mount": "D:",
           "rw": true
         }
@@ -4228,15 +1525,2718 @@
       "processLoad": [
         {
           "proc": "node",
-          "pid": 13464,
+          "pid": 13460,
           "pids": [
-            13464,
-            1136,
-            14276,
-            17348
+            13460,
+            3676,
+            1064,
+            10188
           ],
-          "cpu": 0.5096839959225281,
-          "mem": 10.798372711073931
+          "cpu": 0,
+          "mem": 9.8242719958779
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516713302,
+      "cpu": {
+        "currentLoad": 9.667125516205731,
+        "currentLoadUser": 6.350894756601176,
+        "currentLoadSystem": 3.316230759604555,
+        "currentLoadIdle": 90.33287448379427
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2236063744,
+        "used": 6126649344,
+        "available": 2236063744,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133615996928,
+          "available": 2040479744,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10810810810810811,
+          "mem": 9.824369954517804
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516715314,
+      "cpu": {
+        "currentLoad": 13.554141716566868,
+        "currentLoadUser": 6.536926147704591,
+        "currentLoadSystem": 6.923652694610778,
+        "currentLoadIdle": 86.44585828343313
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2236878848,
+        "used": 6125834240,
+        "available": 2236809216,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.824467913157706
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516717317,
+      "cpu": {
+        "currentLoad": 13.641146252398343,
+        "currentLoadUser": 7.4456891749706005,
+        "currentLoadSystem": 5.898372222566071,
+        "currentLoadIdle": 86.35885374760166
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2234568704,
+        "used": 6128144384,
+        "available": 2234568704,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21598272138228944,
+          "mem": 9.82456587179761
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516719333,
+      "cpu": {
+        "currentLoad": 12.186668317138082,
+        "currentLoadUser": 7.148604320108931,
+        "currentLoadSystem": 4.9390357120752615,
+        "currentLoadIdle": 87.81333168286191
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2235531264,
+        "used": 6127181824,
+        "available": 2235531264,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21390374331550802,
+          "mem": 9.824663830437512
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516721355,
+      "cpu": {
+        "currentLoad": 15.82751590782727,
+        "currentLoadUser": 8.883672082535368,
+        "currentLoadSystem": 6.56082041144128,
+        "currentLoadIdle": 84.17248409217272
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2236846080,
+        "used": 6125867008,
+        "available": 2236846080,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10787486515641855,
+          "mem": 9.824712809757465
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516723347,
+      "cpu": {
+        "currentLoad": 12.107006687917995,
+        "currentLoadUser": 8.000500031251953,
+        "currentLoadSystem": 3.9064941558847424,
+        "currentLoadIdle": 87.892993312082
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2236207104,
+        "used": 6126505984,
+        "available": 2236207104,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.32397408207343414,
+          "mem": 9.824761789077415
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516725361,
+      "cpu": {
+        "currentLoad": 13.23284116883919,
+        "currentLoadUser": 8.018780502872676,
+        "currentLoadSystem": 5.022548959041206,
+        "currentLoadIdle": 86.76715883116081
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2241163264,
+        "used": 6121549824,
+        "available": 2241093632,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21344717182497333,
+          "mem": 9.818051622244056
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516727368,
+      "cpu": {
+        "currentLoad": 14.402426192981371,
+        "currentLoadUser": 9.085845144519404,
+        "currentLoadSystem": 5.124713746363805,
+        "currentLoadIdle": 85.59757380701863
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2241101824,
+        "used": 6121611264,
+        "available": 2241101824,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.3218884120171674,
+          "mem": 9.819912836402214
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516729386,
+      "cpu": {
+        "currentLoad": 12.804649418822647,
+        "currentLoadUser": 7.811523559555056,
+        "currentLoadSystem": 4.693163354580678,
+        "currentLoadIdle": 87.19535058117735
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2234712064,
+        "used": 6128001024,
+        "available": 2234712064,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10649627263045794,
+          "mem": 9.827259734394945
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516731380,
+      "cpu": {
+        "currentLoad": 18.665256872745367,
+        "currentLoadUser": 13.129742505286726,
+        "currentLoadSystem": 5.342704316457271,
+        "currentLoadIdle": 81.33474312725464
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2238119936,
+        "used": 6124593152,
+        "available": 2238119936,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.11135857461024498,
+          "mem": 9.827847486234361
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516733402,
+      "cpu": {
+        "currentLoad": 13.02413036665622,
+        "currentLoadUser": 8.028831087433407,
+        "currentLoadSystem": 4.895017235976183,
+        "currentLoadIdle": 86.97586963334378
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2235383808,
+        "used": 6127329280,
+        "available": 2235383808,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.6607929515418502,
+          "mem": 9.828484217393731
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516735426,
+      "cpu": {
+        "currentLoad": 17.322397631968425,
+        "currentLoadUser": 11.648988653182043,
+        "currentLoadSystem": 5.4822397631968425,
+        "currentLoadIdle": 82.67760236803157
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2238001152,
+        "used": 6124711936,
+        "available": 2238001152,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.4149377593360996,
+          "mem": 9.828582176033635
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516737417,
+      "cpu": {
+        "currentLoad": 15.194652472612491,
+        "currentLoadUser": 8.423593488890264,
+        "currentLoadSystem": 6.579191681624064,
+        "currentLoadIdle": 84.80534752738751
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2250895360,
+        "used": 6111817728,
+        "available": 2250895360,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10940919037199125,
+          "mem": 9.828876051953344
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516739432,
+      "cpu": {
+        "currentLoad": 11.538461538461538,
+        "currentLoadUser": 6.535384615384615,
+        "currentLoadSystem": 5.003076923076923,
+        "currentLoadIdle": 88.46153846153845
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2259038208,
+        "used": 6103674880,
+        "available": 2259038208,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.828974010593246
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516741432,
+      "cpu": {
+        "currentLoad": 14.815045848668204,
+        "currentLoadUser": 8.283949847171106,
+        "currentLoadSystem": 6.337720666209219,
+        "currentLoadIdle": 85.1849541513318
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2259804160,
+        "used": 6102908928,
+        "available": 2259804160,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10905125408942204,
+          "mem": 9.829610741752617
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516743439,
+      "cpu": {
+        "currentLoad": 11.225701606350396,
+        "currentLoadUser": 6.3503968998062374,
+        "currentLoadSystem": 4.875304706544159,
+        "currentLoadIdle": 88.7742983936496
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2256822272,
+        "used": 6105890816,
+        "available": 2256822272,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10626992561105207,
+          "mem": 9.829659721072568
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516745489,
+      "cpu": {
+        "currentLoad": 11.911599450618054,
+        "currentLoadUser": 6.829816456486452,
+        "currentLoadSystem": 4.988138344362592,
+        "currentLoadIdle": 88.08840054938194
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2262294528,
+        "used": 6100418560,
+        "available": 2262294528,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10799136069114472,
+          "mem": 9.830296452231938
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516747475,
+      "cpu": {
+        "currentLoad": 15.950730378806636,
+        "currentLoadUser": 9.086407526615499,
+        "currentLoadSystem": 6.666254023273087,
+        "currentLoadIdle": 84.04926962119336
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2257940480,
+        "used": 6104772608,
+        "available": 2257940480,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.7526881720430108,
+          "mem": 9.830394410871842
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516749462,
+      "cpu": {
+        "currentLoad": 11.721657157032993,
+        "currentLoadUser": 6.400396923840238,
+        "currentLoadSystem": 5.1290002480774,
+        "currentLoadIdle": 88.278342842967
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2258329600,
+        "used": 6104383488,
+        "available": 2258329600,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.832696438909563
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516751476,
+      "cpu": {
+        "currentLoad": 13.816076209451467,
+        "currentLoadUser": 7.975842101986178,
+        "currentLoadSystem": 5.6472199738496975,
+        "currentLoadIdle": 86.18392379054853
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2262781952,
+        "used": 6099931136,
+        "available": 2262781952,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.4305705059203444,
+          "mem": 9.832892356189369
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516753477,
+      "cpu": {
+        "currentLoad": 11.834541364658834,
+        "currentLoadUser": 6.542114471382154,
+        "currentLoadSystem": 5.192451887028243,
+        "currentLoadIdle": 88.16545863534117
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2256908288,
+        "used": 6105804800,
+        "available": 2256908288,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.3218884120171674,
+          "mem": 9.823439347438724
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516755504,
+      "cpu": {
+        "currentLoad": 12.857142857142856,
+        "currentLoadUser": 7.2114784778540235,
+        "currentLoadSystem": 5.45227698066126,
+        "currentLoadIdle": 87.14285714285714
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2259017728,
+        "used": 6103695360,
+        "available": 2259017728,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616001024,
+          "available": 2040475648,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.43907793633369924,
+          "mem": 9.827112796435088
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516757500,
+      "cpu": {
+        "currentLoad": 16.096778175533885,
+        "currentLoadUser": 9.363041599802493,
+        "currentLoadSystem": 6.351067769411184,
+        "currentLoadIdle": 83.90322182446612
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2252230656,
+        "used": 6110482432,
+        "available": 2252230656,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616005120,
+          "available": 2040471552,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.828925031273295
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516759485,
+      "cpu": {
+        "currentLoad": 16.862133499688085,
+        "currentLoadUser": 10.910792264504055,
+        "currentLoadSystem": 5.757953836556457,
+        "currentLoadIdle": 83.13786650031192
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2249248768,
+        "used": 6113464320,
+        "available": 2249248768,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.2176278563656148,
+          "mem": 9.829267886512957
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516760491,
+      "cpu": {
+        "currentLoad": 22.611623846345722,
+        "currentLoadUser": 12.27238712895984,
+        "currentLoadSystem": 10.139685707158892,
+        "currentLoadIdle": 77.38837615365428
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2271260672,
+        "used": 6091452416,
+        "available": 2271191040,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.830688286791553
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516762494,
+      "cpu": {
+        "currentLoad": 16.154565285135554,
+        "currentLoadUser": 8.956061078217513,
+        "currentLoadSystem": 6.905578061701465,
+        "currentLoadIdle": 83.84543471486444
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2254430208,
+        "used": 6108282880,
+        "available": 2254430208,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21551724137931033,
+          "mem": 9.830786245431455
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516764502,
+      "cpu": {
+        "currentLoad": 13.085279061056312,
+        "currentLoadUser": 7.9098514171557,
+        "currentLoadSystem": 5.075540017480335,
+        "currentLoadIdle": 86.91472093894369
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2257862656,
+        "used": 6104850432,
+        "available": 2257862656,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.33444816053511706,
+          "mem": 9.831716852510533
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516766522,
+      "cpu": {
+        "currentLoad": 14.504426955238564,
+        "currentLoadUser": 8.933841613379242,
+        "currentLoadSystem": 5.4783571077225774,
+        "currentLoadIdle": 85.49557304476144
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2263359488,
+        "used": 6099353600,
+        "available": 2263359488,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.5202913631633714,
+          "mem": 9.831863790470388
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516768547,
+      "cpu": {
+        "currentLoad": 11.91515524131571,
+        "currentLoadUser": 6.633876421764525,
+        "currentLoadSystem": 5.090685521057486,
+        "currentLoadIdle": 88.08484475868428
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2257457152,
+        "used": 6105255936,
+        "available": 2257457152,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.832990314829274
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516770576,
+      "cpu": {
+        "currentLoad": 13.400469541579143,
+        "currentLoadUser": 8.482639317929074,
+        "currentLoadSystem": 4.627455826022488,
+        "currentLoadIdle": 86.59953045842086
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2253742080,
+        "used": 6108971008,
+        "available": 2253742080,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10537407797681769,
+          "mem": 9.833284190748984
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516772592,
+      "cpu": {
+        "currentLoad": 15.995319044099531,
+        "currentLoadUser": 9.534368070953436,
+        "currentLoadSystem": 6.263858093126386,
+        "currentLoadIdle": 84.00468095590047
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2242572288,
+        "used": 6120140800,
+        "available": 2242572288,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21715526601520088,
+          "mem": 9.834459694427819
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516774601,
+      "cpu": {
+        "currentLoad": 12.544356595903631,
+        "currentLoadUser": 7.103280831725082,
+        "currentLoadSystem": 5.347693457013011,
+        "currentLoadIdle": 87.45564340409638
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2249396224,
+        "used": 6113316864,
+        "available": 2249396224,
+        "swapused": 676331520,
+        "swapfree": 6304038912
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133616041984,
+          "available": 2040434688,
+          "use": 98.5,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.834655611707625
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516776639,
+      "cpu": {
+        "currentLoad": 19.506712457071494,
+        "currentLoadUser": 10.040586949734625,
+        "currentLoadSystem": 9.366219169528566,
+        "currentLoadIdle": 80.4932875429285
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2229030912,
+        "used": 6133682176,
+        "available": 2229030912,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133539815424,
+          "available": 2116661248,
+          "use": 98.44,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.755939524838013,
+          "mem": 9.836859681105443
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516778608,
+      "cpu": {
+        "currentLoad": 18.509045539613226,
+        "currentLoadUser": 8.477854023705552,
+        "currentLoadSystem": 9.837804117280099,
+        "currentLoadIdle": 81.49095446038677
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2241863680,
+        "used": 6120857600,
+        "available": 2241839104,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10845986984815618,
+          "mem": 9.836957639745346
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516780613,
+      "cpu": {
+        "currentLoad": 15.271423271917891,
+        "currentLoadUser": 8.890812414987016,
+        "currentLoadSystem": 6.090021021392358,
+        "currentLoadIdle": 84.7285767280821
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2228826112,
+        "used": 6133886976,
+        "available": 2228826112,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.7583965330444203,
+          "mem": 9.845382082777009
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516782615,
+      "cpu": {
+        "currentLoad": 14.925373134328357,
+        "currentLoadUser": 9.073877474551926,
+        "currentLoadSystem": 5.757821769812028,
+        "currentLoadIdle": 85.07462686567165
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2224472064,
+        "used": 6138241024,
+        "available": 2224472064,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.849398387013036
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516784619,
+      "cpu": {
+        "currentLoad": 11.712555409877005,
+        "currentLoadUser": 6.736592370606232,
+        "currentLoadSystem": 4.782418680152338,
+        "currentLoadIdle": 88.287444590123
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2220322816,
+        "used": 6142390272,
+        "available": 2220322816,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.858361602564166
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516786668,
+      "cpu": {
+        "currentLoad": 11.901961997895649,
+        "currentLoadUser": 6.678219966577954,
+        "currentLoadSystem": 5.124713746363805,
+        "currentLoadIdle": 88.09803800210435
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2226077696,
+        "used": 6136635392,
+        "available": 2226077696,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.21164021164021166,
+          "mem": 9.899896065883063
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516788644,
+      "cpu": {
+        "currentLoad": 18.5155329571526,
+        "currentLoadUser": 11.142803993303156,
+        "currentLoadSystem": 7.273516463074348,
+        "currentLoadIdle": 81.4844670428474
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2216218624,
+        "used": 6146494464,
+        "available": 2216218624,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.2222222222222222,
+          "mem": 9.924532663818683
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516790654,
+      "cpu": {
+        "currentLoad": 10.987708242341048,
+        "currentLoadUser": 7.006925812691084,
+        "currentLoadSystem": 3.8871903662569416,
+        "currentLoadIdle": 89.01229175765894
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2219991040,
+        "used": 6142722048,
+        "available": 2219991040,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.10672358591248667,
+          "mem": 9.926932650496308
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516792693,
+      "cpu": {
+        "currentLoad": 19.09544603867748,
+        "currentLoadUser": 10.91703056768559,
+        "currentLoadSystem": 7.991266375545851,
+        "currentLoadIdle": 80.90455396132252
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2409013248,
+        "used": 5953699840,
+        "available": 2409013248,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0,
+          "mem": 9.941332570562057
+        }
+      ]
+    },
+    {
+      "timestamp": 1745516794672,
+      "cpu": {
+        "currentLoad": 28.474743124346276,
+        "currentLoadUser": 14.809573617178367,
+        "currentLoadSystem": 13.665169507167906,
+        "currentLoadIdle": 71.52525687565372
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2392231936,
+        "used": 5970481152,
+        "available": 2392231936,
+        "swapused": 675282944,
+        "swapfree": 6305087488
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133495422976,
+          "available": 2161053696,
+          "use": 98.41,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 13460,
+          "pids": [
+            13460,
+            3676,
+            1064,
+            10188
+          ],
+          "cpu": 0.43383947939262474,
+          "mem": 9.985169061918677
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517487152,
+      "cpu": {
+        "currentLoad": 54.027429012941866,
+        "currentLoadUser": 36.42392634086665,
+        "currentLoadSystem": 17.307320842186595,
+        "currentLoadIdle": 45.97257098705814
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2490851328,
+        "used": 5871861760,
+        "available": 2490851328,
+        "swapused": 649068544,
+        "swapfree": 6331301888
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485404160,
+          "available": 2171072512,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 16132,
+          "pids": [
+            16132,
+            16776,
+            14480,
+            15860
+          ],
+          "cpu": 21.983914209115284,
+          "mem": 9.135426840079582
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517489265,
+      "cpu": {
+        "currentLoad": 44.427234991636205,
+        "currentLoadUser": 30.8716932036429,
+        "currentLoadSystem": 13.555541787993308,
+        "currentLoadIdle": 55.57276500836379
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2313330688,
+        "used": 6049382400,
+        "available": 2313330688,
+        "swapused": 649068544,
+        "swapfree": 6331301888
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485408256,
+          "available": 2171068416,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 16132,
+          "pids": [
+            16132,
+            16776,
+            14480,
+            15860
+          ],
+          "cpu": 26.2448132780083,
+          "mem": 11.351153316046899
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517631421,
+      "cpu": {
+        "currentLoad": 14.290103225842493,
+        "currentLoadUser": 11.673652331701216,
+        "currentLoadSystem": 2.3736427639957194,
+        "currentLoadIdle": 85.7098967741575
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2267222016,
+        "used": 6095491072,
+        "available": 2267222016,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485219840,
+          "available": 2171256832,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 0.0018605772944642078,
+          "mem": 8.881958859330414
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517633528,
+      "cpu": {
+        "currentLoad": 59.22948488034135,
+        "currentLoadUser": 39.12559520128625,
+        "currentLoadSystem": 19.813245934079525,
+        "currentLoadIdle": 40.77051511965865
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2131451904,
+        "used": 6231261184,
+        "available": 2131451904,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485154304,
+          "available": 2171322368,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 21.999999999999996,
+          "mem": 10.90681292544662
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517635541,
+      "cpu": {
+        "currentLoad": 52.79256965944272,
+        "currentLoadUser": 39.845201238390096,
+        "currentLoadSystem": 12.755417956656348,
+        "currentLoadIdle": 47.20743034055728
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2048098304,
+        "used": 6314614784,
+        "available": 2048098304,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485154304,
+          "available": 2171322368,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 31.019036954087348,
+          "mem": 12.164846758401668
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517637451,
+      "cpu": {
+        "currentLoad": 35.965764234551415,
+        "currentLoadUser": 21.53696734247906,
+        "currentLoadSystem": 13.099429403909191,
+        "currentLoadIdle": 64.03423576544859
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2036994048,
+        "used": 6325719040,
+        "available": 2036994048,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485154304,
+          "available": 2171322368,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 1.141552511415525,
+          "mem": 11.766595907875777
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517639417,
+      "cpu": {
+        "currentLoad": 32.64083848025454,
+        "currentLoadUser": 23.002058768482126,
+        "currentLoadSystem": 9.445380248299957,
+        "currentLoadIdle": 67.35916151974546
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2156703744,
+        "used": 6206009344,
+        "available": 2156703744,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485158400,
+          "available": 2171318272,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 1.5151515151515151,
+          "mem": 10.695418180535814
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517641440,
+      "cpu": {
+        "currentLoad": 22.833178005591797,
+        "currentLoadUser": 12.333022677850265,
+        "currentLoadSystem": 10.500155327741535,
+        "currentLoadIdle": 77.1668219944082
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2171858944,
+        "used": 6190854144,
+        "available": 2171858944,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485158400,
+          "available": 2171318272,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 0.5446623093681917,
+          "mem": 10.711434418159964
+        }
+      ]
+    },
+    {
+      "timestamp": 1745517643480,
+      "cpu": {
+        "currentLoad": 38.76681891124553,
+        "currentLoadUser": 24.114306875694357,
+        "currentLoadSystem": 14.362424392050363,
+        "currentLoadIdle": 61.23318108875447
+      },
+      "memory": {
+        "total": 8362713088,
+        "free": 2219679744,
+        "used": 6143033344,
+        "available": 2219679744,
+        "swapused": 634388480,
+        "swapfree": 6345981952
+      },
+      "disk": [
+        {
+          "fs": "C:",
+          "type": "NTFS",
+          "size": 135656476672,
+          "used": 133485223936,
+          "available": 2171252736,
+          "use": 98.4,
+          "mount": "C:",
+          "rw": true
+        },
+        {
+          "fs": "D:",
+          "type": "NTFS",
+          "size": 375793905664,
+          "used": 199496433664,
+          "available": 176297472000,
+          "use": 53.09,
+          "mount": "D:",
+          "rw": true
+        }
+      ],
+      "processLoad": [
+        {
+          "proc": "node",
+          "pid": 4616,
+          "pids": [
+            4616,
+            7060,
+            10452,
+            13144
+          ],
+          "cpu": 0.9719222462203023,
+          "mem": 10.172123126173668
         }
       ]
     }

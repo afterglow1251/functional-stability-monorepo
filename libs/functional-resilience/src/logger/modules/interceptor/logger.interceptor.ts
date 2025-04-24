@@ -28,11 +28,11 @@ export class LoggerInterceptor implements NestInterceptor {
     const req = context.switchToHttp().getRequest<Request>();
     const res = context.switchToHttp().getResponse<Response>();
 
-    const startTime = performance.now();
+    const startTime = Date.now();
 
     return next.handle().pipe(
       tap(() => {
-        const duration = performance.now() - startTime;
+        const duration = Date.now() - startTime;
 
         if (config.console.on) {
           const logData = this.loggerService.getConsoleLogData(req, res);

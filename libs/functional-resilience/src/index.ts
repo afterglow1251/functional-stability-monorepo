@@ -16,7 +16,9 @@ export * from './decorators/retry.decorator';
 export * from './decorators/fallback.decorator';
 
 // monitoring/healthcheck
-export * from './monitoring/modules/healthcheck/utils';
+export * from './monitoring/modules/healthcheck/utils/db';
+export * from './monitoring/modules/healthcheck/utils/http';
+export * from './monitoring/modules/healthcheck/core/create-checker';
 
 // monitoring/system-info interceptors
 export * from './monitoring/modules/system-info/interceptors/overload-protection/overload-protection.interceptor';

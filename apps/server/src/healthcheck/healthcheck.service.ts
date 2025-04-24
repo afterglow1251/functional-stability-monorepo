@@ -1,11 +1,37 @@
-import { Inject, Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { Interval } from '@nestjs/schedule';
-import { drizzleProvideToken } from '../db/drizzle';
-import { checkDrizzleHealth } from '@app/functional-resilience/monitoring/modules/healthcheck/utils';
-import { PinoFileLoggerService } from '@app/functional-resilience';
-import { MikroORM } from '@mikro-orm/mysql';
+import {
+  checkMongooseHealth,
+  PinoFileLoggerService,
+} from '@app/functional-resilience';
 import { InjectConnection } from '@nestjs/mongoose';
 import { Connection } from 'mongoose';
+
+/*
+TODO
+const mongooseCheker = createDbHealthChecker((db: any) =>
+  db.db.command({ ping: 1 }),
+);
+ */
+
+/* 
+TODO
+async function checkApiHealth(): Promise<any> {
+  const response = await fetch('https://api.example.com/health');
+  if (!response.ok) {
+    throw new Error('API не працює!');
+  }
+  return response.json();
+}
+
+const checkApiHealthChecker = createHealthChecker(checkApiHealth);
+
+checkApiHealthChecker().then(result => {
+  console.log('API здоровий:', result);
+}).catch(error => {
+  console.error('Помилка перевірки API:', error);
+});
+*/
 
 @Injectable()
 export class HealthcheckService {
@@ -14,24 +40,37 @@ export class HealthcheckService {
     dir: './logs/db-health',
   });
 
-  constructor(
-    @Inject(drizzleProvideToken) private readonly drizzle: any,
-    @Inject(MikroORM) private readonly mikroOrm: MikroORM,
-    @InjectConnection() private readonly mongodb: Connection,
-  ) {}
+  constructor(@InjectConnection() private readonly mongodb: Connection) {
+    // @Inject(MikroORM) private readonly mikroOrm: MikroORM,
+    // @Inject(drizzleProvideToken) private readonly drizzle: any,
+  }
 
-  @Interval(5000)
-  async checkDrizzle() {
-    const { ok, error } = await checkDrizzleHealth(this.drizzle);
+  // @Interval(1000)
+  async checkMongoose() {
+    const { ok, error } = await checkMongooseHealth(this.mongodb);
 
     if (ok) {
-      this.logger.debug('Drizzle connection is healthy');
-      this.fileLogger.debug('Drizzle connection is healthy');
+      this.logger.debug('Mongoose connection is healthy');
+      this.fileLogger.debug('Mongoose connection is healthy');
     } else {
-      this.logger.error('Drizzle connection failed', error.stack);
-      this.fileLogger.error('Drizzle connection failed', error.stack);
+      this.logger.error('Mongoose connection failed', error.stack);
+      this.fileLogger.error('Mongoose connection failed', error.stack);
     }
   }
+
+  // or @Cron(...)
+  // @Interval(5000)
+  // async checkDrizzle() {
+  //   const { ok, error } = await checkDrizzleHealth(this.drizzle);
+
+  //   if (ok) {
+  //     this.logger.debug('Drizzle connection is healthy');
+  //     this.fileLogger.debug('Drizzle connection is healthy');
+  //   } else {
+  //     this.logger.error('Drizzle connection failed', error.stack);
+  //     this.fileLogger.error('Drizzle connection failed', error.stack);
+  //   }
+  // }
 
   // @Interval(1000)
   // async checkMikroOrm() {
@@ -43,19 +82,6 @@ export class HealthcheckService {
   //   } else {
   //     this.logger.error('MikroORM connection failed', error.stack);
   //     this.fileLogger.error('MikroORM connection failed', error.stack);
-  //   }
-  // }
-
-  // @Interval(1000)
-  // async checkMongoose() {
-  //   const { ok, error } = await checkDbConnection({ mongoose: this.mongodb });
-
-  //   if (ok) {
-  //     this.logger.debug('Mongoose connection is healthy');
-  //     this.fileLogger.debug('Mongoose connection is healthy');
-  //   } else {
-  //     this.logger.error('Mongoose connection failed', error.stack);
-  //     this.fileLogger.error('Mongoose connection failed', error.stack);
   //   }
   // }
 }

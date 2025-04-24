@@ -1,31 +1,21 @@
 type CircuitBreakerOptions = {
   failureThreshold: number;
   resetTimeout: number;
-  strategy?: 'linear' | 'exponential' | ((failureCount: number) => number);
 };
 
+const STATE_CLOSED = 0;
+const STATE_OPEN = 1;
+const STATE_HALF_OPEN = 2;
+
 type CircuitState = {
-  isOpen: boolean;
+  state: typeof STATE_CLOSED | typeof STATE_OPEN | typeof STATE_HALF_OPEN;
   failureCount: number;
   resetTimer: NodeJS.Timeout | null;
+  lastFailureTime: number | null;
+  successCount: number;
 };
 
 const circuitStates: WeakMap<object, Map<string, CircuitState>> = new WeakMap();
-
-function calculateBackoffDelay(
-  failureCount: number,
-  failureThreshold: number,
-  resetTimeout: number,
-  strategy: CircuitBreakerOptions['strategy'],
-): number {
-  if (typeof strategy === 'function') {
-    return strategy(failureCount);
-  }
-  if (strategy === 'exponential') {
-    return resetTimeout * 2 ** (failureCount - failureThreshold);
-  }
-  return resetTimeout * (failureCount - failureThreshold + 1);
-}
 
 export function CircuitBreaker(options: CircuitBreakerOptions): MethodDecorator {
   return (target, propertyKey, descriptor: PropertyDescriptor) => {
@@ -35,48 +25,81 @@ export function CircuitBreaker(options: CircuitBreakerOptions): MethodDecorator 
     if (!circuitStates.has(target)) {
       circuitStates.set(target, new Map());
     }
+
     const targetCircuitStates = circuitStates.get(target)!;
 
     if (!targetCircuitStates.has(circuitId)) {
       targetCircuitStates.set(circuitId, {
-        isOpen: false,
+        state: STATE_CLOSED,
         failureCount: 0,
         resetTimer: null,
+        lastFailureTime: null,
+        successCount: 0,
       });
     }
 
     descriptor.value = async function (...args: any[]) {
       const state = targetCircuitStates.get(circuitId)!;
 
-      if (state.isOpen) {
-        throw new Error(`CircuitBreaker: Service unavailable (${circuitId})`);
+      if (state.state === STATE_OPEN) {
+        if (
+          state.lastFailureTime &&
+          Date.now() - state.lastFailureTime >= options.resetTimeout
+        ) {
+          state.state = STATE_HALF_OPEN;
+          state.successCount = 0;
+        } else {
+          throw new Error(`CircuitBreaker: Service unavailable (${circuitId})`);
+        }
       }
 
       try {
         const result = await originalMethod.apply(this, args);
-        state.failureCount = 0;
+
+        if (state.state === STATE_HALF_OPEN) {
+          ++state.successCount;
+
+          if (state.successCount >= options.failureThreshold) {
+            state.state = STATE_CLOSED;
+            state.failureCount = 0;
+            state.lastFailureTime = null;
+            if (state.resetTimer) {
+              clearTimeout(state.resetTimer);
+              state.resetTimer = null;
+            }
+          }
+        } else {
+          state.failureCount = 0;
+        }
+
         return result;
       } catch (error) {
-        state.failureCount++;
-
-        if (state.failureCount >= options.failureThreshold) {
-          state.isOpen = true;
+        if (state.state === STATE_HALF_OPEN) {
+          state.state = STATE_OPEN;
+          state.lastFailureTime = Date.now();
 
           if (state.resetTimer) {
             clearTimeout(state.resetTimer);
           }
-
-          const backoffTimeout = calculateBackoffDelay(
-            state.failureCount,
-            options.failureThreshold,
-            options.resetTimeout,
-            options.strategy ?? 'exponential',
-          );
-
           state.resetTimer = setTimeout(() => {
-            state.isOpen = false;
-            state.resetTimer = null;
-          }, backoffTimeout);
+            state.state = STATE_HALF_OPEN;
+            state.successCount = 0;
+          }, options.resetTimeout);
+        } else {
+          state.failureCount++;
+
+          if (state.failureCount >= options.failureThreshold) {
+            state.state = STATE_OPEN;
+            state.lastFailureTime = Date.now();
+
+            if (state.resetTimer) {
+              clearTimeout(state.resetTimer);
+            }
+            state.resetTimer = setTimeout(() => {
+              state.state = STATE_HALF_OPEN;
+              state.successCount = 0;
+            }, options.resetTimeout);
+          }
         }
 
         throw error;

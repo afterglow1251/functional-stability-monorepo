@@ -1,7 +1,6 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ServerController } from './server.controller';
 import { ServerService } from './server.service';
-import { UsersModule } from './users/users.module';
 import { ClsModule } from 'nestjs-cls';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import {
@@ -21,16 +20,23 @@ import {
 } from '@app/functional-resilience';
 import { ScheduleModule } from '@nestjs/schedule';
 import { HealthcheckModule } from './healthcheck/healthcheck.module';
-import { DrizzleModule } from './db/drizzle/drizzle.module';
-import { MikroOrmModule } from '@mikro-orm/nestjs';
-import { MySqlDriver } from '@mikro-orm/mysql';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User } from './db/mikro-orm/user.entity';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
+    // ...
+    ConfigModule.forRoot({ isGlobal: true }),
+    // ...
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '..', '..', 'public'),
+      serveRoot: '/',
+    }),
+    // not necessarily (you can use it with healthcheck utils)
     ScheduleModule.forRoot(),
+    // for traceId (optional)
     ClsModule.forRoot({ global: true }),
+    // flexible configuration
     LoggerRequestModule.forRoot({
       console: {
         on: true,
@@ -41,6 +47,7 @@ import { User } from './db/mikro-orm/user.entity';
         options: { dir: './logs/my-logs' },
       },
     }),
+    // flexible configuration
     LoggerExceptionFilterModule.forRoot({
       console: {
         on: true,
@@ -50,6 +57,37 @@ import { User } from './db/mikro-orm/user.entity';
         options: { dir: './logs/error-logs' },
       },
     }),
+
+    HealthcheckModule,
+
+    // ...
+    MongooseModule.forRootAsync({
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGODB_URI'),
+      }),
+      inject: [ConfigService],
+    }),
+
+    // SystemMonitoringModule.forRoot({
+    //   cronExpression: '*/2 * * * * *',
+    //   thresholds: {
+    //     cpu: 100,
+    //     memory: 100,
+    //     disk: 100,
+    //     processCpu: 100,
+    //     processMemory: 100,
+    //   },
+    //   console: {
+    //     on: true,
+    //   },
+    //   file: {
+    //     on: false,
+    //     options: {
+    //       dir: './logs/monitoring-logs',
+    //     },
+    //   },
+    // }),
+
     // DrizzleModule,
     // MikroOrmModule.forRoot({
     //   entities: [User],
@@ -61,44 +99,15 @@ import { User } from './db/mikro-orm/user.entity';
     //   user: 'root',
     //   password: 'root',
     // }),
-
-    SystemMonitoringModule.forRoot({
-      cronExpression: '*/2 * * * * *',
-      thresholds: {
-        cpu: 40,
-        memory: 40,
-        disk: 40,
-        processCpu: 40,
-        processMemory: 40,
-      },
-      console: {
-        on: false,
-      },
-      file: {
-        on: false,
-        options: {
-          dir: './logs/monitoring-logs',
-        },
-      },
-    }),
-    UsersModule,
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', '..', 'public'),
-      serveRoot: '/',
-    }),
-    // MongooseModule.forRoot(
-    //   'mongodb+srv://yuriiafterglow:dew6Uo9zvX4Un2Rr@cluster0.7hwngpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-    // ),
-    // HealthcheckModule,
   ],
   controllers: [ServerController],
   providers: [
     ServerService,
     PinoConsoleLoggerService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: OverloadProtectionInterceptor,
-    },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: OverloadProtectionInterceptor,
+    // },
     {
       provide: APP_INTERCEPTOR,
       useClass: LoggerInterceptor,
@@ -110,6 +119,7 @@ import { User } from './db/mikro-orm/user.entity';
   ],
 })
 export class ServerModule {
+  // you must import ClsModule for middleware dependency
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(TraceMiddleware).forRoutes('*');
   }

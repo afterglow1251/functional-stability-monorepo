@@ -17,7 +17,7 @@ export class ServerService {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ message: 'Hello World!' });
-      }, 100);
+      }, 1000);
     });
   }
 
@@ -26,14 +26,17 @@ export class ServerService {
     throw new HttpException('test exception', HttpStatus.NOT_FOUND);
   }
 
-  // @Fallback((e) => ({
-  //   temp: 18,
-  //   condition: 'cached',
-  //   note: 'API unreachable, fallback used',
-  //   e: e.message,
-  // }))
-  @Fallback({ x: 'x' })
-  async riskyOperation(operation: string) {
+  @Fallback({ data: 'default value' })
+  // @Fallback((error) => {
+  //   console.error('Operation failed', error);
+  //   return { error: 'Something went wrong', details: error.message };
+  // })
+
+  // @Fallback(
+  //   { default: 'No data' },
+  //   { ignore: (error) => error.status === 404 } // Ignore 404 error
+  // )
+  async fallback(operation: string) {
     const res = await fetch(`https://some-api.com/weather/Kyiv`);
     return await res.json();
   }
@@ -42,8 +45,7 @@ export class ServerService {
     failureThreshold: 3,
     resetTimeout: 2000,
   })
-  async fetchData() {
-    console.log('QUERY TO SERVICE');
+  async circuitBreaker() {
     if (Math.random() < 0.99) {
       throw new Error('Error while fetching');
     }
